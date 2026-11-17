@@ -17,6 +17,13 @@ import numpy as np
 from .optics import frequency_grid
 
 
+def _keys(t):
+    """Cubic convolution weight (Keys, a = -0.5) at offset t, |t| < 2."""
+    t = np.abs(t)
+    return np.where(t <= 1, (1.5 * t - 2.5) * t * t + 1,
+                    np.where(t < 2, ((-0.5 * t + 2.5) * t - 4) * t + 2, 0.0))
+
+
 class PeriodicChannel:
     def __init__(self, lattice, reader, n=48, q=24, dot_side=None, photons=64_000.0):
         if n % 2 or q % 2:
@@ -41,9 +48,9 @@ class PeriodicChannel:
     # ---- forward model ----------------------------------------------------
     def comb(self, values, jitter=None):
         """Symbol values placed on the fine grid. jitter (n, n, 2) in um moves each dot off its
-        nominal site; sub-pixel offsets are split bilinearly over the four nearest pixels, which
-        is exact to well below 0.1% inside the pupil because the grid is ~10x finer than the
-        optical cutoff."""
+        nominal site; a sub-pixel offset is spread over the 4 x 4 nearest pixels with cubic
+        (Keys) weights, which reproduces the exact shift to ~0.1% inside the pupil
+        (validation: subpixel_placement_is_a_shift)."""
         c = np.zeros((self.My, self.Mx), complex)
         if jitter is None:
             np.add.at(c, (self.iy, self.ix), values)
@@ -52,9 +59,10 @@ class PeriodicChannel:
         fy = self.iy + jitter[..., 1] / self.dy
         x0, y0 = np.floor(fx).astype(int), np.floor(fy).astype(int)
         tx, ty = fx - x0, fy - y0
-        for oy, wy in ((0, 1 - ty), (1, ty)):
-            for ox, wx in ((0, 1 - tx), (1, tx)):
-                np.add.at(c, ((y0 + oy) % self.My, (x0 + ox) % self.Mx), values * wx * wy)
+        for oy in (-1, 0, 1, 2):
+            wy = _keys(ty - oy)
+            for ox in (-1, 0, 1, 2):
+                np.add.at(c, ((y0 + oy) % self.My, (x0 + ox) % self.Mx), values * wy * _keys(tx - ox))
         return c
 
     def field(self, values, jitter=None, H=None):
