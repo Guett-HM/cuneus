@@ -1426,6 +1426,14 @@
     "README.md",
     "docs/PHASE1.md"
    ]
+  },
+  {
+   "id": "vods_v11",
+   "description": "4D-VODS v1.1 headline: APSK-16 at 300 nm (bits/um^2)",
+   "expr": "vods_v11_density",
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
   }
  ]
 }

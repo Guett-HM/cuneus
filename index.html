@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CUNEUS: data formats computed from the optics of the reader</title>
+<meta name="description" content="CUNEUS: an open simulation study of archival data storage in glass, where the lattice of dots, their alphabet and the decoder are computed from the optics of the reader. Successor of 4D-VODS.">
+<meta name="author" content="Hakim Guettal">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef2f6;
+    --pane: #f9fbfc;
+    --ink: #12161c;
+    --ink2: #4b5360;
+    --ink3: #6b7380;
+    --rule: #d3dae2;
+    --grid: #e3e8ee;
+    --accent: #5428d6;          /* 405 nm, the colour of the reader's laser */
+    --accent-soft: #ebe5fc;
+    --sq: #2a78d6;               /* square lattice, categorical slot 1 */
+    --hx: #eb6834;               /* hexagonal lattice, categorical slot 2 */
+    --good: #1d7a46;
+    --font: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --wrap: 1180px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161b; --pane: #181d23; --ink: #e9edf2; --ink2: #b4bcc7; --ink3: #8c95a1;
+      --rule: #2c333c; --grid: #232a32; --accent: #a58bff; --accent-soft: #2a2343;
+      --sq: #3987e5; --hx: #d95926; --good: #3fb072;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--font); font-size: 17px; line-height: 1.6;
+    font-variation-settings: "opsz" 16; font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 0.18em; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2.5px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--pane); padding: 8px 12px; z-index: 10; }
+  .skip:focus { left: 12px; }
+
+  /* top bar */
+  .top { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
+         backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+  .top .wrap { display: flex; align-items: center; gap: 28px; height: 58px; }
+  .mark { font-weight: 800; font-stretch: 75%; font-size: 1.3rem; letter-spacing: 0.02em; color: var(--ink); text-decoration: none; }
+  .top nav { display: flex; gap: 22px; margin-left: auto; overflow-x: auto; }
+  .top nav a { color: var(--ink2); text-decoration: none; font-size: 0.95rem; white-space: nowrap; }
+  .top nav a:hover { color: var(--ink); }
+
+  /* hero */
+  .hero { padding: 56px 0 72px; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; align-items: start; }
+  h1 { margin: 0; font-weight: 800; font-stretch: 75%; font-variation-settings: "opsz" 96;
+       font-size: clamp(3.6rem, 9vw, 7.4rem); line-height: 0.88; letter-spacing: -0.01em; }
+  .tagline { margin: 22px 0 0; font-size: clamp(1.45rem, 2.4vw, 1.95rem); line-height: 1.22; font-weight: 600;
+             font-variation-settings: "opsz" 48; max-width: 19ch; }
+  .lead { margin: 24px 0 0; color: var(--ink2); max-width: 46ch; font-size: 1.08rem; }
+  .lead strong { color: var(--ink); }
+  .status { margin: 22px 0 0; display: flex; gap: 10px; align-items: baseline; color: var(--ink2); font-size: 0.95rem; max-width: 46ch; }
+  .status b { color: var(--good); font-weight: 650; white-space: nowrap; }
+  .actions { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 11px 18px; border-radius: 999px; border: 1.5px solid var(--ink);
+         color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.98rem; background: transparent; cursor: pointer; font-family: inherit; }
+  .btn.primary { background: var(--ink); color: var(--bg); }
+  .btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* the instrument */
+  .instrument { margin: 0; background: var(--pane); border: 1px solid var(--rule); border-radius: 18px; padding: 22px; }
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 22px; align-items: center; }
+  .viewport { position: relative; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #000; container-type: inline-size;
+              box-shadow: 0 0 0 8px var(--bg), 0 0 0 9px var(--rule); }
+  .viewport canvas { width: 100%; height: 100%; display: block; }
+  .scale { position: absolute; left: 50%; bottom: 12%; transform: translateX(-50%); color: #fff; font-size: 0.78rem;
+           text-align: center; text-shadow: 0 1px 2px #000; pointer-events: none; }
+  .scale i { display: block; height: 3px; background: #fff; margin: 0 auto 3px; box-shadow: 0 1px 2px #000; }
+  .readouts { margin: 0; display: grid; gap: 14px; }
+  .readouts div { border-left: 2px solid var(--rule); padding-left: 12px; }
+  .readouts dt { font-size: 0.82rem; color: var(--ink3); line-height: 1.3; }
+  .readouts dd { margin: 2px 0 0; font-size: 1.32rem; font-weight: 650; line-height: 1.15; }
+  .readouts dd small { font-size: 0.8rem; font-weight: 450; color: var(--ink2); }
+  .readouts .hl { border-left-color: var(--accent); }
+  .controls { margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 22px; }
+  .control label, .control .lab { display: flex; justify-content: space-between; gap: 8px; font-size: 0.88rem; color: var(--ink2); margin-bottom: 6px; }
+  .control output { color: var(--ink); font-weight: 600; }
+  .seg { display: inline-flex; border: 1.5px solid var(--rule); border-radius: 999px; padding: 3px; gap: 2px; max-width: 100%; overflow-x: auto; }
+  .seg button { white-space: nowrap; }
+  .seg button { border: 0; background: transparent; color: var(--ink2); font: inherit; font-size: 0.9rem; padding: 6px 13px; border-radius: 999px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  input[type=range] { width: 100%; accent-color: var(--accent); height: 22px; }
+  .figcap { margin: 18px 0 0; font-size: 0.85rem; color: var(--ink3); line-height: 1.5; }
+  .legend-phase { display: inline-block; width: 64px; height: 9px; border-radius: 5px; vertical-align: middle; margin: 0 4px;
+                  background: linear-gradient(90deg, hsl(210 80% 55%), hsl(300 80% 55%), hsl(30 80% 55%), hsl(120 80% 45%), hsl(210 80% 55%)); }
+
+  /* sections */
+  section.block { padding: 84px 0; border-top: 1px solid var(--rule); scroll-margin-top: 58px; }
+  h2 { margin: 0; font-weight: 750; font-stretch: 85%; font-variation-settings: "opsz" 72; font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.02; max-width: 22ch; }
+  h3 { margin: 0 0 8px; font-weight: 650; font-size: 1.15rem; line-height: 1.25; }
+  .intro { margin: 18px 0 0; color: var(--ink2); max-width: 64ch; font-size: 1.06rem; }
+  .intro strong { color: var(--ink); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
+  .panel { background: var(--pane); border: 1px solid var(--rule); border-radius: 14px; padding: 20px 22px; }
+  .panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .big { font-size: 2.2rem; font-weight: 750; font-stretch: 85%; line-height: 1; }
+  .big small { font-size: 0.95rem; font-weight: 450; color: var(--ink2); font-stretch: 100%; }
+  .muted { color: var(--ink3); font-size: 0.9rem; }
+
+  /* tiers */
+  .tiers { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--ink); }
+  .tier { padding: 22px 22px 6px 0; }
+  .tier + .tier { padding-left: 22px; border-left: 1px solid var(--rule); }
+  .tier .who { font-weight: 750; font-stretch: 85%; font-size: 1.45rem; line-height: 1.1; }
+  .tier dl { margin: 14px 0 0; }
+  .tier dt { font-size: 0.82rem; color: var(--ink3); }
+  .tier dd { margin: 0 0 12px; }
+
+  /* geometry */
+  .geo-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 30px; }
+  .geo svg { width: 100%; height: auto; display: block; }
+  .geo .lost { font-size: 1.9rem; font-weight: 750; font-stretch: 85%; }
+  .slider-row { margin-top: 30px; max-width: 560px; }
+
+  /* charts */
+  .chart-wrap { margin-top: 26px; }
+  .chart { position: relative; }
+  .chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .chart .axis text, .chart .lbl { fill: var(--ink3); font-size: 12px; font-family: var(--font); }
+  .chart .axis-title { fill: var(--ink2); font-size: 12.5px; }
+  .chart .gridline { stroke: var(--grid); stroke-width: 1; }
+  .chart .baseline { stroke: var(--ink3); stroke-width: 1; }
+  .chart .series { fill: none; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+  .chart .cross { stroke: var(--ink3); stroke-width: 1; stroke-dasharray: 3 3; }
+  .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); border-radius: 8px; padding: 9px 11px;
+         font-size: 0.82rem; line-height: 1.45; min-width: 170px; opacity: 0; transform: translateY(4px); transition: opacity .12s, transform .12s; z-index: 2; }
+  .tip.on { opacity: 1; transform: none; }
+  .tip b { display: block; margin-bottom: 3px; font-weight: 650; }
+  .tip .row { display: flex; justify-content: space-between; gap: 14px; }
+  .tip .sw { display: inline-block; width: 14px; height: 0; border-top: 2.5px solid; vertical-align: middle; margin-right: 6px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .legend button { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--rule); background: var(--pane); color: var(--ink);
+                   border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 0.86rem; cursor: pointer; text-align: left; }
+  .legend button[aria-pressed="false"] { opacity: 0.45; }
+  .legend svg { width: 26px; height: 10px; }
+  details { margin-top: 18px; }
+  summary { cursor: pointer; color: var(--ink2); font-size: 0.92rem; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; margin-top: 12px; }
+  th, td { text-align: right; padding: 6px 10px; border-bottom: 1px solid var(--rule); }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--ink2); font-weight: 600; }
+  .table-scroll { overflow-x: auto; }
+
+  /* findings */
+  .findings { margin: 44px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 40px; }
+  .findings li { padding: 18px 0; border-top: 2px solid var(--ink); }
+  .findings p { margin: 4px 0 0; color: var(--ink2); }
+
+  /* verdict */
+  .verdict { margin-top: 36px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 40px; align-items: start; }
+  .criterion { border-left: 4px solid var(--accent); padding: 4px 0 4px 20px; font-size: 1.15rem; }
+  .criterion .muted { display: block; margin-top: 6px; }
+  .bars { display: grid; gap: 18px; }
+  .bar-label { display: flex; justify-content: space-between; font-size: 0.92rem; color: var(--ink2); margin-bottom: 6px; }
+  .bar-label b { color: var(--ink); }
+  .track { position: relative; height: 16px; background: var(--grid); border-radius: 8px; }
+  .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 8px; background: var(--hx); }
+  .goal { position: absolute; top: -6px; bottom: -6px; width: 2px; background: var(--ink); }
+  .goal span { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; color: var(--ink2); white-space: nowrap; }
+  .whisker { position: absolute; top: 50%; height: 2px; background: var(--ink); transform: translateY(-50%); }
+
+  /* plan */
+  .plan { margin: 36px 0 0; padding: 0; list-style: none; }
+  .plan li { display: grid; grid-template-columns: 64px minmax(0, 1.25fr) minmax(0, 1fr) 128px; gap: 22px; padding: 16px 0; border-top: 1px solid var(--rule); align-items: baseline; }
+  .plan .n { font-weight: 800; font-stretch: 75%; font-size: 1.6rem; line-height: 1; }
+  .plan .crit { color: var(--ink2); font-size: 0.93rem; }
+  .plan .st { font-size: 0.85rem; font-weight: 650; text-align: right; color: var(--ink3); }
+  .plan .done .st { color: var(--good); }
+  .plan .next .st { color: var(--accent); }
+  .plan .done .n { color: var(--good); }
+
+  /* reproduce */
+  pre { background: var(--ink); color: var(--bg); border-radius: 14px; padding: 20px 22px; overflow-x: auto; font-family: var(--mono); font-size: 0.88rem; line-height: 1.7; margin: 0; }
+  pre .c { opacity: 0.6; }
+  .code { position: relative; margin-top: 30px; }
+  .copy { position: absolute; top: 12px; right: 12px; border: 1px solid color-mix(in srgb, var(--bg) 40%, transparent); background: transparent;
+          color: var(--bg); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 0.82rem; cursor: pointer; }
+  .notes { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+  .notes ul { margin: 10px 0 0; padding-left: 18px; color: var(--ink2); }
+  .notes li { margin-bottom: 6px; }
+
+  footer { border-top: 1px solid var(--rule); padding: 48px 0 64px; color: var(--ink2); font-size: 0.92rem; }
+  footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
+  footer p { margin: 0 0 10px; max-width: 60ch; }
+
+  @media (max-width: 980px) {
+    .hero .wrap, .verdict, .notes, footer .wrap { grid-template-columns: 1fr; }
+    .stage { grid-template-columns: 1fr; }
+    .readouts { grid-template-columns: 1fr 1fr; }
+    .tagline { max-width: none; }
+  }
+  @media (max-width: 720px) {
+    .wrap { padding: 0 18px; }
+    .top nav { display: none; }
+    .two, .geo-panels, .tiers, .controls { grid-template-columns: 1fr; }
+    .tier + .tier { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
+    .plan li { grid-template-columns: 44px 1fr; }
+    .plan .crit, .plan .st { grid-column: 2; text-align: left; }
+    section.block { padding: 60px 0; }
+    .seg { flex-wrap: wrap; border-radius: 18px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#">CUNEUS</a>
+    <nav aria-label="Sections">
+      <a href="#plate">The plate</a>
+      <a href="#geometry">Why hexagonal</a>
+      <a href="#results">Results</a>
+      <a href="#limits">Limits</a>
+      <a href="#plan">Plan</a>
+      <a href="#reproduce">Reproduce</a>
+      <a href="https://github.com/GuettHM/cuneus">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" aria-labelledby="title">
+  <div class="wrap">
+    <div>
+      <h1 id="title">CUNEUS</h1>
+      <p class="tagline">Data formats for glass, computed from the optics of the reader.</p>
+      <p class="lead">The lattice of dots written in the glass, the alphabet of each dot and the decoder are not drawn by hand: they are calculated from the microscope that will read them. In simulation, the dense layer reaches <strong><span data-claim="real_hex_it">51.9</span> bits/µm²</strong> before error correction with realistic writing errors, against <span data-claim="vods_v11">42.6</span> for its predecessor <a href="https://doi.org/10.5281/zenodo.24268721">4D-VODS</a> under ideal assumptions.</p>
+      <p class="status"><b>Phase 1 of 6 done.</b> <span>Simulation only: nothing has been written in glass yet, and every number on this page is checked against the published results.</span></p>
+      <div class="actions">
+        <a class="btn primary" href="#results">See the Phase 1 results</a>
+        <a class="btn" href="https://github.com/GuettHM/cuneus/blob/main/docs/PHASE1.md">Read the report</a>
+      </div>
+    </div>
+
+    <figure class="instrument" aria-labelledby="sim-cap">
+      <div class="stage">
+        <div class="viewport">
+          <canvas id="sim" width="560" height="560" role="img" aria-label="Simulated image of written dots as seen by the reader"></canvas>
+          <div class="scale" aria-hidden="true"><i id="scalebar"></i>1 µm</div>
+        </div>
+        <dl class="readouts" aria-live="polite">
+          <div><dt>Symbols per µm²</dt><dd id="r-density">16.3</dd></div>
+          <div><dt>Nearest neighbours</dt><dd id="r-spacing">263 <small>nm</small></dd></div>
+          <div><dt>Defocus</dt><dd id="r-defocus">0 <small>nm</small></dd></div>
+          <div class="hl"><dt>Phase 1 density at this pitch, realistic errors</dt><dd id="r-phase1">51.9 <small>bits/µm²</small></dd></div>
+        </dl>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <span class="lab" id="lab-lattice">Lattice</span>
+          <div class="seg" role="group" aria-labelledby="lab-lattice" data-key="lattice">
+            <button type="button" data-v="square" aria-pressed="false">Square</button>
+            <button type="button" data-v="hex" aria-pressed="true">Hexagonal</button>
+          </div>
+        </div>
+        <div class="control">
+          <span class="lab" id="lab-view">Show</span>
+          <div class="seg" role="group" aria-labelledby="lab-view" data-key="view">
+            <button type="button" data-v="field" aria-pressed="true">Field</button>
+            <button type="button" data-v="intensity" aria-pressed="false">Intensity</button>
+            <button type="button" data-v="written" aria-pressed="false">Written</button>
+          </div>
+        </div>
+        <div class="control">
+          <label for="pitch">Square-equivalent pitch <output id="pitch-out">245 nm</output></label>
+          <input id="pitch" type="range" min="220" max="600" step="5" value="245">
+        </div>
+        <div class="control">
+          <label for="defocus">Defocus <output id="defocus-out">0 depths of focus</output></label>
+          <input id="defocus" type="range" min="0" max="2" step="0.05" value="0">
+        </div>
+      </div>
+      <label class="figcap" style="display:flex;gap:8px;align-items:center;margin-top:16px;color:var(--ink2)"><input type="checkbox" id="centres"> Mark where each dot was written</label>
+      <figcaption class="figcap" id="sim-cap">Live scalar simulation in your browser: 405 nm light, NA 0.90, coherent readout, 16-symbol amplitude and phase alphabet (APSK-16). <em>Field</em> is what an interferometric reader measures: hue = phase <span class="legend-phase" aria-hidden="true"></span>, brightness = amplitude. <em>Intensity</em> is what an ordinary camera would see; <em>Written</em> shows the dots before the optics. At the dense pitch the dots are smaller than the light can resolve; drag the pitch to 500 nm to see them separate. <button type="button" class="btn" id="reseed" style="padding:4px 12px;font-size:.82rem;margin-left:4px">New symbols</button></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="block" id="plate" aria-labelledby="plate-title">
+  <div class="wrap">
+    <h2 id="plate-title">One plate, three readers</h2>
+    <p class="intro">Each layer of the plate is written for a different reader, and each explains how to read the next one: a mark visible to the eye leads to plain text, the text explains a code for a cheap camera, and that code carries the index and format of the dense layer.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="who">A person</div>
+        <dl><dt>Reader</dt><dd>Magnifier or school microscope</dd>
+            <dt>Written as</dt><dd>Letters about 70 µm tall in a chrome film on fused silica</dd>
+            <dt>Carries</dt><dd>How to read the plate, in plain words</dd>
+            <dt>Smallest feature</dt><dd>About 10 µm, the stroke of a letter</dd></dl>
+      </div>
+      <div class="tier">
+        <div class="who">A low-cost camera</div>
+        <dl><dt>Reader</dt><dd>Bright-field camera, NA 0.1 to 0.65, LED light, no stage</dd>
+            <dt>Written as</dt><dd>Hexagonal grey-level code in the same chrome film</dd>
+            <dt>Carries</dt><dd>Specification, decoder description, file index</dd>
+            <dt>Smallest feature</dt><dd>About 1 to 6 µm per symbol, set by the camera's NA</dd></dl>
+      </div>
+      <div class="tier">
+        <div class="who">A laboratory reader</div>
+        <dl><dt>Reader</dt><dd>Interferometric microscope, 405 nm, NA 0.90</dd>
+            <dt>Written as</dt><dd>Metallised relief under a thin inorganic cover</dd>
+            <dt>Carries</dt><dd>The bulk data, at the density shown above</dd>
+            <dt>Smallest feature</dt><dd>About 0.26 µm between dots</dd></dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="geometry" aria-labelledby="geo-title">
+  <div class="wrap">
+    <h2 id="geo-title">Why the hexagonal lattice stores more</h2>
+    <p class="intro">A lattice of dots has a cell in frequency space that holds exactly one value per dot. The reader only sees the frequencies inside its pupil, a disc of radius NA/λ. Whatever part of the cell sticks out of the disc is never seen. A hexagon is closer to a disc than a square, so at the same density it loses less: at 265 nm, <strong><span data-claim="pupil_lost_square_265">6.1</span>%</strong> of the square cell against <strong><span data-claim="pupil_lost_hex_265">1.1</span>%</strong> of the hexagonal one.</p>
+    <div class="geo-panels">
+      <div class="panel geo">
+        <div class="panel-head"><h3>Square lattice</h3><span><span class="lost" id="lost-sq" style="color:var(--sq)">6.1%</span> <span class="muted">never seen</span></span></div>
+        <svg id="geo-sq" viewBox="-3 -3 6 6" role="img" aria-label="Frequency cell of the square lattice and the pupil disc"></svg>
+      </div>
+      <div class="panel geo">
+        <div class="panel-head"><h3>Hexagonal lattice</h3><span><span class="lost" id="lost-hx" style="color:var(--hx)">1.1%</span> <span class="muted">never seen</span></span></div>
+        <svg id="geo-hx" viewBox="-3 -3 6 6" role="img" aria-label="Frequency cell of the hexagonal lattice and the pupil disc"></svg>
+      </div>
+    </div>
+    <div class="slider-row control">
+      <label for="geo-pitch">Same density for both: square-equivalent pitch <output id="geo-pitch-out">265 nm</output></label>
+      <input id="geo-pitch" type="range" min="220" max="340" step="1" value="265">
+      <p class="muted">Dashed circle: the pupil of a 405 nm, NA 0.90 reader. Solid outline: the lattice's frequency cell; the darker area outside the circle is information the reader never receives. Denser lattices have larger cells.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="results" aria-labelledby="res-title">
+  <div class="wrap">
+    <h2 id="res-title">Phase 1: the decoder matters more than the lattice</h2>
+    <p class="intro">Best information density before error correction, for both lattices at the same density, two decoders and three sets of conditions. With realistic errors the hexagonal lattice reaches <strong><span data-claim="real_hex_it">51.9</span> bits/µm²</strong>; cancelling the interference between neighbouring dots adds <strong>+<span data-claim="decoder_gain_ideal_hex_pct">24</span>%</strong> in ideal conditions, more than the lattice itself (+<span data-claim="ideal_gain_it_pct">11</span>% with that decoder).</p>
+    <div class="chart-wrap panel">
+      <div class="panel-head">
+        <div class="seg" role="group" aria-label="Conditions" id="cond">
+          <button type="button" data-v="ideal" aria-pressed="false">Ideal</button>
+          <button type="button" data-v="estimated" aria-pressed="false">Response learnt</button>
+          <button type="button" data-v="realistic" aria-pressed="true">Learnt + placement error</button>
+        </div>
+        <span class="muted" id="cond-note"></span>
+      </div>
+      <div class="chart" id="chart-lattice"></div>
+      <div class="legend" id="legend-lattice"></div>
+      <details><summary>Show the numbers</summary><div class="table-scroll" id="table-lattice"></div></details>
+    </div>
+    <ul class="findings">
+      <li><div><h3>The decoder matters most</h3><p>Interference cancellation subtracts the image of the decided neighbours and re-decides each dot: +<span data-claim="decoder_gain_ideal_hex_pct">24</span>% on the hexagonal lattice in ideal conditions.</p></div></li>
+      <li><div><h3>Hexagonal always wins, by less than first thought</h3><p>+<span data-claim="seeds_gain_it_mean_pct">10</span>% with interference cancellation and +<span data-claim="seeds_gain_lin_mean_pct">19</span>% with the linear equaliser, averaged over four independent random seeds with realistic errors.</p></div></li>
+      <li><div><h3>Learning the optics is free</h3><p>A decoder that learns the response from two frames of known symbols does as well as one that knows it exactly, because it uses the known pupil edge and a compact kernel.</p></div></li>
+      <li><div><h3>Placement is the real limit</h3><p>Dots misplaced by 5% of the pitch cost about 20% of the density; the writer must hold about <span data-claim="placement_2p5_nm">6</span> nm to keep more than 90%.</p></div></li>
+      <li><div><h3>Defocus becomes a slope</h3><p>Coherent defocus is a pure phase, so a decoder that re-learns the response at the actual focus keeps <span data-claim="focus_hex_re_1dof">49.7</span> bits/µm² one depth of focus away.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="limits" aria-labelledby="lim-title">
+  <div class="wrap">
+    <h2 id="lim-title">What limits it: where the dots land, and focus</h2>
+    <p class="intro">Placement accuracy is the first thing to ask of any writer. Defocus is not a hard limit once the decoder learns the response at the focus it actually reads.</p>
+    <div class="two">
+      <div class="panel">
+        <h3>Best density against dot placement error</h3>
+        <p class="muted" style="margin:0">Learnt response, both decoders. 5% of the pitch is about <span data-claim="placement_5_nm">12</span> nm per axis.</p>
+        <div class="chart" id="chart-placement"></div>
+        <div class="legend" id="legend-placement"></div>
+      </div>
+      <div class="panel">
+        <h3>Density against defocus</h3>
+        <p class="muted" style="margin:0">Best of the two decoders, 5% placement error. Depth of focus λ/NA² = 500 nm.</p>
+        <div class="chart" id="chart-focus"></div>
+        <div class="legend" id="legend-focus"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="verdict" aria-labelledby="ver-title">
+  <div class="wrap">
+    <h2 id="ver-title">Go/no-go of Phase 1: conditional go</h2>
+    <div class="verdict">
+      <div>
+        <p class="criterion">“Hexagonal gain of at least 15% over square, with a learnt response and placement errors of 5% of the pitch.”<span class="muted">Criterion fixed in the concept note before the simulation was run.</span></p>
+        <p class="intro">Met with the linear equaliser, missed with interference cancellation. The hexagonal lattice stays the default because it wins in every condition, with both decoders and in every seed; the case for CUNEUS now rests on the decoder, the learnt response and the focus tolerance together. The +22% first estimated is withdrawn.</p>
+      </div>
+      <div class="bars" id="bars" aria-label="Hexagonal gain over square, realistic conditions"></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="plan" aria-labelledby="plan-title">
+  <div class="wrap">
+    <h2 id="plan-title">Six phases, each with a measurable go/no-go</h2>
+    <ul class="plan">
+      <li class="done"><span class="n">0</span><span>Concept note</span><span class="crit">Scope fixed by the author</span><span class="st">Done</span></li>
+      <li class="done"><span class="n">1</span><span>Simulator core: periodic lattices, learnt response, interference cancellation, placement errors, defocus</span><span class="crit">Hexagonal gain ≥ 15%: met with the linear decoder, not with the iterative one</span><span class="st">Conditional go</span></li>
+      <li class="next"><span class="n">2</span><span>Literature and patent search on every ingredient, including interference cancellation and response learning</span><span class="crit">At least one contribution not anticipated</span><span class="st">Next</span></li>
+      <li><span class="n">3</span><span>Format compiler: reader and writer in, lattice, alphabet, code and net density out; a decoder that tracks slow placement errors</span><span class="crit">Predictions within 5% of full simulation</span><span class="st">Planned</span></li>
+      <li><span class="n">4</span><span>Low-cost code (SAMM-2) with a focus sweep, against a binary Data-Matrix-like code</span><span class="crit">≥ 20% more net density at equal reliability</span><span class="st">Planned</span></li>
+      <li><span class="n">5</span><span>Paper experiment: layers printed large and photographed through a pinhole</span><span class="crit">≥ 95% of real frames decoded</span><span class="st">Planned</span></li>
+      <li><span class="n">5b</span><span>First real plate without a laboratory: a commercial chrome-on-quartz photomask carrying the human and low-cost layers</span><span class="crit">≥ 95% of frames decoded; measured variability fed to the compiler</span><span class="st">Planned</span></li>
+      <li><span class="n">6</span><span>Glass with a partner laboratory: test grids that measure placement error and writing variability, then data</span><span class="crit">Measured errors within twice the simulated values</span><span class="st">Planned</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="reproduce" aria-labelledby="rep-title">
+  <div class="wrap">
+    <h2 id="rep-title">Every number can be rerun</h2>
+    <p class="intro">The simulator, the results and this page live in one repository. Twelve validation checks compare the code with closed-form optics; every result file carries a hash, the command and the software versions that made it; every number quoted here is recomputed from the results on each push.</p>
+    <div class="code">
+      <button type="button" class="copy" data-copy="repro">Copy</button>
+<pre id="repro"><span class="c"># exact reference environment (Python 3.13)</span>
+git clone https://github.com/GuettHM/cuneus && cd cuneus
+pip install -r requirements-lock.txt
+python -m cuneus validate        <span class="c"># physics checks -> docs/VALIDATION.md</span>
+python -m cuneus run all --quick <span class="c"># a small version of every experiment, about a minute</span>
+python -m cuneus run all --config configs/phase1.toml   <span class="c"># the published runs, about 25 min</span>
+python -m cuneus check           <span class="c"># every published number vs results/</span>
+pytest -q</pre>
+    </div>
+    <div class="notes">
+      <div>
+        <h3>Modelled</h3>
+        <ul>
+          <li>Scalar coherent imaging through a circular pupil, exact non-paraxial defocus</li>
+          <li>Dots of side 0.6 × pitch with 10% writing variability and sub-pixel placement errors</li>
+          <li>Detection noise of 64,000 photons per dot; periodic lattice with no edges</li>
+          <li>Decoders that learn the optical response from known symbols</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Not modelled yet</h3>
+        <ul>
+          <li>Vectorial optics and three-dimensional dots at NA 0.90</li>
+          <li>Non-linear writing, camera pixels, aberrations other than defocus</li>
+          <li>A real error-correction code: densities are mutual information before correction</li>
+          <li>The human and low-cost layers (phases 4 to 5b)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>CUNEUS</strong> by Hakim Guettal, 2026. I am not a professional physicist; I developed this concept with the help of AI tools on standard diffraction optics. Corrections from specialists are very welcome: please open an issue on GitHub.</p>
+      <p>The name is Latin for wedge: the shape that started 4D-VODS, and the tool of the first writing system.</p>
+    </div>
+    <div>
+      <p><a href="https://github.com/GuettHM/cuneus">Code, results and report on GitHub</a></p>
+      <p><a href="https://doi.org/10.5281/zenodo.24268721">Predecessor: 4D-VODS (Zenodo)</a></p>
+      <p>MIT licence. Cite with CITATION.cff in the repository.</p>
+    </div>
+  </div>
+</footer>
+
+<script id="cuneus-data" type="application/json">{"source":"results/ of the CUNEUS repository, written by python -m cuneus site","lattice":{"pitches":[225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0,265.0,270.0,275.0,280.0,285.0,290.0,295.0,300.0],"series":{"ideal":{"square":{"linear":[33.69,36.59,37.98,38.6,39.37,40.47,41.55,42.5,41.98,42.97,43.97,44.1,43.29,42.85,42.8,41.97],"iterative":[36.44,45.15,52.3,55.26,58.37,59.46,57.65,56.31,54.01,52.27,50.53,48.6,47.06,45.36,43.8,42.51],"ser_iterative":[0.4741,0.3205,0.1942,0.1335,0.073,0.041,0.0369,0.0284,0.031,0.0282,0.0258,0.0281,0.0262,0.0271,0.0279,0.0258]},"hex":{"linear":[35.18,37.33,39.57,43.01,47.53,49.51,52.0,52.04,52.91,51.64,50.87,49.07,47.48,45.83,44.43,42.8],"iterative":[38.66,49.99,65.15,65.77,63.56,61.11,58.86,56.64,54.67,52.61,50.77,48.97,47.36,45.62,44.24,42.64],"ser_iterative":[0.4559,0.2658,0.0595,0.0312,0.027,0.0258,0.0257,0.0249,0.023,0.024,0.0222,0.0227,0.022,0.0239,0.0209,0.0233]}},"estimated":{"square":{"linear":[34.04,36.44,37.65,38.96,39.04,40.78,40.32,42.28,41.52,42.27,43.34,43.7,42.72,42.75,42.82,41.75],"iterative":[35.76,44.03,49.11,55.76,56.03,57.18,57.68,56.01,54.01,51.77,50.06,48.31,46.87,45.33,43.93,42.46],"ser_iterative":[0.4907,0.3358,0.2445,0.129,0.0982,0.0623,0.0354,0.0319,0.0301,0.0362,0.0332,0.0324,0.0288,0.0278,0.0259,0.0263]},"hex":{"linear":[34.69,36.25,39.19,43.39,46.57,49.25,52.72,52.43,52.55,51.67,50.81,49.05,47.25,45.71,43.97,42.69],"iterative":[36.64,45.23,62.28,66.06,63.56,61.05,58.82,56.47,54.27,52.5,50.69,48.83,47.04,45.57,43.83,42.52],"ser_iterative":[0.4831,0.3311,0.0877,0.0291,0.0273,0.0269,0.0253,0.0268,0.0292,0.0252,0.0242,0.0252,0.0261,0.025,0.0294,0.025]}},"realistic":{"square":{"linear":[31.7,33.09,34.92,35.04,35.24,37.38,36.66,37.57,37.79,38.05,38.77,39.03,38.25,38.26,38.52,38.05],"iterative":[32.01,34.94,39.61,41.32,42.65,46.6,47.1,46.69,46.74,46.49,45.25,44.08,42.32,41.52,40.71,39.48],"ser_iterative":[0.5495,0.4787,0.3864,0.3385,0.2878,0.2079,0.1777,0.1584,0.1335,0.1093,0.1026,0.095,0.1037,0.0881,0.0776,0.0742]},"hex":{"linear":[33.08,34.72,35.87,38.75,41.21,43.31,44.48,45.11,45.96,45.51,45.01,44.01,42.86,41.8,40.76,40.07],"iterative":[33.21,37.39,41.01,48.91,51.94,51.48,50.53,49.32,48.39,47.3,45.72,44.65,43.35,42.24,41.33,40.54],"ser_iterative":[0.5295,0.4509,0.3745,0.2393,0.1691,0.1505,0.1336,0.1253,0.108,0.0974,0.0956,0.0867,0.0826,0.0772,0.0674,0.0578]}}}},"placement":[{"percent":0.0,"square":{"linear":43.86,"iterative":58.56},"hex":{"linear":52.59,"iterative":65.79}},{"percent":2.5,"square":{"linear":42.68,"iterative":55.54},"hex":{"linear":50.62,"iterative":61.5}},{"percent":5.0,"square":{"linear":39.59,"iterative":46.47},"hex":{"linear":46.06,"iterative":52.47}},{"percent":7.5,"square":{"linear":34.96,"iterative":39.37},"hex":{"linear":39.47,"iterative":42.62}},{"percent":10.0,"square":{"linear":30.01,"iterative":32.56},"hex":{"linear":33.42,"iterative":34.99}}],"focus":{"depth_of_focus_um":0.5,"pitch_nm":{"square":255.0,"hex":245.0},"rows":[{"lattice":"hex","response":"fixed","dof":0.0,"best":52.12},{"lattice":"hex","response":"fixed","dof":0.25,"best":30.08},{"lattice":"hex","response":"fixed","dof":0.5,"best":18.28},{"lattice":"hex","response":"fixed","dof":1.0,"best":3.64},{"lattice":"hex","response":"fixed","dof":1.5,"best":0.44},{"lattice":"hex","response":"fixed","dof":2.0,"best":1.11},{"lattice":"hex","response":"re-estimated","dof":0.0,"best":52.64},{"lattice":"hex","response":"re-estimated","dof":0.25,"best":51.75},{"lattice":"hex","response":"re-estimated","dof":0.5,"best":51.01},{"lattice":"hex","response":"re-estimated","dof":1.0,"best":49.7},{"lattice":"hex","response":"re-estimated","dof":1.5,"best":43.79},{"lattice":"hex","response":"re-estimated","dof":2.0,"best":40.03},{"lattice":"square","response":"fixed","dof":0.0,"best":46.6},{"lattice":"square","response":"fixed","dof":0.25,"best":27.6},{"lattice":"square","response":"fixed","dof":0.5,"best":17.81},{"lattice":"square","response":"fixed","dof":1.0,"best":4.28},{"lattice":"square","response":"fixed","dof":1.5,"best":0.81},{"lattice":"square","response":"fixed","dof":2.0,"best":0.94},{"lattice":"square","response":"re-estimated","dof":0.0,"best":46.8},{"lattice":"square","response":"re-estimated","dof":0.25,"best":46.2},{"lattice":"square","response":"re-estimated","dof":0.5,"best":45.81},{"lattice":"square","response":"re-estimated","dof":1.0,"best":45.39},{"lattice":"square","response":"re-estimated","dof":1.5,"best":43.12},{"lattice":"square","response":"re-estimated","dof":2.0,"best":42.17}]},"pupil":{"pitches":[225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0,265.0,270.0,275.0,280.0,285.0,290.0,295.0,300.0],"square":[21.55,18.62,16.18,14.02,12.08,10.33,8.76,7.34,6.07,4.95,3.93,3.06,2.3,1.64,1.11,0.68],"hex":[21.45,17.91,14.31,10.63,7.37,5.1,3.37,2.05,1.09,0.44,0.09,0.0,0.0,0.0,0.0,0.0]},"claims":{"ideal_sq_lin":"44.1","ideal_sq_it":"59.5","ideal_hex_lin":"52.9","ideal_hex_it":"65.8","est_sq_lin":"43.7","est_sq_it":"57.7","est_hex_lin":"52.7","est_hex_it":"66.1","real_sq_lin":"39.0","real_sq_it":"47.1","real_hex_lin":"46.0","real_hex_it":"51.9","ideal_gain_lin":"0.200","ideal_gain_it":"0.106","est_gain_lin":"0.206","est_gain_it":"0.145","real_gain_lin":"0.177","real_gain_it":"0.103","ideal_gain_lin_pct":"20","ideal_gain_it_pct":"11","est_gain_lin_pct":"21","est_gain_it_pct":"15","real_gain_lin_pct":"18","real_gain_it_pct":"10","symbols_per_point":"13,824","decoder_gain_ideal_hex_pct":"24","seeds_gain_it_mean":"0.103","seeds_gain_lin_mean":"0.187","seeds_gain_it_min":"0.093","seeds_gain_lin_min":"0.183","seeds_gain_it_max":"0.117","seeds_gain_lin_max":"0.195","seeds_gain_it_mean_pct":"10","seeds_gain_it_min_pct":"9","seeds_gain_it_max_pct":"12","seeds_gain_lin_mean_pct":"19","seeds_gain_lin_min_pct":"18","seeds_gain_lin_max_pct":"20","placement_hex_it_0":"65.8","placement_hex_it_2p5":"61.5","placement_hex_it_5":"52.5","placement_hex_it_5_pitch":"245","placement_5_nm":"12","placement_2p5_nm":"6","focus_hex_re_1dof_it":"49.7","focus_hex_re_1dof_lin":"41.1","focus_hex_fixed_half_it":"17.0","focus_hex_fixed_half_lin":"18.3","focus_hex_re_1dof":"49.7","focus_hex_fixed_half":"18.3","vods_uplift_ideal_pct":"54","net_real_hex":"43","net_real_vs_bdxl":"1.41","placement_sq_it_0":"58.6","placement_sq_it_2p5":"55.5","placement_sq_it_5":"46.5","placement_sq_it_7p5":"39.4","placement_hex_it_7p5":"42.6","placement_sq_it_10":"32.6","placement_hex_it_10":"35.0","focus_hex_fixed_1p0_lin":"3.6","focus_hex_fixed_1p0_ite":"3.4","focus_hex_fixed_1p0":"3.6","focus_hex_fixed_2p0_lin":"1.1","focus_hex_fixed_2p0_ite":"1.1","focus_hex_fixed_2p0":"1.1","focus_hex_re_0p5_lin":"40.1","focus_hex_re_0p5_ite":"51.0","focus_hex_re_0p5":"51.0","focus_hex_re_2p0_lin":"38.0","focus_hex_re_2p0_ite":"40.0","focus_hex_re_2p0":"40.0","focus_sq_re_2p0_lin":"35.3","focus_sq_re_2p0_ite":"42.2","focus_sq_re_2p0":"42.2","pupil_lost_square_265_frac":"0.0607","pupil_lost_square_265":"6.1","pupil_lost_hex_265_frac":"0.0109","pupil_lost_hex_265":"1.1","seeds_hex_it_2027":"52.7","seeds_hex_it_2028":"51.9","seeds_hex_it_2029":"52.4","seeds_hex_it_2030":"52.0","seeds_hex_it_min":"51.9","seeds_hex_it_max":"52.7","vods_v11":"42.6"}}</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("cuneus-data").textContent);
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const SVGNS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs = {}, parent) => {
+  const e = document.createElementNS(SVGNS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+};
+const LAMBDA = 0.405, NA = 0.90, FC = NA / LAMBDA, DOF = LAMBDA / (NA * NA);
+const hexSpacing = (p) => p * Math.sqrt(2 / Math.sqrt(3));
+
+/* ---------- segmented controls ---------- */
+function segmented(group, onChange) {
+  group.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+    group.querySelectorAll("button").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
+    onChange(b.dataset.v);
+  }));
+}
+
+/* ---------- FFT (radix 2, in place) ---------- */
+function fft1(re, im, n, inv) {
+  for (let i = 1, j = 0; i < n; i++) {
+    let bit = n >> 1;
+    for (; j & bit; bit >>= 1) j ^= bit;
+    j ^= bit;
+    if (i < j) { let t = re[i]; re[i] = re[j]; re[j] = t; t = im[i]; im[i] = im[j]; im[j] = t; }
+  }
+  for (let len = 2; len <= n; len <<= 1) {
+    const ang = (inv ? 2 : -2) * Math.PI / len, wr = Math.cos(ang), wi = Math.sin(ang);
+    for (let i = 0; i < n; i += len) {
+      let cr = 1, ci = 0;
+      for (let k = 0; k < len / 2; k++) {
+        const a = i + k, b = a + len / 2;
+        const xr = re[b] * cr - im[b] * ci, xi = re[b] * ci + im[b] * cr;
+        re[b] = re[a] - xr; im[b] = im[a] - xi; re[a] += xr; im[a] += xi;
+        const t = cr * wr - ci * wi; ci = cr * wi + ci * wr; cr = t;
+      }
+    }
+  }
+}
+function fft2(re, im, n, inv) {
+  const rr = new Float64Array(n), ri = new Float64Array(n);
+  for (let y = 0; y < n; y++) {
+    const o = y * n;
+    for (let x = 0; x < n; x++) { rr[x] = re[o + x]; ri[x] = im[o + x]; }
+    fft1(rr, ri, n, inv);
+    for (let x = 0; x < n; x++) { re[o + x] = rr[x]; im[o + x] = ri[x]; }
+  }
+  for (let x = 0; x < n; x++) {
+    for (let y = 0; y < n; y++) { rr[y] = re[y * n + x]; ri[y] = im[y * n + x]; }
+    fft1(rr, ri, n, inv);
+    for (let y = 0; y < n; y++) { re[y * n + x] = rr[y]; im[y * n + x] = ri[y]; }
+  }
+  if (inv) { const s = 1 / (n * n); for (let i = 0; i < n * n; i++) { re[i] *= s; im[i] *= s; } }
+}
+
+/* ---------- the live reader ---------- */
+const sim = (() => {
+  const N = 256, DX = 0.025, CROP = 176;                // 6.4 um field, 4.4 um shown
+  const canvas = document.getElementById("sim"), ctx = canvas.getContext("2d");
+  const off = document.createElement("canvas"); off.width = off.height = CROP;
+  const octx = off.getContext("2d"), img = octx.createImageData(CROP, CROP);
+  const freq = new Float64Array(N); for (let i = 0; i < N; i++) freq[i] = (i < N / 2 ? i : i - N) / (N * DX);
+  const AMPS = [1, 0.5], state = { lattice: "hex", pitch: 0.245, dof: 0, view: "field", seed: 7, centres: false };
+  const sinc = (x) => (x === 0 ? 1 : Math.sin(Math.PI * x) / (Math.PI * x));
+  function rng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
+  function dots() {
+    const p = state.pitch, hex = state.lattice === "hex";
+    const a = hex ? hexSpacing(p) : p, h = hex ? a * Math.sqrt(3) / 2 : a, L = N * DX;
+    const rand = rng(state.seed), out = [];
+    const rows = Math.ceil(L / h) + 2, cols = Math.ceil(L / a) + 2;
+    for (let j = -1; j < rows; j++) for (let i = -1; i < cols; i++) {
+      const x = i * a + (hex && (j & 1) ? a / 2 : 0), y = j * h;
+      if (x < 0 || y < 0 || x >= L || y >= L) continue;
+      const b = Math.floor(rand() * 16), amp = AMPS[b >> 3], ph = 2 * Math.PI * (b & 7) / 8 + Math.PI / 8;
+      out.push([x, y, amp * Math.cos(ph) - 1, amp * Math.sin(ph)]);
+    }
+    return out;
+  }
+  function colour(re, im, i, view) {
+    let r, g, b;
+    if (view === "intensity") {
+      const v = Math.min(1, (re * re + im * im) / 2.4) ** 0.8 * 255; r = g = b = v;
+    } else {
+      const amp = Math.hypot(re, im), hue = ((Math.atan2(im, re) * 180 / Math.PI) + 210 + 360) % 360;
+      const v = Math.min(1, amp / 1.25), s = 0.78;
+      const c = v * s, hh = hue / 60, xx = c * (1 - Math.abs((hh % 2) - 1)), m = v - c;
+      [r, g, b] = hh < 1 ? [c, xx, 0] : hh < 2 ? [xx, c, 0] : hh < 3 ? [0, c, xx] : hh < 4 ? [0, xx, c] : hh < 5 ? [xx, 0, c] : [c, 0, xx];
+      r = (r + m) * 255; g = (g + m) * 255; b = (b + m) * 255;
+    }
+    img.data[i] = r; img.data[i + 1] = g; img.data[i + 2] = b; img.data[i + 3] = 255;
+  }
+  function render() {
+    const list = dots(), s = 0.6 * state.pitch, start = (N - CROP) / 2;
+    const re = new Float64Array(N * N), im = new Float64Array(N * N);
+    if (state.view === "written") {
+      for (const [x, y, vr, vi] of list) {                      // exact squares, no optics
+        const x0 = Math.round((x - s / 2) / DX), x1 = Math.round((x + s / 2) / DX);
+        const y0 = Math.round((y - s / 2) / DX), y1 = Math.round((y + s / 2) / DX);
+        for (let yy = Math.max(0, y0); yy < Math.min(N, y1); yy++)
+          for (let xx = Math.max(0, x0); xx < Math.min(N, x1); xx++) { re[yy * N + xx] += vr; im[yy * N + xx] += vi; }
+      }
+      for (let i = 0; i < N * N; i++) re[i] += 1;
+    } else {
+      for (const [x, y, vr, vi] of list) {                      // comb, bilinear sub-pixel placement
+        const fx = x / DX, fy = y / DX, x0 = Math.floor(fx), y0 = Math.floor(fy), tx = fx - x0, ty = fy - y0;
+        for (const [ox, wx] of [[0, 1 - tx], [1, tx]]) for (const [oy, wy] of [[0, 1 - ty], [1, ty]]) {
+          const k = ((y0 + oy) % N) * N + ((x0 + ox) % N), w = wx * wy;
+          re[k] += vr * w; im[k] += vi * w;
+        }
+      }
+      fft2(re, im, N, false);
+      const dz = state.dof * DOF;
+      for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+        const k = y * N + x, f2 = freq[x] * freq[x] + freq[y] * freq[y];
+        if (f2 > FC * FC) { re[k] = 0; im[k] = 0; continue; }
+        const d = s * s / (DX * DX) * sinc(s * freq[x]) * sinc(s * freq[y]);
+        const ph = 2 * Math.PI * dz / LAMBDA * (1 - Math.sqrt(Math.max(0, 1 - f2 * LAMBDA * LAMBDA)));
+        const c = Math.cos(ph) * d, sn = Math.sin(ph) * d, a = re[k], b = im[k];
+        re[k] = a * c - b * sn; im[k] = a * sn + b * c;
+      }
+      fft2(re, im, N, true);
+      for (let i = 0; i < N * N; i++) re[i] += 1;               // the unwritten background
+    }
+    for (let y = 0; y < CROP; y++) for (let x = 0; x < CROP; x++) {
+      const k = (y + start) * N + (x + start);
+      colour(re[k], im[k], (y * CROP + x) * 4, state.view === "written" ? "field" : state.view);
+    }
+    octx.putImageData(img, 0, 0);
+    ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(off, 0, 0, canvas.width, canvas.height);
+    if (state.centres) {
+      const k = canvas.width / (CROP * DX), x0 = start * DX;
+      ctx.strokeStyle = "rgba(255,255,255,0.85)"; ctx.lineWidth = 1.5;
+      for (const [x, y] of list) {
+        const px = (x - x0) * k, py = (y - x0) * k;
+        if (px < -5 || py < -5 || px > canvas.width + 5 || py > canvas.height + 5) continue;
+        ctx.beginPath(); ctx.arc(px, py, 3.2, 0, 2 * Math.PI); ctx.stroke();
+      }
+    }
+    document.getElementById("scalebar").style.width = (100 / (CROP * DX)).toFixed(2) + "cqw";
+    readouts();
+  }
+  function readouts() {
+    const p = state.pitch, hex = state.lattice === "hex";
+    document.getElementById("r-density").textContent = (1 / (p * p)).toFixed(1);
+    document.getElementById("r-spacing").innerHTML = Math.round(1000 * (hex ? hexSpacing(p) : p)) + " <small>nm</small>";
+    document.getElementById("r-defocus").innerHTML = Math.round(state.dof * DOF * 1000) + " <small>nm</small>";
+    const L = DATA.lattice, pn = Math.round(p * 1000);
+    const idx = L ? L.pitches.indexOf(pn) : -1;
+    document.getElementById("r-phase1").innerHTML = idx >= 0
+      ? L.series.realistic[state.lattice].iterative[idx].toFixed(1) + " <small>bits/µm²" + (state.dof ? ", in focus" : "") + "</small>"
+      : "<small>not simulated at this pitch</small>";
+  }
+  let queued = false;
+  const update = () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; render(); }); } };
+  segmented(document.querySelector('[data-key="lattice"]'), (v) => { state.lattice = v; update(); });
+  segmented(document.querySelector('[data-key="view"]'), (v) => { state.view = v; update(); });
+  const pitch = document.getElementById("pitch"), defocus = document.getElementById("defocus");
+  pitch.addEventListener("input", () => { state.pitch = pitch.value / 1000; document.getElementById("pitch-out").textContent = pitch.value + " nm"; update(); });
+  defocus.addEventListener("input", () => {
+    state.dof = +defocus.value;
+    const v = (+defocus.value).toFixed(2).replace(/\.?0+$/, "");
+    document.getElementById("defocus-out").textContent = v + (v === "1" ? " depth" : " depths") + " of focus";
+    update();
+  });
+  document.getElementById("centres").addEventListener("change", (e) => { state.centres = e.target.checked; update(); });
+  document.getElementById("reseed").addEventListener("click", () => { state.seed = (state.seed * 7919 + 13) % 100003; update(); });
+  render();
+})();
+
+/* ---------- frequency cell against the pupil ---------- */
+(() => {
+  function zone(kind, p) {
+    if (kind === "square") { const h = 1 / (2 * p); return [[-h, -h], [h, -h], [h, h], [-h, h]]; }
+    const r = 2 / (3 * hexSpacing(p));
+    return [0, 60, 120, 180, 240, 300].map((d) => [r * Math.cos(d * Math.PI / 180), r * Math.sin(d * Math.PI / 180)]);
+  }
+  function inside(poly, x, y) {
+    let c = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const [xi, yi] = poly[i], [xj, yj] = poly[j];
+      if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c;
+    }
+    return c;
+  }
+  function lost(poly) {
+    const R = Math.max(...poly.map(([x, y]) => Math.hypot(x, y))), n = 500, st = 2 * R / n;
+    let tot = 0, out = 0;
+    for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+      const x = -R + (i + 0.5) * st, y = -R + (j + 0.5) * st;
+      if (inside(poly, x, y)) { tot++; if (x * x + y * y > FC * FC) out++; }
+    }
+    return 100 * out / tot;
+  }
+  function draw(svg, kind, p, colour) {
+    svg.textContent = "";
+    const poly = zone(kind, p), pts = poly.map(([x, y]) => `${x},${-y}`).join(" "), id = "m-" + kind;
+    for (let g = -3; g <= 3; g++) {
+      el("line", { x1: g, y1: -3, x2: g, y2: 3, stroke: css("--grid"), "stroke-width": 0.012 }, svg);
+      el("line", { x1: -3, y1: g, x2: 3, y2: g, stroke: css("--grid"), "stroke-width": 0.012 }, svg);
+    }
+    const defs = el("defs", {}, svg), mask = el("mask", { id }, defs);
+    el("rect", { x: -3, y: -3, width: 6, height: 6, fill: "#fff" }, mask);
+    el("circle", { cx: 0, cy: 0, r: FC, fill: "#000" }, mask);
+    el("polygon", { points: pts, fill: colour, "fill-opacity": 0.14 }, svg);
+    el("polygon", { points: pts, fill: colour, "fill-opacity": 0.75, mask: `url(#${id})` }, svg);
+    el("polygon", { points: pts, fill: "none", stroke: colour, "stroke-width": 0.035, "stroke-linejoin": "round" }, svg);
+    el("circle", { cx: 0, cy: 0, r: FC, fill: "none", stroke: css("--ink"), "stroke-width": 0.03, "stroke-dasharray": "0.09 0.07" }, svg);
+    const t = el("text", { x: 0, y: -FC - 0.12, "text-anchor": "middle", "font-size": 0.2, fill: css("--ink2"), "font-family": "inherit" }, svg);
+    t.textContent = "pupil NA/λ";
+    const ax = el("text", { x: 2.92, y: 2.9, "text-anchor": "end", "font-size": 0.18, fill: css("--ink3"), "font-family": "inherit" }, svg);
+    ax.textContent = "cycles per µm";
+    return lost(poly);
+  }
+  const slider = document.getElementById("geo-pitch");
+  function render() {
+    const p = slider.value / 1000;
+    document.getElementById("geo-pitch-out").textContent = slider.value + " nm";
+    document.getElementById("lost-sq").textContent = draw(document.getElementById("geo-sq"), "square", p, css("--sq")).toFixed(1) + "%";
+    document.getElementById("lost-hx").textContent = draw(document.getElementById("geo-hx"), "hex", p, css("--hx")).toFixed(1) + "%";
+  }
+  slider.addEventListener("input", render);
+  render();
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
+})();
+
+/* ---------- line charts with hover, keyboard and legend ---------- */
+function lineChart(host, legendHost, cfg) {
+  const W = Math.max(300, Math.round(host.clientWidth || 680));                 // draw at the real size: text stays legible
+  const H = Math.max(250, Math.round(W * (cfg.aspect || 0.52))), m = { l: 56, r: 14, t: 16, b: 50 };
+  const visible = Object.fromEntries(cfg.series.map((s) => [s.key, s.visible !== false]));
+  let tip = host.querySelector(".tip");
+  if (!tip) { tip = document.createElement("div"); tip.className = "tip"; host.appendChild(tip); }
+  let svg, cursor = -1;
+  const xs = cfg.x, xmin = cfg.xmin ?? Math.min(...xs), xmax = cfg.xmax ?? Math.max(...xs);
+  const sx = (v) => m.l + (v - xmin) / (xmax - xmin) * (W - m.l - m.r);
+  function yrange() {
+    const vals = cfg.series.filter((s) => visible[s.key]).flatMap((s) => s.values).filter((v) => v != null);
+    const lo = cfg.ymin ?? Math.floor(Math.min(...vals) / 5) * 5, hi = Math.ceil(Math.max(...vals) / 5) * 5;
+    return [lo, Math.max(hi, lo + 5)];
+  }
+  function draw() {
+    host.querySelector("svg")?.remove();
+    svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": cfg.label, tabindex: 0 });
+    host.prepend(svg);
+    const [y0, y1] = yrange(), sy = (v) => H - m.b - (v - y0) / (y1 - y0) * (H - m.t - m.b);
+    const g = el("g", { class: "axis" }, svg);
+    const step = (y1 - y0) > 40 ? 10 : 5;
+    for (let v = y0; v <= y1 + 1e-9; v += step) {
+      el("line", { x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v), class: v === y0 ? "baseline" : "gridline" }, g);
+      el("text", { x: m.l - 10, y: sy(v) + 4, "text-anchor": "end" }, g).textContent = v;
+    }
+    (cfg.ticks || xs).forEach((v) => { el("text", { x: sx(v), y: H - m.b + 20, "text-anchor": "middle" }, g).textContent = cfg.xfmt ? cfg.xfmt(v) : v; });
+    el("text", { x: (m.l + W - m.r) / 2, y: H - 6, "text-anchor": "middle", class: "axis-title" }, svg).textContent = cfg.xlabel;
+    const yt = el("text", { x: 14, y: (m.t + H - m.b) / 2, "text-anchor": "middle", class: "axis-title", transform: `rotate(-90 14 ${(m.t + H - m.b) / 2})` }, svg);
+    yt.textContent = cfg.ylabel;
+    for (const s of cfg.series) {
+      if (!visible[s.key]) continue;
+      const col = css(s.colour), pts = s.values.map((v, i) => (v == null ? null : [sx(xs[i]), sy(v)])).filter(Boolean);
+      el("path", { d: "M" + pts.map((p) => p.join(",")).join("L"), class: "series", stroke: col, "stroke-dasharray": s.dash || "none" }, svg);
+      pts.forEach(([x, y]) => el(s.marker === "square" ? "rect" : "circle", s.marker === "square"
+        ? { x: x - 3.6, y: y - 3.6, width: 7.2, height: 7.2, fill: s.dash ? css("--pane") : col, stroke: col, "stroke-width": 1.8 }
+        : { cx: x, cy: y, r: 3.9, fill: s.dash ? css("--pane") : col, stroke: col, "stroke-width": 1.8 }, svg));
+    }
+    const cross = el("line", { y1: m.t, y2: H - m.b, class: "cross", visibility: "hidden" }, svg);
+    const hit = el("rect", { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: "transparent" }, svg);
+    const show = (i) => {
+      cursor = i;
+      if (i < 0) { cross.setAttribute("visibility", "hidden"); tip.classList.remove("on"); return; }
+      const x = sx(xs[i]); cross.setAttribute("x1", x); cross.setAttribute("x2", x); cross.setAttribute("visibility", "visible");
+      const rows = cfg.series.filter((s) => visible[s.key] && s.values[i] != null).sort((a, b) => b.values[i] - a.values[i])
+        .map((s) => `<div class="row"><span><span class="sw" style="border-color:${css(s.colour)};border-top-style:${s.dash ? "dashed" : "solid"}"></span>${s.name}</span><b style="margin:0">${s.values[i].toFixed(1)}</b></div>`).join("");
+      tip.innerHTML = `<b>${cfg.tipTitle(xs[i])}</b>${rows}`;
+      const box = svg.getBoundingClientRect(), px = x / W * box.width;
+      tip.style.left = Math.min(Math.max(px + 14, 0), box.width - tip.offsetWidth) + "px";
+      tip.style.top = (m.t / H * box.height) + "px";
+      if (px + 14 + tip.offsetWidth > box.width) tip.style.left = Math.max(0, px - tip.offsetWidth - 14) + "px";
+      tip.classList.add("on");
+    };
+    const nearest = (evt) => {
+      const box = svg.getBoundingClientRect(), vx = (evt.clientX - box.left) / box.width * W;
+      let best = 0; xs.forEach((v, i) => { if (Math.abs(sx(v) - vx) < Math.abs(sx(xs[best]) - vx)) best = i; });
+      return best;
+    };
+    hit.addEventListener("pointermove", (e) => show(nearest(e)));
+    hit.addEventListener("pointerdown", (e) => show(nearest(e)));
+    hit.addEventListener("pointerleave", () => show(-1));
+    svg.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { show(Math.min(xs.length - 1, cursor + 1)); e.preventDefault(); }
+      if (e.key === "ArrowLeft") { show(Math.max(0, cursor < 0 ? 0 : cursor - 1)); e.preventDefault(); }
+      if (e.key === "Escape") show(-1);
+    });
+    svg.addEventListener("blur", () => show(-1));
+  }
+  if (legendHost) {
+    legendHost.textContent = "";
+    for (const s of cfg.series) {
+      const b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-pressed", String(visible[s.key]));
+      b.innerHTML = `<svg viewBox="0 0 26 10" aria-hidden="true"><line x1="1" y1="5" x2="25" y2="5" stroke="${css(s.colour)}" stroke-width="2.4" ${s.dash ? `stroke-dasharray="${s.dash}"` : ""}/>${s.marker === "square"
+        ? `<rect x="9.5" y="1.5" width="7" height="7" fill="${s.dash ? css("--pane") : css(s.colour)}" stroke="${css(s.colour)}" stroke-width="1.6"/>`
+        : `<circle cx="13" cy="5" r="3.6" fill="${s.dash ? css("--pane") : css(s.colour)}" stroke="${css(s.colour)}" stroke-width="1.6"/>`}</svg>${s.name}`;
+      b.addEventListener("click", () => {
+        if (visible[s.key] && Object.values(visible).filter(Boolean).length === 1) return;
+        visible[s.key] = !visible[s.key]; b.setAttribute("aria-pressed", String(visible[s.key])); draw();
+      });
+      legendHost.appendChild(b);
+    }
+  }
+  draw();
+  return { redraw: draw };
+}
+
+/* ---------- Phase 1 charts ---------- */
+const SERIES4 = (get) => [
+  { key: "hx-it", name: "Hexagonal, interference cancellation", colour: "--hx", marker: "square", values: get("hex", "iterative") },
+  { key: "hx-lin", name: "Hexagonal, linear equaliser", colour: "--hx", marker: "square", dash: "6 4", values: get("hex", "linear") },
+  { key: "sq-it", name: "Square, interference cancellation", colour: "--sq", values: get("square", "iterative") },
+  { key: "sq-lin", name: "Square, linear equaliser", colour: "--sq", dash: "6 4", values: get("square", "linear") },
+];
+let charts = [];
+function buildCharts() {
+  if (!DATA.lattice) return;
+  const L = DATA.lattice, cond = document.querySelector("#cond [aria-pressed=true]").dataset.v;
+  const notes = { ideal: "Exact response, dots exactly on their sites", estimated: "Response learnt from two frames of known symbols",
+                  realistic: "Learnt response, dots misplaced by 5% of the pitch (rms per axis)" };
+  document.getElementById("cond-note").textContent = notes[cond];
+  charts = [];
+  charts.push(lineChart(document.getElementById("chart-lattice"), document.getElementById("legend-lattice"), {
+    label: "Information density against pitch for the square and hexagonal lattices", x: L.pitches,
+    ticks: L.pitches.filter((p) => p % 25 === 0), xlabel: "square-equivalent pitch (nm)",
+    ylabel: "bits per µm², before error correction", ymin: 30, tipTitle: (x) => `${x} nm pitch`,
+    series: SERIES4((k, d) => L.series[cond][k][d]),
+  }));
+  const rows = L.pitches.map((p, i) => `<tr><td>${p}</td>${["hex", "square"].flatMap((k) => ["iterative", "linear"].map((d) => `<td>${L.series[cond][k][d][i].toFixed(1)}</td>`)).join("")}</tr>`).join("");
+  document.getElementById("table-lattice").innerHTML = `<table><thead><tr><th>Pitch (nm)</th><th>Hexagonal, cancellation</th><th>Hexagonal, linear</th><th>Square, cancellation</th><th>Square, linear</th></tr></thead><tbody>${rows}</tbody></table>`;
+  const P = DATA.placement;
+  charts.push(lineChart(document.getElementById("chart-placement"), document.getElementById("legend-placement"), {
+    label: "Best density against dot placement error", aspect: 0.7, x: P.map((e) => e.percent), xlabel: "rms placement error per axis (% of pitch)",
+    xfmt: (v) => v + "%", ylabel: "best bits per µm²", ymin: 30, tipTitle: (x) => `${x}% placement error`,
+    series: SERIES4((k, d) => P.map((e) => e[k][d])),
+  }));
+  const F = DATA.focus, pick = (lat, resp) => F.rows.filter((r) => r.lattice === lat && r.response === resp).map((r) => r.best);
+  const dofs = [...new Set(F.rows.map((r) => r.dof))].sort((a, b) => a - b);
+  charts.push(lineChart(document.getElementById("chart-focus"), document.getElementById("legend-focus"), {
+    label: "Density against defocus", aspect: 0.7, x: dofs, ticks: dofs.filter((d) => d !== 0.25), xlabel: "defocus (depths of focus, 1 = 500 nm)", ylabel: "bits per µm²", ymin: 0,
+    tipTitle: (x) => `${x} depths of focus (${Math.round(x * 500)} nm)`,
+    series: [
+      { key: "hx-re", name: `Hexagonal (${F.pitch_nm.hex} nm), response learnt at that focus`, colour: "--hx", marker: "square", values: pick("hex", "re-estimated") },
+      { key: "hx-fx", name: "Hexagonal, response fixed at best focus", colour: "--hx", marker: "square", dash: "2 4", values: pick("hex", "fixed") },
+      { key: "sq-re", name: `Square (${F.pitch_nm.square} nm), response learnt at that focus`, colour: "--sq", values: pick("square", "re-estimated") },
+      { key: "sq-fx", name: "Square, response fixed at best focus", colour: "--sq", dash: "2 4", values: pick("square", "fixed") },
+    ],
+  }));
+}
+segmented(document.getElementById("cond"), buildCharts);
+buildCharts();
+
+/* ---------- go/no-go bars ---------- */
+(() => {
+  const C = DATA.claims; if (!C) return;
+  const scale = (v) => (100 * v / 25).toFixed(2) + "%";
+  const bar = (title, mean, lo, hi) => `
+    <div><div class="bar-label"><span>${title}</span><b>+${mean}%</b></div>
+      <div class="track" role="img" aria-label="${title}: +${mean}% on average, range ${lo} to ${hi}%, goal 15%">
+        <div class="fill" style="width:${scale(mean)}"></div>
+        <div class="whisker" style="left:${scale(lo)};width:calc(${scale(hi)} - ${scale(lo)})"></div>
+        <div class="goal" style="left:${scale(15)}"><span>goal 15%</span></div>
+      </div></div>`;
+  document.getElementById("bars").innerHTML =
+    bar("Linear equaliser", C.seeds_gain_lin_mean_pct, C.seeds_gain_lin_min_pct, C.seeds_gain_lin_max_pct) +
+    bar("Interference cancellation", C.seeds_gain_it_mean_pct, C.seeds_gain_it_min_pct, C.seeds_gain_it_max_pct) +
+    `<p class="muted" style="margin:0">Hexagonal gain over square with realistic errors, averaged over four random seeds; the black line spans the smallest and largest seed.</p>`;
+})();
+
+/* ---------- copy buttons, theme changes ---------- */
+document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => {
+  const text = document.getElementById(b.dataset.copy).innerText;
+  try { await navigator.clipboard.writeText(text); b.textContent = "Copied"; } catch (e) { b.textContent = "Select and copy"; }
+  setTimeout(() => (b.textContent = "Copy"), 1600);
+}));
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", buildCharts);
+let resizeTimer, lastWidth = window.innerWidth;
+window.addEventListener("resize", () => {
+  if (window.innerWidth === lastWidth) return;            // ignore mobile address-bar height changes
+  lastWidth = window.innerWidth; clearTimeout(resizeTimer); resizeTimer = setTimeout(buildCharts, 150);
+});
+</script>
+</body>
+</html>

@@ -2,6 +2,7 @@
 
   run <experiment>  lattice | placement | focus | seeds | pupil | all  (results/<name>.json)
   figures           rebuild figures/ from results/
+  site              rebuild the numbers and chart data of index.html from results/
   validate          physics and numerics checks -> docs/VALIDATION.md
   check             every published number vs results/ and the documents
   manifest          verify the provenance of results/ (hashes, commands, versions)
@@ -53,6 +54,13 @@ def cmd_figures(args):
     return 0
 
 
+def cmd_site(args):
+    from . import site
+    n = site.build()
+    print(f"index.html rebuilt from results/ ({n} quoted numbers)")
+    return 0
+
+
 def cmd_validate(args):
     from . import validation
     results = validation.run_all()
@@ -99,6 +107,7 @@ def main(argv=None):
     r.add_argument("--pic-iterations", dest="pic_iterations", type=int)
     r.set_defaults(fn=cmd_run)
     sub.add_parser("figures", help="rebuild figures/").set_defaults(fn=cmd_figures)
+    sub.add_parser("site", help="rebuild the data and numbers of index.html from results/").set_defaults(fn=cmd_site)
     v = sub.add_parser("validate", help="physics and numerics checks")
     v.add_argument("--report", default=os.path.join(ROOT, "docs", "VALIDATION.md"))
     v.set_defaults(fn=cmd_validate)

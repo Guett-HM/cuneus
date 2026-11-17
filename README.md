@@ -12,6 +12,10 @@ compiler turns a hardware description into machine code, instead of being drawn 
 > every push. I am not a professional physicist; I developed this concept with the help of AI
 > tools on standard diffraction optics. Corrections from specialists are very welcome.
 
+Project page with a live simulation of the reader and interactive results:
+<https://guetthm.github.io/cuneus/> (`index.html`, rebuilt from `results/` by
+`python -m cuneus site`).
+
 The concept note (three tiers on one plate, from naked eye to laboratory reader) is
 [CUNEUS – Concept Note v0.2](https://claude.ai/artifact/Y9NEWMc7YT3YA7Rg1tzkJP). Phase 1
 tests its dense tier: amplitude/phase dots (APSK-16) read by a coherent 405 nm, NA 0.90
@@ -125,6 +129,7 @@ written glass can show that the model matches reality.
 | `results/` | result files, `MANIFEST.json` (provenance), `claims.json` (published numbers) |
 | `figures/` | PNG, PDF and the plotted values as CSV |
 | `docs/PHASE1.md` | Phase 1 report: method, results, limits |
+| `index.html`, `cuneus/site.py` | project page; its numbers and chart data come from `results/` |
 
 ## Licence and citation
 
