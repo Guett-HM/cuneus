@@ -1,6 +1,6 @@
 # Validation report
 
-CUNEUS 0.1.0, generated 2026-11-17 by `python -m cuneus validate`, commit 09487f9, Python 3.13.18, NumPy 2.5.3, SciPy 1.18.1.
+CUNEUS 0.1.0, generated 2026-11-17 by `python -m cuneus validate`, commit 8b9dc54, Python 3.13.18, NumPy 2.5.3, SciPy 1.18.1.
 
 **12 of 12 checks pass.** Each check compares the code with a reference that does not come from the code: a closed-form result of diffraction theory, a direct numerical integral, an exact identity, or a property the decoder has by construction. The same checks run as tests on every push (`tests/test_validation.py`).
 
