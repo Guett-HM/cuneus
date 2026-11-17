@@ -1,0 +1,3817 @@
+{
+ "experiment": "placement",
+ "parameters": {
+  "wavelength": 0.405,
+  "na": 0.9,
+  "n": 48,
+  "q": 12,
+  "photons": 64000.0,
+  "writing_variability": 0.1,
+  "placement_error": 0.05,
+  "training_frames": 2,
+  "frames": 6,
+  "pic_iterations": 16,
+  "estimate_radius": 1.0,
+  "seed": 2026
+ },
+ "rows": [
+  {
+   "lattice": "square",
+   "pitch_nm": 235.0,
+   "spacing_nm": 235.0,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4459635416666667,
+    "ser_ci95": [
+     0.4376934408710384,
+     0.4542636668817724
+    ],
+    "bits_per_symbol": 2.0263775299905316,
+    "density_bits_um2": 36.69311960145825
+   },
+   "iterative": {
+    "ser": 0.26338252314814814,
+    "ser_ci95": [
+     0.25610632040928244,
+     0.2707901982780591
+    ],
+    "bits_per_symbol": 2.5961583115088183,
+    "density_bits_um2": 47.010562453758595
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 240.0,
+   "spacing_nm": 240.0,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.39453125,
+    "ser_ci95": [
+     0.3864141036233583,
+     0.4027069982556218
+    ],
+    "bits_per_symbol": 2.221804078801312,
+    "density_bits_um2": 38.57298747918944
+   },
+   "iterative": {
+    "ser": 0.14069733796296297,
+    "ser_ci95": [
+     0.13500074539913975,
+     0.14659357080997854
+    ],
+    "bits_per_symbol": 3.1455744368267755,
+    "density_bits_um2": 54.61066730602041
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 245.0,
+   "spacing_nm": 245.0,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.36617476851851855,
+    "ser_ci95": [
+     0.3581820036922218,
+     0.37424189101018784
+    ],
+    "bits_per_symbol": 2.3397965392724305,
+    "density_bits_um2": 38.98036716822042
+   },
+   "iterative": {
+    "ser": 0.09895833333333333,
+    "ser_ci95": [
+     0.09409138939842077,
+     0.10404810910436796
+    ],
+    "bits_per_symbol": 3.3526350336490127,
+    "density_bits_um2": 55.8539780699544
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 250.0,
+   "spacing_nm": 250.0,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3253038194444444,
+    "ser_ci95": [
+     0.31754352288582305,
+     0.3331611829013765
+    ],
+    "bits_per_symbol": 2.5126841134659923,
+    "density_bits_um2": 40.20294581545588
+   },
+   "iterative": {
+    "ser": 0.04955150462962963,
+    "ser_ci95": [
+     0.04605729024741611,
+     0.053296002894154156
+    ],
+    "bits_per_symbol": 3.6599113585503016,
+    "density_bits_um2": 58.558581736804825
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2882667824074074,
+    "ser_ci95": [
+     0.2807755875956745,
+     0.2958756231037594
+    ],
+    "bits_per_symbol": 2.6578891472113804,
+    "density_bits_um2": 40.874881156653295
+   },
+   "iterative": {
+    "ser": 0.03226273148148148,
+    "ser_ci95": [
+     0.02944465610902462,
+     0.03534069694274884
+    ],
+    "bits_per_symbol": 3.7747659363089263,
+    "density_bits_um2": 58.050994791371416
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 260.0,
+   "spacing_nm": 260.0,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.22923900462962962,
+    "ser_ci95": [
+     0.2223076151659504,
+     0.23632083773735732
+    ],
+    "bits_per_symbol": 2.878325583415755,
+    "density_bits_um2": 42.578780819759686
+   },
+   "iterative": {
+    "ser": 0.031105324074074073,
+    "ser_ci95": [
+     0.028339086362704432,
+     0.034132094967576354
+    ],
+    "bits_per_symbol": 3.7906677471785324,
+    "density_bits_um2": 56.07496667423864
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 265.0,
+   "spacing_nm": 265.0,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.19495081018518517,
+    "ser_ci95": [
+     0.1884318420952413,
+     0.201639273558846
+    ],
+    "bits_per_symbol": 3.0305183906062103,
+    "density_bits_um2": 43.15440926459537
+   },
+   "iterative": {
+    "ser": 0.03009259259259259,
+    "ser_ci95": [
+     0.027372583492447054,
+     0.03307369758152764
+    ],
+    "bits_per_symbol": 3.7966085659027096,
+    "density_bits_um2": 54.06348972449568
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 270.0,
+   "spacing_nm": 270.0,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.16919849537037038,
+    "ser_ci95": [
+     0.16304050249158442,
+     0.17554029235929092
+    ],
+    "bits_per_symbol": 3.137618925208512,
+    "density_bits_um2": 43.04004012631703
+   },
+   "iterative": {
+    "ser": 0.03125,
+    "ser_ci95": [
+     0.02847722557646261,
+     0.03428322721900476
+    ],
+    "bits_per_symbol": 3.793579735039463,
+    "density_bits_um2": 52.03813079615175
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 275.0,
+   "spacing_nm": 275.0,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.1316550925925926,
+    "ser_ci95": [
+     0.12612084812810404,
+     0.13739400150685271
+    ],
+    "bits_per_symbol": 3.2864616103902797,
+    "density_bits_um2": 43.4573436084665
+   },
+   "iterative": {
+    "ser": 0.030237268518518517,
+    "ser_ci95": [
+     0.027510603988121513,
+     0.03322494855103977
+    ],
+    "bits_per_symbol": 3.8013033316813583,
+    "density_bits_um2": 50.26516802223283
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 280.0,
+   "spacing_nm": 280.0,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.09968171296296297,
+    "ser_ci95": [
+     0.09479842406310497,
+     0.10478743176561668
+    ],
+    "bits_per_symbol": 3.438660541091218,
+    "density_bits_um2": 43.86046608534716
+   },
+   "iterative": {
+    "ser": 0.028284143518518517,
+    "ser_ci95": [
+     0.025648838934474873,
+     0.031181548824667518
+    ],
+    "bits_per_symbol": 3.807632601917595,
+    "density_bits_um2": 48.566742371397886
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 285.0,
+   "spacing_nm": 285.0,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.10221354166666667,
+    "ser_ci95": [
+     0.0972736783647113,
+     0.10737442810477558
+    ],
+    "bits_per_symbol": 3.4275468096476893,
+    "density_bits_um2": 42.19817555737384
+   },
+   "iterative": {
+    "ser": 0.029007523148148147,
+    "ser_ci95": [
+     0.02633799399719226,
+     0.03193875108788305
+    ],
+    "bits_per_symbol": 3.8057167302724135,
+    "density_bits_um2": 46.854007144012485
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 290.0,
+   "spacing_nm": 290.0,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.07356770833333333,
+    "ser_ci95": [
+     0.06933316254306793,
+     0.07803919381947527
+    ],
+    "bits_per_symbol": 3.5671145454984807,
+    "density_bits_um2": 42.415155118888
+   },
+   "iterative": {
+    "ser": 0.03074363425925926,
+    "ser_ci95": [
+     0.02799381126680866,
+     0.033754191400505666
+    ],
+    "bits_per_symbol": 3.799800826738354,
+    "density_bits_um2": 45.18193610866057
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 295.0,
+   "spacing_nm": 295.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.04130497685185185,
+    "ser_ci95": [
+     0.038113154941448055,
+     0.04475166468448691
+    ],
+    "bits_per_symbol": 3.7261782785511324,
+    "density_bits_um2": 42.81733155473867
+   },
+   "iterative": {
+    "ser": 0.023871527777777776,
+    "ser_ci95": [
+     0.021456043585468355,
+     0.026551564485483223
+    ],
+    "bits_per_symbol": 3.8317684801558194,
+    "density_bits_um2": 44.0306633743846
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 300.0,
+   "spacing_nm": 300.0,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.03501157407407408,
+    "ser_ci95": [
+     0.032074336651505705,
+     0.038207174238812855
+    ],
+    "bits_per_symbol": 3.7664008773573663,
+    "density_bits_um2": 41.848898637304075
+   },
+   "iterative": {
+    "ser": 0.02589699074074074,
+    "ser_ci95": [
+     0.023378112595197852,
+     0.028679295988365907
+    ],
+    "bits_per_symbol": 3.8197787053312005,
+    "density_bits_um2": 42.441985614791115
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 235.0,
+   "spacing_nm": 252.5,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4073350694444444,
+    "ser_ci95": [
+     0.39917123505784935,
+     0.4155503914901434
+    ],
+    "bits_per_symbol": 2.1652906982537368,
+    "density_bits_um2": 39.20852328209573
+   },
+   "iterative": {
+    "ser": 0.08116319444444445,
+    "ser_ci95": [
+     0.07672632515901097,
+     0.08583278312582791
+    ],
+    "bits_per_symbol": 3.4680898376018505,
+    "density_bits_um2": 62.79927274969399
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 240.0,
+   "spacing_nm": 257.9,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3307291666666667,
+    "ser_ci95": [
+     0.3229342462751899,
+     0.3386181394565066
+    ],
+    "bits_per_symbol": 2.478940317996973,
+    "density_bits_um2": 43.03715829855856
+   },
+   "iterative": {
+    "ser": 0.031322337962962965,
+    "ser_ci95": [
+     0.02854630137924047,
+     0.034358787148820194
+    ],
+    "bits_per_symbol": 3.7892408741935286,
+    "density_bits_um2": 65.78543184363765
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.23929398148148148,
+    "ser_ci95": [
+     0.23225467247892578,
+     0.24647814725484957
+    ],
+    "bits_per_symbol": 2.8445780996175447,
+    "density_bits_um2": 47.389889206456395
+   },
+   "iterative": {
+    "ser": 0.03739872685185185,
+    "ser_ci95": [
+     0.034362135000717164,
+     0.04069235506518003
+    ],
+    "bits_per_symbol": 3.7641269862801963,
+    "density_bits_um2": 62.70932088763343
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 250.0,
+   "spacing_nm": 268.6,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.1922019675925926,
+    "ser_ci95": [
+     0.1857192846037174,
+     0.1988556732118248
+    ],
+    "bits_per_symbol": 3.0348954597065507,
+    "density_bits_um2": 48.55832735530481
+   },
+   "iterative": {
+    "ser": 0.031684027777777776,
+    "ser_ci95": [
+     0.028891741802750868,
+     0.03473652538827625
+    ],
+    "bits_per_symbol": 3.7929783637771686,
+    "density_bits_um2": 60.6876538204347
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 255.0,
+   "spacing_nm": 274.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.11530671296296297,
+    "ser_ci95": [
+     0.11008894967548766,
+     0.12073822439338508
+    ],
+    "bits_per_symbol": 3.3529104340923648,
+    "density_bits_um2": 51.56340536858693
+   },
+   "iterative": {
+    "ser": 0.024377893518518517,
+    "ser_ci95": [
+     0.0219361341501368,
+     0.02708392404896782
+    ],
+    "bits_per_symbol": 3.8297338390798052,
+    "density_bits_um2": 58.89632970518732
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 260.0,
+   "spacing_nm": 279.4,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.08109085648148148,
+    "ser_ci95": [
+     0.07665585594134061,
+     0.08575861661090498
+    ],
+    "bits_per_symbol": 3.5231321794704464,
+    "density_bits_um2": 52.11733993299477
+   },
+   "iterative": {
+    "ser": 0.023075810185185185,
+    "ser_ci95": [
+     0.020702223539601557,
+     0.02571439147282381
+    ],
+    "bits_per_symbol": 3.8370626933747034,
+    "density_bits_um2": 56.76128244637135
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 265.0,
+   "spacing_nm": 284.8,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.04897280092592592,
+    "ser_ci95": [
+     0.045498819376764504,
+     0.05269738790405941
+    ],
+    "bits_per_symbol": 3.6928500287402826,
+    "density_bits_um2": 52.585974065365356
+   },
+   "iterative": {
+    "ser": 0.026258680555555556,
+    "ser_ci95": [
+     0.023721801082890303,
+     0.029058786163639914
+    ],
+    "bits_per_symbol": 3.82264707520799,
+    "density_bits_um2": 54.43427661385532
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 270.0,
+   "spacing_nm": 290.1,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.03877314814814815,
+    "ser_ci95": [
+     0.03568094678332063,
+     0.04212162220184911
+    ],
+    "bits_per_symbol": 3.7437898472886677,
+    "density_bits_um2": 51.35514193811615
+   },
+   "iterative": {
+    "ser": 0.02662037037037037,
+    "ser_ci95": [
+     0.024065622381633657,
+     0.029438143527863017
+    ],
+    "bits_per_symbol": 3.818450861982397,
+    "density_bits_um2": 52.37929851827705
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 275.0,
+   "spacing_nm": 295.5,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.024377893518518517,
+    "ser_ci95": [
+     0.0219361341501368,
+     0.02708392404896782
+    ],
+    "bits_per_symbol": 3.830119211193692,
+    "density_bits_um2": 50.64620444553642
+   },
+   "iterative": {
+    "ser": 0.025028935185185185,
+    "ser_ci95": [
+     0.022553818506996927,
+     0.027767961285447326
+    ],
+    "bits_per_symbol": 3.8249461805381118,
+    "density_bits_um2": 50.57780073438825
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 280.0,
+   "spacing_nm": 300.9,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.02271412037037037,
+    "ser_ci95": [
+     0.02035983231515781,
+     0.025333604034301092
+    ],
+    "bits_per_symbol": 3.842559556076164,
+    "density_bits_um2": 49.01223923566535
+   },
+   "iterative": {
+    "ser": 0.024956597222222224,
+    "ser_ci95": [
+     0.022485163800532976,
+     0.02769198025931799
+    ],
+    "bits_per_symbol": 3.8279571435953215,
+    "density_bits_um2": 48.825983974430116
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 285.0,
+   "spacing_nm": 306.3,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.025101273148148147,
+    "ser_ci95": [
+     0.02262247890998189,
+     0.027843936615055652
+    ],
+    "bits_per_symbol": 3.831312745724631,
+    "density_bits_um2": 47.16913198799177
+   },
+   "iterative": {
+    "ser": 0.026041666666666668,
+    "ser_ci95": [
+     0.02351557188164664,
+     0.028831108167103704
+    ],
+    "bits_per_symbol": 3.8246274680608,
+    "density_bits_um2": 47.08682632269375
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 290.0,
+   "spacing_nm": 311.6,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.020616319444444444,
+    "ser_ci95": [
+     0.01837732679196892,
+     0.023121673312284513
+    ],
+    "bits_per_symbol": 3.8554422272755975,
+    "density_bits_um2": 45.84354610315812
+   },
+   "iterative": {
+    "ser": 0.022424768518518517,
+    "ser_ci95": [
+     0.02008603729330403,
+     0.025028856125781703
+    ],
+    "bits_per_symbol": 3.8435277793203797,
+    "density_bits_um2": 45.7018760918
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 295.0,
+   "spacing_nm": 317.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.02546296296296296,
+    "ser_ci95": [
+     0.022965865541871477,
+     0.028223728646132522
+    ],
+    "bits_per_symbol": 3.830491118593853,
+    "density_bits_um2": 44.01598527542492
+   },
+   "iterative": {
+    "ser": 0.027777777777777776,
+    "ser_ci95": [
+     0.02516671308100104,
+     0.03065122454998831
+    ],
+    "bits_per_symbol": 3.8156341391545356,
+    "density_bits_um2": 43.84526445451923
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 300.0,
+   "spacing_nm": 322.4,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.024377893518518517,
+    "ser_ci95": [
+     0.0219361341501368,
+     0.02708392404896782
+    ],
+    "bits_per_symbol": 3.8344242273481477,
+    "density_bits_um2": 42.60471363720164
+   },
+   "iterative": {
+    "ser": 0.025535300925925927,
+    "ser_ci95": [
+     0.023034559627819765,
+     0.02829967029277753
+    ],
+    "bits_per_symbol": 3.8272677180241756,
+    "density_bits_um2": 42.52519686693529
+   },
+   "placement_fraction": 0.0
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 235.0,
+   "spacing_nm": 235.0,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4437934027777778,
+    "ser_ci95": [
+     0.4355279158811379,
+     0.4520901198938741
+    ],
+    "bits_per_symbol": 2.0369876330518792,
+    "density_bits_um2": 36.88524460030565
+   },
+   "iterative": {
+    "ser": 0.2740162037037037,
+    "ser_ci95": [
+     0.2666445853146704,
+     0.2815133860638851
+    ],
+    "bits_per_symbol": 2.573572426722162,
+    "density_bits_um2": 46.601583100446575
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 240.0,
+   "spacing_nm": 240.0,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4107349537037037,
+    "ser_ci95": [
+     0.40255969296808486,
+     0.4189598130117927
+    ],
+    "bits_per_symbol": 2.148346454300469,
+    "density_bits_um2": 37.29768149827203
+   },
+   "iterative": {
+    "ser": 0.20970775462962962,
+    "ser_ci95": [
+     0.20300245261532013,
+     0.21657435248779877
+    ],
+    "bits_per_symbol": 2.837567111558907,
+    "density_bits_um2": 49.263317909008805
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 245.0,
+   "spacing_nm": 245.0,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.36516203703703703,
+    "ser_ci95": [
+     0.35717426034914,
+     0.37322473409696344
+    ],
+    "bits_per_symbol": 2.3422305903771745,
+    "density_bits_um2": 39.02091779054019
+   },
+   "iterative": {
+    "ser": 0.13896122685185186,
+    "ser_ci95": [
+     0.13329515595579902,
+     0.14482790267108028
+    ],
+    "bits_per_symbol": 3.1922886542209774,
+    "density_bits_um2": 53.182651465572306
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 250.0,
+   "spacing_nm": 250.0,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.33412905092592593,
+    "ser_ci95": [
+     0.32631303398681477,
+     0.34203723117676643
+    ],
+    "bits_per_symbol": 2.456772456773792,
+    "density_bits_um2": 39.30835930838067
+   },
+   "iterative": {
+    "ser": 0.09613715277777778,
+    "ser_ci95": [
+     0.09133474341840056,
+     0.10116396151324977
+    ],
+    "bits_per_symbol": 3.4045397621256384,
+    "density_bits_um2": 54.472636194010214
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2962962962962963,
+    "ser_ci95": [
+     0.2887417625595076,
+     0.3039640144577818
+    ],
+    "bits_per_symbol": 2.610304125117666,
+    "density_bits_um2": 40.14308535359733
+   },
+   "iterative": {
+    "ser": 0.05931712962962963,
+    "ser_ci95": [
+     0.05550042759723708,
+     0.06337868944442762
+    ],
+    "bits_per_symbol": 3.6116326735212305,
+    "density_bits_um2": 55.542217201403005
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 260.0,
+   "spacing_nm": 260.0,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2595486111111111,
+    "ser_ci95": [
+     0.25230815088314323,
+     0.2669226739767538
+    ],
+    "bits_per_symbol": 2.7600689255186563,
+    "density_bits_um2": 40.82942197512805
+   },
+   "iterative": {
+    "ser": 0.05649594907407408,
+    "ser_ci95": [
+     0.05276897397510697,
+     0.06046934949541933
+    ],
+    "bits_per_symbol": 3.6612901172264163,
+    "density_bits_um2": 54.161096408674794
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 265.0,
+   "spacing_nm": 265.0,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2224392361111111,
+    "ser_ci95": [
+     0.21558402690510053,
+     0.22944866713443773
+    ],
+    "bits_per_symbol": 2.904482350191297,
+    "density_bits_um2": 41.35966322807115
+   },
+   "iterative": {
+    "ser": 0.04673032407407408,
+    "ser_ci95": [
+     0.043336075102616875,
+     0.050376424467815
+    ],
+    "bits_per_symbol": 3.6970799941866725,
+    "density_bits_um2": 52.64620853238408
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 270.0,
+   "spacing_nm": 270.0,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.20298032407407407,
+    "ser_ci95": [
+     0.19635823500188077,
+     0.20976744697006194
+    ],
+    "bits_per_symbol": 2.999371005051802,
+    "density_bits_um2": 41.143635185895775
+   },
+   "iterative": {
+    "ser": 0.042317708333333336,
+    "ser_ci95": [
+     0.03908700242753886,
+     0.0458027174547022
+    ],
+    "bits_per_symbol": 3.7208953602009673,
+    "density_bits_um2": 51.04108861729721
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 275.0,
+   "spacing_nm": 275.0,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.14699074074074073,
+    "ser_ci95": [
+     0.14118597692323814,
+     0.1529916480214965
+    ],
+    "bits_per_symbol": 3.2276758823009666,
+    "density_bits_um2": 42.68001166678963
+   },
+   "iterative": {
+    "ser": 0.04347511574074074,
+    "ser_ci95": [
+     0.04020060993496027,
+     0.047003281668773454
+    ],
+    "bits_per_symbol": 3.721808627197686,
+    "density_bits_um2": 49.213998376167744
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 280.0,
+   "spacing_nm": 280.0,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.11942997685185185,
+    "ser_ci95": [
+     0.11412940018471916,
+     0.1249420106419712
+    ],
+    "bits_per_symbol": 3.3411749510537034,
+    "density_bits_um2": 42.617027436909474
+   },
+   "iterative": {
+    "ser": 0.040219907407407406,
+    "ser_ci95": [
+     0.037070347888537324,
+     0.04362493574849826
+    ],
+    "bits_per_symbol": 3.742901928250871,
+    "density_bits_um2": 47.741096023608044
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 285.0,
+   "spacing_nm": 285.0,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.1138599537037037,
+    "ser_ci95": [
+     0.10867175754139262,
+     0.11926270187561429
+    ],
+    "bits_per_symbol": 3.3752839984982326,
+    "density_bits_um2": 41.55474297935651
+   },
+   "iterative": {
+    "ser": 0.04072627314814815,
+    "ser_ci95": [
+     0.03755691237724673,
+     0.044150821387941894
+    ],
+    "bits_per_symbol": 3.735618748163828,
+    "density_bits_um2": 45.990997207310905
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 290.0,
+   "spacing_nm": 290.0,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.0900607638888889,
+    "ser_ci95": [
+     0.08540181520244824,
+     0.09494748819136556
+    ],
+    "bits_per_symbol": 3.4930464552808758,
+    "density_bits_um2": 41.534440609760715
+   },
+   "iterative": {
+    "ser": 0.041087962962962965,
+    "ser_ci95": [
+     0.03790454308581358,
+     0.04452636934234151
+    ],
+    "bits_per_symbol": 3.742439559090948,
+    "density_bits_um2": 44.49987585125979
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 295.0,
+   "spacing_nm": 295.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.06691261574074074,
+    "ser_ci95": [
+     0.06286639797427543,
+     0.0711994709896849
+    ],
+    "bits_per_symbol": 3.5977952751991262,
+    "density_bits_um2": 41.342088769883674
+   },
+   "iterative": {
+    "ser": 0.038990162037037035,
+    "ser_ci95": [
+     0.03588928142348973,
+     0.04234719475945988
+    ],
+    "bits_per_symbol": 3.7527790360957853,
+    "density_bits_um2": 43.12299955295359
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 300.0,
+   "spacing_nm": 300.0,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.04897280092592592,
+    "ser_ci95": [
+     0.045498819376764504,
+     0.05269738790405941
+    ],
+    "bits_per_symbol": 3.689714271369264,
+    "density_bits_um2": 40.99682523743627
+   },
+   "iterative": {
+    "ser": 0.03689236111111111,
+    "ser_ci95": [
+     0.033876543533413024,
+     0.040165496404331126
+    ],
+    "bits_per_symbol": 3.758975479233238,
+    "density_bits_um2": 41.76639421370265
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 235.0,
+   "spacing_nm": 252.5,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.42918113425925924,
+    "ser_ci95": [
+     0.4209508918987727,
+     0.43745072589239425
+    ],
+    "bits_per_symbol": 2.089817317693931,
+    "density_bits_um2": 37.84187085004855
+   },
+   "iterative": {
+    "ser": 0.20167824074074073,
+    "ser_ci95": [
+     0.19507258872999156,
+     0.20844965005527188
+    ],
+    "bits_per_symbol": 2.9269476449193763,
+    "density_bits_um2": 53.00041004833638
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 240.0,
+   "spacing_nm": 257.9,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3422309027777778,
+    "ser_ci95": [
+     0.33436645632472184,
+     0.35018301088930803
+    ],
+    "bits_per_symbol": 2.430923103575451,
+    "density_bits_um2": 42.203526103740465
+   },
+   "iterative": {
+    "ser": 0.08051215277777778,
+    "ser_ci95": [
+     0.07609214085264297,
+     0.08516524583885628
+    ],
+    "bits_per_symbol": 3.542438535870859,
+    "density_bits_um2": 61.50066902553575
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.271484375,
+    "ser_ci95": [
+     0.2641349857286542,
+     0.27896073500913604
+    ],
+    "bits_per_symbol": 2.7232222660477383,
+    "density_bits_um2": 45.36813437813809
+   },
+   "iterative": {
+    "ser": 0.06720196759259259,
+    "ser_ci95": [
+     0.06314732717364488,
+     0.07149708472068861
+    ],
+    "bits_per_symbol": 3.614727782703491,
+    "density_bits_um2": 60.22037122371498
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 250.0,
+   "spacing_nm": 268.6,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.20616319444444445,
+    "ser_ci95": [
+     0.19950138116965413,
+     0.21298827303639348
+    ],
+    "bits_per_symbol": 2.9721861704482353,
+    "density_bits_um2": 47.554978727171765
+   },
+   "iterative": {
+    "ser": 0.04716435185185185,
+    "ser_ci95": [
+     0.04375450179330573,
+     0.05082581217268589
+    ],
+    "bits_per_symbol": 3.698257711076987,
+    "density_bits_um2": 59.17212337723179
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 255.0,
+   "spacing_nm": 274.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.1372974537037037,
+    "ser_ci95": [
+     0.13166091723578283,
+     0.1431355195414507
+    ],
+    "bits_per_symbol": 3.2649754773063964,
+    "density_bits_um2": 50.21108000471198
+   },
+   "iterative": {
+    "ser": 0.046296296296296294,
+    "ser_ci95": [
+     0.04291773172022378,
+     0.049926953454648336
+    ],
+    "bits_per_symbol": 3.7079208355776143,
+    "density_bits_um2": 57.02300400734509
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 260.0,
+   "spacing_nm": 279.4,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.10923032407407407,
+    "ser_ci95": [
+     0.1041385927956921,
+     0.11453917973534408
+    ],
+    "bits_per_symbol": 3.392552707614309,
+    "density_bits_um2": 50.18569094104007
+   },
+   "iterative": {
+    "ser": 0.04933449074074074,
+    "ser_ci95": [
+     0.045847847581188726,
+     0.053071538362601665
+    ],
+    "bits_per_symbol": 3.7019269640050556,
+    "density_bits_um2": 54.762233195341054
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 265.0,
+   "spacing_nm": 284.8,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.07566550925925926,
+    "ser_ci95": [
+     0.07137381161765834,
+     0.08019298099009035
+    ],
+    "bits_per_symbol": 3.5547708412710635,
+    "density_bits_um2": 50.61973430076274
+   },
+   "iterative": {
+    "ser": 0.04173900462962963,
+    "ser_ci95": [
+     0.03853045299377944,
+     0.04520218102771528
+    ],
+    "bits_per_symbol": 3.7327658787591456,
+    "density_bits_um2": 53.15437349603624
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 270.0,
+   "spacing_nm": 290.1,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.05570023148148148,
+    "ser_ci95": [
+     0.0519990424213753,
+     0.05964828799062479
+    ],
+    "bits_per_symbol": 3.6546294766224614,
+    "density_bits_um2": 50.13209158604199
+   },
+   "iterative": {
+    "ser": 0.03732638888888889,
+    "ser_ci95": [
+     0.03429275516919363,
+     0.040617099164110264
+    ],
+    "bits_per_symbol": 3.754043164918588,
+    "density_bits_um2": 51.495791013972394
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 275.0,
+   "spacing_nm": 295.5,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.041449652777777776,
+    "ser_ci95": [
+     0.03825224332466277,
+     0.04490184776645877
+    ],
+    "bits_per_symbol": 3.738749811140512,
+    "density_bits_um2": 49.43801403161007
+   },
+   "iterative": {
+    "ser": 0.037688078703703706,
+    "ser_ci95": [
+     0.03463968607337821,
+     0.04099334692289215
+    ],
+    "bits_per_symbol": 3.758513115819861,
+    "density_bits_um2": 49.69934698604774
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 280.0,
+   "spacing_nm": 300.9,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.040219907407407406,
+    "ser_ci95": [
+     0.037070347888537324,
+     0.04362493574849826
+    ],
+    "bits_per_symbol": 3.7440928909332998,
+    "density_bits_um2": 47.756286874149225
+   },
+   "iterative": {
+    "ser": 0.0390625,
+    "ser_ci95": [
+     0.0359587323109215,
+     0.04242237960462141
+    ],
+    "bits_per_symbol": 3.7502517288852535,
+    "density_bits_um2": 47.83484348067925
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 285.0,
+   "spacing_nm": 306.3,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.03696469907407408,
+    "ser_ci95": [
+     0.033945904076063356,
+     0.04024077159427409
+    ],
+    "bits_per_symbol": 3.7611452488676225,
+    "density_bits_um2": 46.305266221823615
+   },
+   "iterative": {
+    "ser": 0.03812210648148148,
+    "ser_ci95": [
+     0.03505610696239064,
+     0.04144474042943948
+    ],
+    "bits_per_symbol": 3.7545866405261026,
+    "density_bits_um2": 46.224520043411545
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 290.0,
+   "spacing_nm": 311.6,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.034722222222222224,
+    "ser_ci95": [
+     0.031797279665339157,
+     0.037905688294606235
+    ],
+    "bits_per_symbol": 3.770469500839573,
+    "density_bits_um2": 44.83316885659421
+   },
+   "iterative": {
+    "ser": 0.033998842592592594,
+    "ser_ci95": [
+     0.03110488672699294,
+     0.03715172390701954
+    ],
+    "bits_per_symbol": 3.7742093657275784,
+    "density_bits_um2": 44.87763811804493
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 295.0,
+   "spacing_nm": 317.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.03139467592592592,
+    "ser_ci95": [
+     0.028615381294200565,
+     0.03443434296645338
+    ],
+    "bits_per_symbol": 3.7884539660206613,
+    "density_bits_um2": 43.53293842023168
+   },
+   "iterative": {
+    "ser": 0.033203125,
+    "ser_ci95": [
+     0.030343676836917494,
+     0.03632194073856876
+    ],
+    "bits_per_symbol": 3.7791782612621705,
+    "density_bits_um2": 43.426351752509866
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 300.0,
+   "spacing_nm": 322.4,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.03153935185185185,
+    "ser_ci95": [
+     0.028753553405889427,
+     0.03458544231995111
+    ],
+    "bits_per_symbol": 3.7889245292380798,
+    "density_bits_um2": 42.099161435978665
+   },
+   "iterative": {
+    "ser": 0.03291377314814815,
+    "ser_ci95": [
+     0.03006698580657443,
+     0.036020088838538654
+    ],
+    "bits_per_symbol": 3.7816128648851737,
+    "density_bits_um2": 42.01792072094638
+   },
+   "placement_fraction": 0.025
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 235.0,
+   "spacing_nm": 235.0,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.46730324074074076,
+    "ser_ci95": [
+     0.45899624639340647,
+     0.47562840247442545
+    ],
+    "bits_per_symbol": 1.9327440330045538,
+    "density_bits_um2": 34.99762848355915
+   },
+   "iterative": {
+    "ser": 0.3992332175925926,
+    "ser_ci95": [
+     0.39109825132369924,
+     0.40742417317384483
+    ],
+    "bits_per_symbol": 2.1390744518724865,
+    "density_bits_um2": 38.733806281077165
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 240.0,
+   "spacing_nm": 240.0,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4388020833333333,
+    "ser_ci95": [
+     0.4305478159024329,
+     0.4470903543236419
+    ],
+    "bits_per_symbol": 2.058687815631421,
+    "density_bits_um2": 35.74110791026773
+   },
+   "iterative": {
+    "ser": 0.31278935185185186,
+    "ser_ci95": [
+     0.30511349519320996,
+     0.3205692288553501
+    ],
+    "bits_per_symbol": 2.482936354402905,
+    "density_bits_um2": 43.10653393060599
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 245.0,
+   "spacing_nm": 245.0,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.40415219907407407,
+    "ser_ci95": [
+     0.39599942958376416,
+     0.4123582247301238
+    ],
+    "bits_per_symbol": 2.185649243086499,
+    "density_bits_um2": 36.4123155866139
+   },
+   "iterative": {
+    "ser": 0.2632378472222222,
+    "ser_ci95": [
+     0.25596298018578423,
+     0.2706442670363707
+    ],
+    "bits_per_symbol": 2.6788753804862973,
+    "density_bits_um2": 44.62932745499871
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 250.0,
+   "spacing_nm": 250.0,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3802083333333333,
+    "ser_ci95": [
+     0.3721503520664395,
+     0.3883328747590687
+    ],
+    "bits_per_symbol": 2.2693294870620497,
+    "density_bits_um2": 36.309271792992796
+   },
+   "iterative": {
+    "ser": 0.216796875,
+    "ser_ci95": [
+     0.21000690827165502,
+     0.22374419862560652
+    ],
+    "bits_per_symbol": 2.8677102167271515,
+    "density_bits_um2": 45.883363467634425
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.35561342592592593,
+    "ser_ci95": [
+     0.34767457170845095,
+     0.36363250603533803
+    ],
+    "bits_per_symbol": 2.3692044532404273,
+    "density_bits_um2": 36.43528570919535
+   },
+   "iterative": {
+    "ser": 0.18569155092592593,
+    "ser_ci95": [
+     0.1792968739461376,
+     0.19226086793600836
+    ],
+    "bits_per_symbol": 3.018783989412351,
+    "density_bits_um2": 46.42497484678741
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 260.0,
+   "spacing_nm": 260.0,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.31785300925925924,
+    "ser_ci95": [
+     0.3101422093505138,
+     0.3256650159795767
+    ],
+    "bits_per_symbol": 2.548669329699928,
+    "density_bits_um2": 37.7022090192297
+   },
+   "iterative": {
+    "ser": 0.1705005787037037,
+    "ser_ci95": [
+     0.16432314959960237,
+     0.17686108843795223
+    ],
+    "bits_per_symbol": 3.132379261839053,
+    "density_bits_um2": 46.33697132898007
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 265.0,
+   "spacing_nm": 265.0,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2863136574074074,
+    "ser_ci95": [
+     0.27883830363427287,
+     0.29390774228514227
+    ],
+    "bits_per_symbol": 2.6633256074944103,
+    "density_bits_um2": 37.9256049483006
+   },
+   "iterative": {
+    "ser": 0.1372974537037037,
+    "ser_ci95": [
+     0.13166091723578283,
+     0.1431355195414507
+    ],
+    "bits_per_symbol": 3.263133775555926,
+    "density_bits_um2": 46.466839096559994
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 270.0,
+   "spacing_nm": 270.0,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2517361111111111,
+    "ser_ci95": [
+     0.24457074538596016,
+     0.25903942035386135
+    ],
+    "bits_per_symbol": 2.7893748511371914,
+    "density_bits_um2": 38.26302950805475
+   },
+   "iterative": {
+    "ser": 0.11031539351851852,
+    "ser_ci95": [
+     0.10520079539241449,
+     0.1156465131275211
+    ],
+    "bits_per_symbol": 3.381871220227105,
+    "density_bits_um2": 46.39055171779293
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 275.0,
+   "spacing_nm": 275.0,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2214988425925926,
+    "ser_ci95": [
+     0.214654377743761,
+     0.2284980517720645
+    ],
+    "bits_per_symbol": 2.917916332155527,
+    "density_bits_um2": 38.58401761527969
+   },
+   "iterative": {
+    "ser": 0.10561342592592593,
+    "ser_ci95": [
+     0.10059909597692906,
+     0.11084688992444253
+    ],
+    "bits_per_symbol": 3.4101908242828904,
+    "density_bits_um2": 45.09343238721177
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 280.0,
+   "spacing_nm": 280.0,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.17476851851851852,
+    "ser_ci95": [
+     0.16852830613312325,
+     0.1811894401274356
+    ],
+    "bits_per_symbol": 3.1039629818269376,
+    "density_bits_um2": 39.5913645641191
+   },
+   "iterative": {
+    "ser": 0.09910300925925926,
+    "ser_ci95": [
+     0.09423278981193987,
+     0.10419598015603544
+    ],
+    "bits_per_symbol": 3.446904600546906,
+    "density_bits_um2": 43.96561990493502
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 285.0,
+   "spacing_nm": 285.0,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.17570891203703703,
+    "ser_ci95": [
+     0.16945505366937547,
+     0.18214295711489614
+    ],
+    "bits_per_symbol": 3.101110609349046,
+    "density_bits_um2": 38.17926265742132
+   },
+   "iterative": {
+    "ser": 0.09013310185185185,
+    "ser_ci95": [
+     0.08547240790834615,
+     0.09502153121806092
+    ],
+    "bits_per_symbol": 3.4716188927058975,
+    "density_bits_um2": 42.74076814657923
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 290.0,
+   "spacing_nm": 290.0,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.14445891203703703,
+    "ser_ci95": [
+     0.13869720735230437,
+     0.15041816695166507
+    ],
+    "bits_per_symbol": 3.226777542176585,
+    "density_bits_um2": 38.368341761909456
+   },
+   "iterative": {
+    "ser": 0.08658854166666667,
+    "ser_ci95": [
+     0.08201447613129835,
+     0.09139231209803743
+    ],
+    "bits_per_symbol": 3.4970136175548343,
+    "density_bits_um2": 41.581612574968304
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 295.0,
+   "spacing_nm": 295.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.11436631944444445,
+    "ser_ci95": [
+     0.10916774408847747,
+     0.11977916545668248
+    ],
+    "bits_per_symbol": 3.3652176738038775,
+    "density_bits_um2": 38.669550977349935
+   },
+   "iterative": {
+    "ser": 0.07631655092592593,
+    "ser_ci95": [
+     0.07200731961563758,
+     0.08086119458545074
+    ],
+    "bits_per_symbol": 3.5489772784303986,
+    "density_bits_um2": 40.78112356714046
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 300.0,
+   "spacing_nm": 300.0,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.10662615740740741,
+    "ser_ci95": [
+     0.10158996956924043,
+     0.11188091658843727
+    ],
+    "bits_per_symbol": 3.40962088156326,
+    "density_bits_um2": 37.884676461814
+   },
+   "iterative": {
+    "ser": 0.07703993055555555,
+    "ser_ci95": [
+     0.07271132787588183,
+     0.08160354365113939
+    ],
+    "bits_per_symbol": 3.548439154636396,
+    "density_bits_um2": 39.42710171818218
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 235.0,
+   "spacing_nm": 252.5,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.45703125,
+    "ser_ci95": [
+     0.4487400985194738,
+     0.46534627632011066
+    ],
+    "bits_per_symbol": 2.0031071576197768,
+    "density_bits_um2": 36.271745724215066
+   },
+   "iterative": {
+    "ser": 0.36595775462962965,
+    "ser_ci95": [
+     0.35796605547112215,
+     0.3740239320335076
+    ],
+    "bits_per_symbol": 2.3203607038085523,
+    "density_bits_um2": 42.01649078874699
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 240.0,
+   "spacing_nm": 257.9,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3882378472222222,
+    "ser_ci95": [
+     0.3801457875169269,
+     0.39639200562643667
+    ],
+    "bits_per_symbol": 2.2541910133218424,
+    "density_bits_um2": 39.135260647948655
+   },
+   "iterative": {
+    "ser": 0.22453703703703703,
+    "ser_ci95": [
+     0.21765804383216633,
+     0.23156908645257743
+    ],
+    "bits_per_symbol": 2.868118410231375,
+    "density_bits_um2": 49.79372239985026
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.32884837962962965,
+    "ser_ci95": [
+     0.3210653280790995,
+     0.3367265286051714
+    ],
+    "bits_per_symbol": 2.483533070131545,
+    "density_bits_um2": 41.374978261250234
+   },
+   "iterative": {
+    "ser": 0.16507523148148148,
+    "ser_ci95": [
+     0.15897967642106017,
+     0.1713568816719975
+    ],
+    "bits_per_symbol": 3.149584247299605,
+    "density_bits_um2": 52.471207785082974
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 250.0,
+   "spacing_nm": 268.6,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2730758101851852,
+    "ser_ci95": [
+     0.26571241305709975,
+     0.2805652937977429
+    ],
+    "bits_per_symbol": 2.7048941353459495,
+    "density_bits_um2": 43.27830616553519
+   },
+   "iterative": {
+    "ser": 0.14641203703703703,
+    "ser_ci95": [
+     0.14061706183381134,
+     0.152403477250177
+    ],
+    "bits_per_symbol": 3.2299335870007555,
+    "density_bits_um2": 51.67893739201209
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 255.0,
+   "spacing_nm": 274.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.21274594907407407,
+    "ser_ci95": [
+     0.20600398888083574,
+     0.2196475169912014
+    ],
+    "bits_per_symbol": 2.943678804195295,
+    "density_bits_um2": 45.269954697351714
+   },
+   "iterative": {
+    "ser": 0.1312934027777778,
+    "ser_ci95": [
+     0.1257658305161993,
+     0.13702584045579105
+    ],
+    "bits_per_symbol": 3.291780956109524,
+    "density_bits_um2": 50.623313434979224
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 260.0,
+   "spacing_nm": 279.4,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.18880208333333334,
+    "ser_ci95": [
+     0.18236499181640758,
+     0.19541208656724995
+    ],
+    "bits_per_symbol": 3.0428982055094225,
+    "density_bits_um2": 45.01328706374885
+   },
+   "iterative": {
+    "ser": 0.12160011574074074,
+    "ser_ci95": [
+     0.11625679281110665,
+     0.1271536899933825
+    ],
+    "bits_per_symbol": 3.335174838938114,
+    "density_bits_um2": 49.33690590145139
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 265.0,
+   "spacing_nm": 284.8,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.14388020833333334,
+    "ser_ci95": [
+     0.13812843151465967,
+     0.14982985692856346
+    ],
+    "bits_per_symbol": 3.2342792163250214,
+    "density_bits_um2": 46.05595181666103
+   },
+   "iterative": {
+    "ser": 0.10431134259259259,
+    "ser_ci95": [
+     0.09932533201422045,
+     0.10951721070047188
+    ],
+    "bits_per_symbol": 3.4125029661296553,
+    "density_bits_um2": 48.59384786229484
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 270.0,
+   "spacing_nm": 290.1,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.13187210648148148,
+    "ser_ci95": [
+     0.12633386546238898,
+     0.1376148913703477
+    ],
+    "bits_per_symbol": 3.2938752226562262,
+    "density_bits_um2": 45.1834735618138
+   },
+   "iterative": {
+    "ser": 0.10235821759259259,
+    "ser_ci95": [
+     0.09741515076547481,
+     0.10752222716919864
+    ],
+    "bits_per_symbol": 3.426922624566553,
+    "density_bits_um2": 47.00854080338207
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 275.0,
+   "spacing_nm": 295.5,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.10474537037037036,
+    "ser_ci95": [
+     0.0997498927420861,
+     0.10996046436816598
+    ],
+    "bits_per_symbol": 3.4133786161223614,
+    "density_bits_um2": 45.135585006576676
+   },
+   "iterative": {
+    "ser": 0.09295428240740741,
+    "ser_ci95": [
+     0.08822623706854925,
+     0.09790849562899624
+    ],
+    "bits_per_symbol": 3.470188214142249,
+    "density_bits_um2": 45.88678630270742
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 280.0,
+   "spacing_nm": 300.9,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.0939670138888889,
+    "ser_ci95": [
+     0.08921512413788947,
+     0.0989445088159621
+    ],
+    "bits_per_symbol": 3.466300258251768,
+    "density_bits_um2": 44.21301349810928
+   },
+   "iterative": {
+    "ser": 0.08499710648148148,
+    "ser_ci95": [
+     0.08046269251266593,
+     0.08976210959961743
+    ],
+    "bits_per_symbol": 3.5071175624018753,
+    "density_bits_um2": 44.73364237757493
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 285.0,
+   "spacing_nm": 306.3,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.08232060185185185,
+    "ser_ci95": [
+     0.07785397719200116,
+     0.08701930281433037
+    ],
+    "bits_per_symbol": 3.5196370432098343,
+    "density_bits_um2": 43.3319426680189
+   },
+   "iterative": {
+    "ser": 0.07335069444444445,
+    "ser_ci95": [
+     0.06912211897674322,
+     0.07781633018802012
+    ],
+    "bits_per_symbol": 3.5636165979251793,
+    "density_bits_um2": 43.87339609633955
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 290.0,
+   "spacing_nm": 311.6,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.08058449074074074,
+    "ser_ci95": [
+     0.07616260146855797,
+     0.08523942095553458
+    ],
+    "bits_per_symbol": 3.5254061238994954,
+    "density_bits_um2": 41.919216693216356
+   },
+   "iterative": {
+    "ser": 0.07118055555555555,
+    "ser_ci95": [
+     0.06701229913912894,
+     0.07558707804783561
+    ],
+    "bits_per_symbol": 3.572072482668225,
+    "density_bits_um2": 42.47410799843312
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 295.0,
+   "spacing_nm": 317.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.08702256944444445,
+    "ser_ci95": [
+     0.08243777259756817,
+     0.09183683002732738
+    ],
+    "bits_per_symbol": 3.5159430030924157,
+    "density_bits_um2": 40.401528332001334
+   },
+   "iterative": {
+    "ser": 0.0814525462962963,
+    "ser_ci95": [
+     0.07700821270993247,
+     0.08612943850527957
+    ],
+    "bits_per_symbol": 3.545846681033609,
+    "density_bits_um2": 40.74515002624084
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 300.0,
+   "spacing_nm": 322.4,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.06409143518518519,
+    "ser_ci95": [
+     0.06012852952482081,
+     0.06829654586800116
+    ],
+    "bits_per_symbol": 3.614025670407326,
+    "density_bits_um2": 40.15584078230362
+   },
+   "iterative": {
+    "ser": 0.056640625,
+    "ser_ci95": [
+     0.05290898464722609,
+     0.060618610288486786
+    ],
+    "bits_per_symbol": 3.649980574729669,
+    "density_bits_um2": 40.555339719218544
+   },
+   "placement_fraction": 0.05
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 235.0,
+   "spacing_nm": 235.0,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.5264756944444444,
+    "ser_ci95": [
+     0.5181461161582271,
+     0.5347905619709178
+    ],
+    "bits_per_symbol": 1.7275511643510937,
+    "density_bits_um2": 31.28204915076675
+   },
+   "iterative": {
+    "ser": 0.5007957175925926,
+    "ser_ci95": [
+     0.4924615957057478,
+     0.5091293973527783
+    ],
+    "bits_per_symbol": 1.7888254821504745,
+    "density_bits_um2": 32.39158863106337
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 240.0,
+   "spacing_nm": 240.0,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4924045138888889,
+    "ser_ci95": [
+     0.4840736740432447,
+     0.5007395740344595
+    ],
+    "bits_per_symbol": 1.8422107723680052,
+    "density_bits_um2": 31.98282590916676
+   },
+   "iterative": {
+    "ser": 0.4457465277777778,
+    "ser_ci95": [
+     0.4374768811799414,
+     0.4540463193750895
+    ],
+    "bits_per_symbol": 1.9899247943647247,
+    "density_bits_um2": 34.54730545772092
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 245.0,
+   "spacing_nm": 245.0,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4620225694444444,
+    "ser_ci95": [
+     0.45372327664933404,
+     0.47034296373918744
+    ],
+    "bits_per_symbol": 1.9743645077133771,
+    "density_bits_um2": 32.89236997440029
+   },
+   "iterative": {
+    "ser": 0.40111400462962965,
+    "ser_ci95": [
+     0.39297213020628174,
+     0.40931082333868796
+    ],
+    "bits_per_symbol": 2.1644963527305645,
+    "density_bits_um2": 36.059914247906114
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 250.0,
+   "spacing_nm": 250.0,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.43041087962962965,
+    "ser_ci95": [
+     0.42217738967655905,
+     0.4386830355686939
+    ],
+    "bits_per_symbol": 2.092262277365504,
+    "density_bits_um2": 33.47619643784807
+   },
+   "iterative": {
+    "ser": 0.36422164351851855,
+    "ser_ci95": [
+     0.3562385329465126,
+     0.37228019697587816
+    ],
+    "bits_per_symbol": 2.3136715163767163,
+    "density_bits_um2": 37.01874426202746
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.40046296296296297,
+    "ser_ci95": [
+     0.39232346564562187,
+     0.4086577663060082
+    ],
+    "bits_per_symbol": 2.1937130030388663,
+    "density_bits_um2": 33.736455256268606
+   },
+   "iterative": {
+    "ser": 0.31691261574074076,
+    "ser_ci95": [
+     0.30920822489441774,
+     0.32471873591195993
+    ],
+    "bits_per_symbol": 2.489794359078209,
+    "density_bits_um2": 38.28980175437461
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 260.0,
+   "spacing_nm": 260.0,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.37232349537037035,
+    "ser_ci95": [
+     0.3643012632938616,
+     0.3804166686789777
+    ],
+    "bits_per_symbol": 2.298125672277007,
+    "density_bits_um2": 33.99594189758886
+   },
+   "iterative": {
+    "ser": 0.27727141203703703,
+    "ser_ci95": [
+     0.26987165518468265,
+     0.284794924160571
+    ],
+    "bits_per_symbol": 2.661411779938922,
+    "density_bits_um2": 39.36999674465861
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 265.0,
+   "spacing_nm": 265.0,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3629195601851852,
+    "ser_ci95": [
+     0.3549429649781715,
+     0.37097232175753986
+    ],
+    "bits_per_symbol": 2.343376512571268,
+    "density_bits_um2": 33.36954806082261
+   },
+   "iterative": {
+    "ser": 0.26533564814814814,
+    "ser_ci95": [
+     0.25804151306177664,
+     0.2727601704055838
+    ],
+    "bits_per_symbol": 2.7214620109831333,
+    "density_bits_um2": 38.753464022543724
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 270.0,
+   "spacing_nm": 270.0,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3269675925925926,
+    "ser_ci95": [
+     0.3191965519953544,
+     0.33483477564149094
+    ],
+    "bits_per_symbol": 2.485230229615426,
+    "density_bits_um2": 34.0909496517891
+   },
+   "iterative": {
+    "ser": 0.24204282407407407,
+    "ser_ci95": [
+     0.23497496584138536,
+     0.24925401173093506
+    ],
+    "bits_per_symbol": 2.8158628849132983,
+    "density_bits_um2": 38.62637702213029
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 275.0,
+   "spacing_nm": 275.0,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.29347511574074076,
+    "ser_ci95": [
+     0.2859425113091557,
+     0.3011224721369954
+    ],
+    "bits_per_symbol": 2.6128930275355646,
+    "density_bits_um2": 34.55065160377605
+   },
+   "iterative": {
+    "ser": 0.20710358796296297,
+    "ser_ci95": [
+     0.20043016044615827,
+     0.2139397582836021
+    ],
+    "bits_per_symbol": 2.9597668935639496,
+    "density_bits_um2": 39.137413468614206
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 280.0,
+   "spacing_nm": 280.0,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.265625,
+    "ser_ci95": [
+     0.25832822400277394,
+     0.2730520023949597
+    ],
+    "bits_per_symbol": 2.7412308554914295,
+    "density_bits_um2": 34.96467927922741
+   },
+   "iterative": {
+    "ser": 0.19798900462962962,
+    "ser_ci95": [
+     0.19143052051386764,
+     0.20471529590913792
+    ],
+    "bits_per_symbol": 3.013107294361492,
+    "density_bits_um2": 38.43249099950882
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 285.0,
+   "spacing_nm": 285.0,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.26591435185185186,
+    "ser_ci95": [
+     0.25861493899157684,
+     0.27334383033653
+    ],
+    "bits_per_symbol": 2.7273515425580936,
+    "density_bits_um2": 33.577735211549324
+   },
+   "iterative": {
+    "ser": 0.19234664351851852,
+    "ser_ci95": [
+     0.18586203803610452,
+     0.19900219124462426
+    ],
+    "bits_per_symbol": 3.022460976434117,
+    "density_bits_um2": 37.210969238954966
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 290.0,
+   "spacing_nm": 290.0,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.232421875,
+    "ser_ci95": [
+     0.22545572269839712,
+     0.2395367024390155
+    ],
+    "bits_per_symbol": 2.8597855774022345,
+    "density_bits_um2": 34.00458474913478
+   },
+   "iterative": {
+    "ser": 0.17975983796296297,
+    "ser_ci95": [
+     0.17344795549307432,
+     0.18624965631642168
+    ],
+    "bits_per_symbol": 3.085302104969342,
+    "density_bits_um2": 36.68611301984949
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 295.0,
+   "spacing_nm": 295.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.20601851851851852,
+    "ser_ci95": [
+     0.19935849698072894,
+     0.21284188576013208
+    ],
+    "bits_per_symbol": 2.9816465797900573,
+    "density_bits_um2": 34.261954378512584
+   },
+   "iterative": {
+    "ser": 0.1675347222222222,
+    "ser_ci95": [
+     0.16140175964343825,
+     0.17385241335779136
+    ],
+    "bits_per_symbol": 3.137233131541372,
+    "density_bits_um2": 36.04979180168196
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 300.0,
+   "spacing_nm": 300.0,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.17881944444444445,
+    "ser_ci95": [
+     0.17252092309108383,
+     0.18529642419469936
+    ],
+    "bits_per_symbol": 3.091051362036724,
+    "density_bits_um2": 34.34501513374138
+   },
+   "iterative": {
+    "ser": 0.15285011574074073,
+    "ser_ci95": [
+     0.14694798556846403,
+     0.15894513371632726
+    ],
+    "bits_per_symbol": 3.197528907808737,
+    "density_bits_um2": 35.52809897565264
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 235.0,
+   "spacing_nm": 252.5,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.5024594907407407,
+    "ser_ci95": [
+     0.49412499687782613,
+     0.5107926180303456
+    ],
+    "bits_per_symbol": 1.8053311191969423,
+    "density_bits_um2": 32.69046843271965
+   },
+   "iterative": {
+    "ser": 0.4752604166666667,
+    "ser_ci95": [
+     0.46694358325691554,
+     0.4835909961961785
+    ],
+    "bits_per_symbol": 1.9018347711628354,
+    "density_bits_um2": 34.43793157379512
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 240.0,
+   "spacing_nm": 257.9,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4486400462962963,
+    "ser_ci95": [
+     0.4403644750002555,
+     0.456944154858507
+    ],
+    "bits_per_symbol": 2.0109700117741616,
+    "density_bits_um2": 34.91267381552364
+   },
+   "iterative": {
+    "ser": 0.40263310185185186,
+    "ser_ci95": [
+     0.394485739146908,
+     0.4108345647825208
+    ],
+    "bits_per_symbol": 2.180421413232271,
+    "density_bits_um2": 37.85453842417137
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4069010416666667,
+    "ser_ci95": [
+     0.3987386951500142,
+     0.4151151170024188
+    ],
+    "bits_per_symbol": 2.1874788928927424,
+    "density_bits_um2": 36.44279704944178
+   },
+   "iterative": {
+    "ser": 0.3333333333333333,
+    "ser_ci95": [
+     0.3255222126283124,
+     0.34123705947674254
+    ],
+    "bits_per_symbol": 2.464527287719348,
+    "density_bits_um2": 41.058347150676354
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 250.0,
+   "spacing_nm": 268.6,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3716724537037037,
+    "ser_ci95": [
+     0.3636532754526526,
+     0.3797629349268472
+    ],
+    "bits_per_symbol": 2.3163012615488356,
+    "density_bits_um2": 37.06082018478137
+   },
+   "iterative": {
+    "ser": 0.3011429398148148,
+    "ser_ci95": [
+     0.2935515440464019,
+     0.30884482705463817
+    ],
+    "bits_per_symbol": 2.58685598414277,
+    "density_bits_um2": 41.38969574628432
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 255.0,
+   "spacing_nm": 274.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.32132523148148145,
+    "ser_ci95": [
+     0.3135910827496063,
+     0.32915865774496217
+    ],
+    "bits_per_symbol": 2.536722114886737,
+    "density_bits_um2": 39.01148965608208
+   },
+   "iterative": {
+    "ser": 0.26005497685185186,
+    "ser_ci95": [
+     0.2528097544873582,
+     0.2674335205006919
+    ],
+    "bits_per_symbol": 2.7715469987985304,
+    "density_bits_um2": 42.622791215663675
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 260.0,
+   "spacing_nm": 279.4,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.29007523148148145,
+    "ser_ci95": [
+     0.2825695215188488,
+     0.2976975824954175
+    ],
+    "bits_per_symbol": 2.6336910224133727,
+    "density_bits_um2": 38.95992636706172
+   },
+   "iterative": {
+    "ser": 0.24508101851851852,
+    "ser_ci95": [
+     0.23798207168103785,
+     0.25232160666020087
+    ],
+    "bits_per_symbol": 2.819502677230335,
+    "density_bits_um2": 41.70861948565584
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 265.0,
+   "spacing_nm": 284.8,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2556423611111111,
+    "ser_ci95": [
+     0.24843906528146958,
+     0.26298143001838975
+    ],
+    "bits_per_symbol": 2.7718736469708083,
+    "density_bits_um2": 39.471322847572914
+   },
+   "iterative": {
+    "ser": 0.224609375,
+    "ser_ci95": [
+     0.217729566171293,
+     0.2316421998460441
+    ],
+    "bits_per_symbol": 2.902452178824523,
+    "density_bits_um2": 41.33075370344639
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 270.0,
+   "spacing_nm": 290.1,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.23936631944444445,
+    "ser_ci95": [
+     0.23232625397544218,
+     0.2465512014909265
+    ],
+    "bits_per_symbol": 2.8392014613084866,
+    "density_bits_um2": 38.94652210299707
+   },
+   "iterative": {
+    "ser": 0.21223958333333334,
+    "ser_ci95": [
+     0.20550369364711837,
+     0.2191353620967658
+    ],
+    "bits_per_symbol": 2.9540781690243154,
+    "density_bits_um2": 40.522334280168934
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 275.0,
+   "spacing_nm": 295.5,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.21274594907407407,
+    "ser_ci95": [
+     0.20600398888083574,
+     0.2196475169912014
+    ],
+    "bits_per_symbol": 2.9575639763092676,
+    "density_bits_um2": 39.108283984254776
+   },
+   "iterative": {
+    "ser": 0.1955295138888889,
+    "ser_ci95": [
+     0.18900297159892157,
+     0.2022252299159121
+    ],
+    "bits_per_symbol": 3.0212616831655623,
+    "density_bits_um2": 39.95056771128016
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 280.0,
+   "spacing_nm": 300.9,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.19596354166666666,
+    "ser_ci95": [
+     0.18943133340282817,
+     0.20266468250756522
+    ],
+    "bits_per_symbol": 3.0214725264953715,
+    "density_bits_um2": 38.53919038897157
+   },
+   "iterative": {
+    "ser": 0.18352141203703703,
+    "ser_ci95": [
+     0.17715673166370924,
+     0.1900619382406379
+    ],
+    "bits_per_symbol": 3.073749984959245,
+    "density_bits_um2": 39.20599470611281
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 285.0,
+   "spacing_nm": 306.3,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.17180266203703703,
+    "ser_ci95": [
+     0.16560592945630578,
+     0.17818175176792808
+    ],
+    "bits_per_symbol": 3.1135405974506636,
+    "density_bits_um2": 38.332294212996786
+   },
+   "iterative": {
+    "ser": 0.15834780092592593,
+    "ser_ci95": [
+     0.15235710837466737,
+     0.16452832658721417
+    ],
+    "bits_per_symbol": 3.1701639445238974,
+    "density_bits_um2": 39.0294114438153
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 290.0,
+   "spacing_nm": 311.6,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.16869212962962962,
+    "ser_ci95": [
+     0.16254173139466224,
+     0.17502661332806005
+    ],
+    "bits_per_symbol": 3.135797792603919,
+    "density_bits_um2": 37.286537367466345
+   },
+   "iterative": {
+    "ser": 0.15726273148148148,
+    "ser_ci95": [
+     0.15128930991002879,
+     0.16342658906295335
+    ],
+    "bits_per_symbol": 3.18500576468539,
+    "density_bits_um2": 37.8716499962591
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 295.0,
+   "spacing_nm": 317.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.15914351851851852,
+    "ser_ci95": [
+     0.15314022467605332,
+     0.16533620334435445
+    ],
+    "bits_per_symbol": 3.193746328977078,
+    "density_bits_um2": 36.6991821772718
+   },
+   "iterative": {
+    "ser": 0.14286747685185186,
+    "ser_ci95": [
+     0.13713315151475539,
+     0.14880023667216166
+    ],
+    "bits_per_symbol": 3.257350246615731,
+    "density_bits_um2": 37.430051670390476
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 300.0,
+   "spacing_nm": 322.4,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.14091435185185186,
+    "ser_ci95": [
+     0.13521396516656423,
+     0.14681425824033392
+    ],
+    "bits_per_symbol": 3.2541873328298725,
+    "density_bits_um2": 36.15763703144303
+   },
+   "iterative": {
+    "ser": 0.12507233796296297,
+    "ser_ci95": [
+     0.11966178412008824,
+     0.13069121384887897
+    ],
+    "bits_per_symbol": 3.320697175603835,
+    "density_bits_um2": 36.896635284487054
+   },
+   "placement_fraction": 0.075
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 235.0,
+   "spacing_nm": 235.0,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.5467303240740741,
+    "ser_ci95": [
+     0.5384198978401911,
+     0.5550147854150755
+    ],
+    "bits_per_symbol": 1.6302234447640038,
+    "density_bits_um2": 29.519664006591288
+   },
+   "iterative": {
+    "ser": 0.5402922453703703,
+    "ser_ci95": [
+     0.5319742363120578,
+     0.5485878667424059
+    ],
+    "bits_per_symbol": 1.6437085435091792,
+    "density_bits_um2": 29.763848682828055
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 240.0,
+   "spacing_nm": 240.0,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.5436197916666666,
+    "ser_ci95": [
+     0.5353055273670624,
+     0.5519098193866927
+    ],
+    "bits_per_symbol": 1.6787176475627488,
+    "density_bits_um2": 29.144403603519944
+   },
+   "iterative": {
+    "ser": 0.5272714120370371,
+    "ser_ci95": [
+     0.5189423263623639,
+     0.5355853448253073
+    ],
+    "bits_per_symbol": 1.7173426732878143,
+    "density_bits_um2": 29.814976966802334
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 245.0,
+   "spacing_nm": 245.0,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.521484375,
+    "ser_ci95": [
+     0.5131521898375294,
+     0.5298046227426784
+    ],
+    "bits_per_symbol": 1.7429515434628629,
+    "density_bits_um2": 29.037093602046863
+   },
+   "iterative": {
+    "ser": 0.49775752314814814,
+    "ser_ci95": [
+     0.48942431856536334,
+     0.5060919737242444
+    ],
+    "bits_per_symbol": 1.8160113693773896,
+    "density_bits_um2": 30.254250218698704
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 250.0,
+   "spacing_nm": 250.0,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.49008969907407407,
+    "ser_ci95": [
+     0.48176017766381096,
+     0.4984247269709079
+    ],
+    "bits_per_symbol": 1.8464890170418902,
+    "density_bits_um2": 29.543824272670243
+   },
+   "iterative": {
+    "ser": 0.46166087962962965,
+    "ser_ci95": [
+     0.4533621486155637,
+     0.46998091310999146
+    ],
+    "bits_per_symbol": 1.952418469622045,
+    "density_bits_um2": 31.23869551395272
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4733072916666667,
+    "ser_ci95": [
+     0.4649926769670606,
+     0.48163673770601456
+    ],
+    "bits_per_symbol": 1.9264083088036317,
+    "density_bits_um2": 29.625656421432243
+   },
+   "iterative": {
+    "ser": 0.4327980324074074,
+    "ser_ci95": [
+     0.4245583864101989,
+     0.4410750180106326
+    ],
+    "bits_per_symbol": 2.05882784785572,
+    "density_bits_um2": 31.662096852836907
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 260.0,
+   "spacing_nm": 260.0,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4503761574074074,
+    "ser_ci95": [
+     0.4420971674047638,
+     0.45868272003623767
+    ],
+    "bits_per_symbol": 2.028625335996498,
+    "density_bits_um2": 30.009250532492572
+   },
+   "iterative": {
+    "ser": 0.40422453703703703,
+    "ser_ci95": [
+     0.39607151211099656,
+     0.41243077793548466
+    ],
+    "bits_per_symbol": 2.1729402771763895,
+    "density_bits_um2": 32.144086940479134
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 265.0,
+   "spacing_nm": 265.0,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4333767361111111,
+    "ser_ci95": [
+     0.4251356271467821,
+     0.44165486313479574
+    ],
+    "bits_per_symbol": 2.081701180507772,
+    "density_bits_um2": 29.64330623720572
+   },
+   "iterative": {
+    "ser": 0.38859953703703703,
+    "ser_ci95": [
+     0.3805059970817826,
+     0.3967549747245475
+    ],
+    "bits_per_symbol": 2.2558384592259664,
+    "density_bits_um2": 32.12301116733309
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 270.0,
+   "spacing_nm": 270.0,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4146412037037037,
+    "ser_ci95": [
+     0.4064533139681716,
+     0.42287652157174366
+    ],
+    "bits_per_symbol": 2.1459567685676677,
+    "density_bits_um2": 29.436992710118897
+   },
+   "iterative": {
+    "ser": 0.36400462962962965,
+    "ser_ci95": [
+     0.35602260054644824,
+     0.3720622221781626
+    ],
+    "bits_per_symbol": 2.327575557024225,
+    "density_bits_um2": 31.928334115558638
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 275.0,
+   "spacing_nm": 275.0,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3851273148148148,
+    "ser_ci95": [
+     0.3770481798608012,
+     0.393270276781051
+    ],
+    "bits_per_symbol": 2.256757405661172,
+    "density_bits_um2": 29.841420240147727
+   },
+   "iterative": {
+    "ser": 0.33622685185185186,
+    "ser_ci95": [
+     0.32839804701333414,
+     0.3441466543954525
+    ],
+    "bits_per_symbol": 2.4371586411835215,
+    "density_bits_um2": 32.22689112308788
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 280.0,
+   "spacing_nm": 280.0,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3616898148148148,
+    "ser_ci95": [
+     0.3537194313362605,
+     0.369737047945365
+    ],
+    "bits_per_symbol": 2.3477242180465097,
+    "density_bits_um2": 29.945461964878945
+   },
+   "iterative": {
+    "ser": 0.31199363425925924,
+    "ser_ci95": [
+     0.3043233657649854,
+     0.31976836522504837
+    ],
+    "bits_per_symbol": 2.552337312712652,
+    "density_bits_um2": 32.5553228662328
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 285.0,
+   "spacing_nm": 285.0,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3509837962962963,
+    "ser_ci95": [
+     0.343069904667354,
+     0.3589804861904642
+    ],
+    "bits_per_symbol": 2.4074171822413373,
+    "density_bits_um2": 29.638869587458757
+   },
+   "iterative": {
+    "ser": 0.30078125,
+    "ser_ci95": [
+     0.29319256996178733,
+     0.30848062247628627
+    ],
+    "bits_per_symbol": 2.598131114463005,
+    "density_bits_um2": 31.986840436602094
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 290.0,
+   "spacing_nm": 290.0,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.32175925925925924,
+    "ser_ci95": [
+     0.3140222266859654,
+     0.32959532820416276
+    ],
+    "bits_per_symbol": 2.499161196025679,
+    "density_bits_um2": 29.71654216439571
+   },
+   "iterative": {
+    "ser": 0.2824074074074074,
+    "ser_ci95": [
+     0.2749642528580948,
+     0.28997146350128256
+    ],
+    "bits_per_symbol": 2.6534073671950873,
+    "density_bits_um2": 31.550622677706155
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 295.0,
+   "spacing_nm": 295.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2966579861111111,
+    "ser_ci95": [
+     0.28910066616919805,
+     0.30432828951105784
+    ],
+    "bits_per_symbol": 2.607373745738214,
+    "density_bits_um2": 29.961203628132306
+   },
+   "iterative": {
+    "ser": 0.2628038194444444,
+    "ser_ci95": [
+     0.25553296564203415,
+     0.27020646718456104
+    ],
+    "bits_per_symbol": 2.7349181397862403,
+    "density_bits_um2": 31.426809994670965
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 300.0,
+   "spacing_nm": 300.0,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.28530092592592593,
+    "ser_ci95": [
+     0.27783385368342645,
+     0.2928872919796826
+    ],
+    "bits_per_symbol": 2.6535857781875363,
+    "density_bits_um2": 29.48428642430596
+   },
+   "iterative": {
+    "ser": 0.25831886574074076,
+    "ser_ci95": [
+     0.2510900235250739,
+     0.2656819938807372
+    ],
+    "bits_per_symbol": 2.763549568392847,
+    "density_bits_um2": 30.706106315476077
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 235.0,
+   "spacing_nm": 252.5,
+   "cell_area_um2": 0.055224999999999996,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.5476707175925926,
+    "ser_ci95": [
+     0.5393615159968486,
+     0.5559534317821309
+    ],
+    "bits_per_symbol": 1.6164880171195466,
+    "density_bits_um2": 29.270946439466666
+   },
+   "iterative": {
+    "ser": 0.5482494212962963,
+    "ser_ci95": [
+     0.5399409881737041,
+     0.5565310454660217
+    ],
+    "bits_per_symbol": 1.6189176202597833,
+    "density_bits_um2": 29.31494106400694
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 240.0,
+   "spacing_nm": 257.9,
+   "cell_area_um2": 0.0576,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.5081018518518519,
+    "ser_ci95": [
+     0.4997667834949025,
+     0.5164324185555462
+    ],
+    "bits_per_symbol": 1.7734527452477318,
+    "density_bits_um2": 30.7891101605509
+   },
+   "iterative": {
+    "ser": 0.5013744212962963,
+    "ser_ci95": [
+     0.4930401595629338,
+     0.5097079193563386
+    ],
+    "bits_per_symbol": 1.8027175422540878,
+    "density_bits_um2": 31.297179553022357
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4887152777777778,
+    "ser_ci95": [
+     0.48038662372730845,
+     0.4970502019881379
+    ],
+    "bits_per_symbol": 1.884006390638947,
+    "density_bits_um2": 31.387028582073256
+   },
+   "iterative": {
+    "ser": 0.45775462962962965,
+    "ser_ci95": [
+     0.44946224627832676,
+     0.4660704858871906
+    ],
+    "bits_per_symbol": 1.9745458023503228,
+    "density_bits_um2": 32.89539029321654
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 250.0,
+   "spacing_nm": 268.6,
+   "cell_area_um2": 0.0625,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.4422019675925926,
+    "ser_ci95": [
+     0.4339399658803459,
+     0.45049608377761363
+    ],
+    "bits_per_symbol": 2.0436678474220633,
+    "density_bits_um2": 32.69868555875301
+   },
+   "iterative": {
+    "ser": 0.4060329861111111,
+    "ser_ci95": [
+     0.3978736351951586,
+     0.41424454816615486
+    ],
+    "bits_per_symbol": 2.186964428889466,
+    "density_bits_um2": 34.991430862231454
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 255.0,
+   "spacing_nm": 274.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.42006655092592593,
+    "ser_ci95": [
+     0.41186200233586534,
+     0.4283155131485469
+    ],
+    "bits_per_symbol": 2.1357920475971013,
+    "density_bits_um2": 32.84570622986699
+   },
+   "iterative": {
+    "ser": 0.3892505787037037,
+    "ser_ci95": [
+     0.38115438615514746,
+     0.3974083072445223
+    ],
+    "bits_per_symbol": 2.2580599316294956,
+    "density_bits_um2": 34.72602739914642
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 260.0,
+   "spacing_nm": 279.4,
+   "cell_area_um2": 0.06760000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.39662905092592593,
+    "ser_ci95": [
+     0.3885038569622824,
+     0.40481168116190314
+    ],
+    "bits_per_symbol": 2.247142340765875,
+    "density_bits_um2": 33.24175060304548
+   },
+   "iterative": {
+    "ser": 0.37405960648148145,
+    "ser_ci95": [
+     0.36602930723163596,
+     0.38215988232344245
+    ],
+    "bits_per_symbol": 2.331457094793759,
+    "density_bits_um2": 34.489010278014185
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 265.0,
+   "spacing_nm": 284.8,
+   "cell_area_um2": 0.07022500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.37594039351851855,
+    "ser_ci95": [
+     0.36790147988254013,
+     0.3840482387199639
+    ],
+    "bits_per_symbol": 2.3232705428582627,
+    "density_bits_um2": 33.08324019734087
+   },
+   "iterative": {
+    "ser": 0.3552517361111111,
+    "ser_ci95": [
+     0.34731480269238485,
+     0.3632690963884376
+    ],
+    "bits_per_symbol": 2.4025127926562666,
+    "density_bits_um2": 34.21164532084395
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 270.0,
+   "spacing_nm": 290.1,
+   "cell_area_um2": 0.0729,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.34541377314814814,
+    "ser_ci95": [
+     0.3375310037266249,
+     0.35338243572150985
+    ],
+    "bits_per_symbol": 2.4302798669719325,
+    "density_bits_um2": 33.33717238644626
+   },
+   "iterative": {
+    "ser": 0.32450810185185186,
+    "ser_ci95": [
+     0.31675298336085117,
+     0.3323607293678222
+    ],
+    "bits_per_symbol": 2.5041247371768245,
+    "density_bits_um2": 34.350133568955066
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 275.0,
+   "spacing_nm": 295.5,
+   "cell_area_um2": 0.07562500000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3181423611111111,
+    "ser_ci95": [
+     0.3104295965276809,
+     0.3259561717327828
+    ],
+    "bits_per_symbol": 2.523408138261627,
+    "density_bits_um2": 33.3673803406496
+   },
+   "iterative": {
+    "ser": 0.30541087962962965,
+    "ser_ci95": [
+     0.29778786293139453,
+     0.31314201639264977
+    ],
+    "bits_per_symbol": 2.573535434175246,
+    "density_bits_um2": 34.03022061719333
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 280.0,
+   "spacing_nm": 300.9,
+   "cell_area_um2": 0.07840000000000001,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.29564525462962965,
+    "ser_ci95": [
+     0.2880957504893377,
+     0.3033083049346121
+    ],
+    "bits_per_symbol": 2.619989967996787,
+    "density_bits_um2": 33.41823938771412
+   },
+   "iterative": {
+    "ser": 0.283203125,
+    "ser_ci95": [
+     0.27575335512664667,
+     0.29077335429125695
+    ],
+    "bits_per_symbol": 2.665250475407824,
+    "density_bits_um2": 33.99554177816102
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 285.0,
+   "spacing_nm": 306.3,
+   "cell_area_um2": 0.08122499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.27857349537037035,
+    "ser_ci95": [
+     0.2711626212028272,
+     0.2861074013291056
+    ],
+    "bits_per_symbol": 2.6753905118574712,
+    "density_bits_um2": 32.938017997629686
+   },
+   "iterative": {
+    "ser": 0.26953125,
+    "ser_ci95": [
+     0.2621992161812424,
+     0.276991339776529
+    ],
+    "bits_per_symbol": 2.7197446281150146,
+    "density_bits_um2": 33.48408283305651
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 290.0,
+   "spacing_nm": 311.6,
+   "cell_area_um2": 0.0841,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.25795717592592593,
+    "ser_ci95": [
+     0.25073176505191475,
+     0.26531707369092994
+    ],
+    "bits_per_symbol": 2.770548251370736,
+    "density_bits_um2": 32.943498827238244
+   },
+   "iterative": {
+    "ser": 0.2445746527777778,
+    "ser_ci95": [
+     0.23748085365958363,
+     0.251810374553502
+    ],
+    "bits_per_symbol": 2.8157157191633195,
+    "density_bits_um2": 33.48056740978977
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 295.0,
+   "spacing_nm": 317.0,
+   "cell_area_um2": 0.08702499999999999,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.24797453703703703,
+    "ser_ci95": [
+     0.24084643126352656,
+     0.2552426763814438
+    ],
+    "bits_per_symbol": 2.807446721044702,
+    "density_bits_um2": 32.260232359031335
+   },
+   "iterative": {
+    "ser": 0.23596643518518517,
+    "ser_ci95": [
+     0.2289622284313356,
+     0.24311734760314832
+    ],
+    "bits_per_symbol": 2.8533707988970916,
+    "density_bits_um2": 32.787943681667244
+   },
+   "placement_fraction": 0.1
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 300.0,
+   "spacing_nm": 322.4,
+   "cell_area_um2": 0.09,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.2388599537037037,
+    "ser_ci95": [
+     0.2318251893961963,
+     0.24603981594201926
+    ],
+    "bits_per_symbol": 2.8522298690252885,
+    "density_bits_um2": 31.691442989169875
+   },
+   "iterative": {
+    "ser": 0.23039641203703703,
+    "ser_ci95": [
+     0.22345231623993944,
+     0.23749030838486096
+    ],
+    "bits_per_symbol": 2.893261604206352,
+    "density_bits_um2": 32.147351157848355
+   },
+   "placement_fraction": 0.1
+  }
+ ],
+ "summary": [
+  {
+   "placement_fraction": 0.0,
+   "square": {
+    "linear": {
+     "density_bits_um2": 43.86046608534716,
+     "pitch_nm": 280.0,
+     "spacing_nm": 280.0,
+     "ser": 0.09968171296296297
+    },
+    "iterative": {
+     "density_bits_um2": 58.558581736804825,
+     "pitch_nm": 250.0,
+     "spacing_nm": 250.0,
+     "ser": 0.04955150462962963
+    }
+   },
+   "hex": {
+    "linear": {
+     "density_bits_um2": 52.585974065365356,
+     "pitch_nm": 265.0,
+     "spacing_nm": 284.8,
+     "ser": 0.04897280092592592
+    },
+    "iterative": {
+     "density_bits_um2": 65.78543184363765,
+     "pitch_nm": 240.0,
+     "spacing_nm": 257.9,
+     "ser": 0.031322337962962965
+    }
+   }
+  },
+  {
+   "placement_fraction": 0.025,
+   "square": {
+    "linear": {
+     "density_bits_um2": 42.68001166678963,
+     "pitch_nm": 275.0,
+     "spacing_nm": 275.0,
+     "ser": 0.14699074074074073
+    },
+    "iterative": {
+     "density_bits_um2": 55.542217201403005,
+     "pitch_nm": 255.0,
+     "spacing_nm": 255.0,
+     "ser": 0.05931712962962963
+    }
+   },
+   "hex": {
+    "linear": {
+     "density_bits_um2": 50.61973430076274,
+     "pitch_nm": 265.0,
+     "spacing_nm": 284.8,
+     "ser": 0.07566550925925926
+    },
+    "iterative": {
+     "density_bits_um2": 61.50066902553575,
+     "pitch_nm": 240.0,
+     "spacing_nm": 257.9,
+     "ser": 0.08051215277777778
+    }
+   }
+  },
+  {
+   "placement_fraction": 0.05,
+   "square": {
+    "linear": {
+     "density_bits_um2": 39.5913645641191,
+     "pitch_nm": 280.0,
+     "spacing_nm": 280.0,
+     "ser": 0.17476851851851852
+    },
+    "iterative": {
+     "density_bits_um2": 46.466839096559994,
+     "pitch_nm": 265.0,
+     "spacing_nm": 265.0,
+     "ser": 0.1372974537037037
+    }
+   },
+   "hex": {
+    "linear": {
+     "density_bits_um2": 46.05595181666103,
+     "pitch_nm": 265.0,
+     "spacing_nm": 284.8,
+     "ser": 0.14388020833333334
+    },
+    "iterative": {
+     "density_bits_um2": 52.471207785082974,
+     "pitch_nm": 245.0,
+     "spacing_nm": 263.3,
+     "ser": 0.16507523148148148
+    }
+   }
+  },
+  {
+   "placement_fraction": 0.075,
+   "square": {
+    "linear": {
+     "density_bits_um2": 34.96467927922741,
+     "pitch_nm": 280.0,
+     "spacing_nm": 280.0,
+     "ser": 0.265625
+    },
+    "iterative": {
+     "density_bits_um2": 39.36999674465861,
+     "pitch_nm": 260.0,
+     "spacing_nm": 260.0,
+     "ser": 0.27727141203703703
+    }
+   },
+   "hex": {
+    "linear": {
+     "density_bits_um2": 39.471322847572914,
+     "pitch_nm": 265.0,
+     "spacing_nm": 284.8,
+     "ser": 0.2556423611111111
+    },
+    "iterative": {
+     "density_bits_um2": 42.622791215663675,
+     "pitch_nm": 255.0,
+     "spacing_nm": 274.0,
+     "ser": 0.26005497685185186
+    }
+   }
+  },
+  {
+   "placement_fraction": 0.1,
+   "square": {
+    "linear": {
+     "density_bits_um2": 30.009250532492572,
+     "pitch_nm": 260.0,
+     "spacing_nm": 260.0,
+     "ser": 0.4503761574074074
+    },
+    "iterative": {
+     "density_bits_um2": 32.5553228662328,
+     "pitch_nm": 280.0,
+     "spacing_nm": 280.0,
+     "ser": 0.31199363425925924
+    }
+   },
+   "hex": {
+    "linear": {
+     "density_bits_um2": 33.41823938771412,
+     "pitch_nm": 280.0,
+     "spacing_nm": 300.9,
+     "ser": 0.29564525462962965
+    },
+    "iterative": {
+     "density_bits_um2": 34.991430862231454,
+     "pitch_nm": 250.0,
+     "spacing_nm": 268.6,
+     "ser": 0.4060329861111111
+    }
+   }
+  }
+ ],
+ "quick": false
+}

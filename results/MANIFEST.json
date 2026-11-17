@@ -1,0 +1,92 @@
+{
+ "description": "Provenance of every result file: hash, command, parameters, commit and software versions. Checked by tests/test_provenance.py.",
+ "files": {
+  "focus.json": {
+   "sha256": "f6a491724efff00e5a71ceefd4ad6d2f8abf7d92a2248b30070bf3679bf98af5",
+   "command": "python -m cuneus run focus --config configs/phase1.toml",
+   "parameters": {
+    "wavelength": 0.405,
+    "na": 0.9,
+    "n": 48,
+    "q": 12,
+    "photons": 64000.0,
+    "writing_variability": 0.1,
+    "placement_error": 0.05,
+    "training_frames": 2,
+    "frames": 6,
+    "pic_iterations": 16,
+    "estimate_radius": 1.0,
+    "seed": 2026,
+    "quick": false
+   },
+   "commit": "67e7713",
+   "code_modified": true,
+   "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "platform": "Linux-6.18.44-fc-v553-x86_64-with-glibc2.39"
+   },
+   "created_utc": "2026-11-17T20:34:57Z"
+  },
+  "lattice.json": {
+   "sha256": "79d8332065bad8fa84b6c1d6c618a60b9c0646aa2651e2281339216d870d6158",
+   "command": "python -m cuneus run lattice --config configs/phase1.toml",
+   "parameters": {
+    "wavelength": 0.405,
+    "na": 0.9,
+    "n": 48,
+    "q": 12,
+    "photons": 64000.0,
+    "writing_variability": 0.1,
+    "placement_error": 0.05,
+    "training_frames": 2,
+    "frames": 6,
+    "pic_iterations": 16,
+    "estimate_radius": 1.0,
+    "seed": 2026,
+    "quick": false
+   },
+   "commit": "67e7713",
+   "code_modified": false,
+   "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "platform": "Linux-6.18.44-fc-v553-x86_64-with-glibc2.39"
+   },
+   "created_utc": "2026-11-17T20:28:33Z"
+  },
+  "placement.json": {
+   "sha256": "743f8d73ef6aa0874753fcc11d82527e29baa232df5edabb296d2af4de080982",
+   "command": "python -m cuneus run placement --config configs/phase1.toml",
+   "parameters": {
+    "wavelength": 0.405,
+    "na": 0.9,
+    "n": 48,
+    "q": 12,
+    "photons": 64000.0,
+    "writing_variability": 0.1,
+    "placement_error": 0.05,
+    "training_frames": 2,
+    "frames": 6,
+    "pic_iterations": 16,
+    "estimate_radius": 1.0,
+    "seed": 2026,
+    "quick": false
+   },
+   "commit": "67e7713",
+   "code_modified": true,
+   "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "platform": "Linux-6.18.44-fc-v553-x86_64-with-glibc2.39"
+   },
+   "created_utc": "2026-11-17T20:34:00Z"
+  }
+ }
+}

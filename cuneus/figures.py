@@ -87,7 +87,8 @@ def lattice_density():
         _title(ax, titles[cond])
         ax.set_xlabel("square-equivalent pitch (nm)")
     axes[0].set_ylabel("information density before error correction\n(bits per µm²)")
-    axes[0].legend(loc="upper left", fontsize=7.8, bbox_to_anchor=(0, 1.0))
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=2, fontsize=8.5, bbox_to_anchor=(0.5, -0.12))
     return _save(fig, "lattice_density", ["condition", "lattice", "decoder", "pitch_nm", "bits_per_um2", "ser"], rows)
 
 

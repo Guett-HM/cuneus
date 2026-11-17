@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+type: software
+title: "CUNEUS: optics-aware data formats for archival storage in glass"
+version: 0.1.0
+date-released: "2026-11-17"
+authors:
+  - family-names: Guettal
+    given-names: Hakim
+license: MIT
+repository-code: "https://github.com/GuettHM/cuneus"
+abstract: >-
+  Open simulator for a concept of archival optical data storage in glass in which
+  the storage format (lattice, symbol alphabet, decoder) is computed from the
+  optics of the reader. Phase 1 compares square and hexagonal lattices of
+  amplitude/phase dots read by coherent imaging, with a linear equaliser and with
+  interference cancellation, a response learnt from known symbols, dot placement
+  errors and defocus. Successor of 4D-VODS (doi:10.5281/zenodo.24268721).
+  The author is not a professional physicist; the study was built with the help
+  of AI tools on standard diffraction optics.
+keywords:
+  - optical data storage
+  - archival storage
+  - glass
+  - hexagonal lattice
+  - equalisation
+  - interference cancellation
+  - simulation
+references:
+  - type: software
+    title: "4D-VODS: optical data storage in glass with a self-aligning code for low-cost readers"
+    authors:
+      - family-names: Guettal
+        given-names: Hakim
+    doi: 10.5281/zenodo.24268721

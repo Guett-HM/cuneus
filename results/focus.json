@@ -1,0 +1,697 @@
+{
+ "experiment": "focus",
+ "parameters": {
+  "wavelength": 0.405,
+  "na": 0.9,
+  "n": 48,
+  "q": 12,
+  "photons": 64000.0,
+  "writing_variability": 0.1,
+  "placement_error": 0.05,
+  "training_frames": 2,
+  "frames": 6,
+  "pic_iterations": 16,
+  "estimate_radius": 1.0,
+  "seed": 2026
+ },
+ "depth_of_focus_um": 0.5,
+ "pitch_nm": {
+  "square": 255.0,
+  "hex": 245.0
+ },
+ "rows": [
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.35619212962962965,
+    "ser_ci95": [
+     0.3482502124658497,
+     0.36421395113868565
+    ],
+    "bits_per_symbol": 2.3822301033856688,
+    "density_bits_um2": 36.63560328159429
+   },
+   "iterative": {
+    "ser": 0.18663194444444445,
+    "ser_ci95": [
+     0.18022437279364312,
+     0.1932136336122156
+    ],
+    "bits_per_symbol": 3.030204311971129,
+    "density_bits_um2": 46.60060456703005
+   },
+   "defocus_dof": 0.0,
+   "defocus_um": 0.0,
+   "response": "fixed"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.6809172453703703,
+    "ser_ci95": [
+     0.6730975958955764,
+     0.6886363713202471
+    ],
+    "bits_per_symbol": 1.7944225367547686,
+    "density_bits_um2": 27.59588676285688
+   },
+   "iterative": {
+    "ser": 0.6956018518518519,
+    "ser_ci95": [
+     0.6878775850363575,
+     0.7032174358959041
+    ],
+    "bits_per_symbol": 1.6703707291355827,
+    "density_bits_um2": 25.68813116702165
+   },
+   "defocus_dof": 0.25,
+   "defocus_um": 0.125,
+   "response": "fixed"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.8922164351851852,
+    "ser_ci95": [
+     0.8869375163806063,
+     0.8972774257402235
+    ],
+    "bits_per_symbol": 1.1579239156757988,
+    "density_bits_um2": 17.80736510074277
+   },
+   "iterative": {
+    "ser": 0.8891059027777778,
+    "ser_ci95": [
+     0.8837629743779613,
+     0.8942326312413568
+    ],
+    "bits_per_symbol": 1.0923058982278784,
+    "density_bits_um2": 16.798245263020043
+   },
+   "defocus_dof": 0.5,
+   "defocus_um": 0.25,
+   "response": "fixed"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.9490017361111112,
+    "ser_ci95": [
+     0.9452080509165772,
+     0.9525459412899866
+    ],
+    "bits_per_symbol": 0.27841233897814743,
+    "density_bits_um2": 4.281619976595885
+   },
+   "iterative": {
+    "ser": 0.9477719907407407,
+    "ser_ci95": [
+     0.9439371408637492,
+     0.9513580438887285
+    ],
+    "bits_per_symbol": 0.2577418961023632,
+    "density_bits_um2": 3.9637354264108144
+   },
+   "defocus_dof": 1.0,
+   "defocus_um": 0.5,
+   "response": "fixed"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.9351128472222222,
+    "ser_ci95": [
+     0.9308844579964592,
+     0.9390994735521925
+    ],
+    "bits_per_symbol": 0.05273539441253198,
+    "density_bits_um2": 0.8110018364095652
+   },
+   "iterative": {
+    "ser": 0.9348958333333334,
+    "ser_ci95": [
+     0.9306611261299284,
+     0.9388888982209437
+    ],
+    "bits_per_symbol": 0.05226535516939018,
+    "density_bits_um2": 0.8037732436661312
+   },
+   "defocus_dof": 1.5,
+   "defocus_um": 0.75,
+   "response": "fixed"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.9377170138888888,
+    "ser_ci95": [
+     0.9335654808422482,
+     0.941625337079762
+    ],
+    "bits_per_symbol": 0.06086097215490756,
+    "density_bits_um2": 0.9359626628974634
+   },
+   "iterative": {
+    "ser": 0.9395978009259259,
+    "ser_ci95": [
+     0.93550301199455,
+     0.9434483349748859
+    ],
+    "bits_per_symbol": 0.05734707618744772,
+    "density_bits_um2": 0.8819235092264163
+   },
+   "defocus_dof": 2.0,
+   "defocus_um": 1.0,
+   "response": "fixed"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3263888888888889,
+    "ser_ci95": [
+     0.31862157265701313,
+     0.33425266911908585
+    ],
+    "bits_per_symbol": 2.4860495185435463,
+    "density_bits_um2": 41.416901600059084
+   },
+   "iterative": {
+    "ser": 0.16767939814814814,
+    "ser_ci95": [
+     0.16154425027297953,
+     0.17399919419343668
+    ],
+    "bits_per_symbol": 3.1286007016273487,
+    "density_bits_um2": 52.121627682254875
+   },
+   "defocus_dof": 0.0,
+   "defocus_um": 0.0,
+   "response": "fixed"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.7090567129629629,
+    "ser_ci95": [
+     0.7014279288263485,
+     0.7165693383682654
+    ],
+    "bits_per_symbol": 1.8054074339722308,
+    "density_bits_um2": 30.077591569716468
+   },
+   "iterative": {
+    "ser": 0.7215711805555556,
+    "ser_ci95": [
+     0.714038425590338,
+     0.7289808233429156
+    ],
+    "bits_per_symbol": 1.6595241008459065,
+    "density_bits_um2": 27.64721534103968
+   },
+   "defocus_dof": 0.25,
+   "defocus_um": 0.125,
+   "response": "fixed"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.9042245370370371,
+    "ser_ci95": [
+     0.8992058934884637,
+     0.9090185802428525
+    ],
+    "bits_per_symbol": 1.0970823335083744,
+    "density_bits_um2": 18.277090104262797
+   },
+   "iterative": {
+    "ser": 0.9028501157407407,
+    "ser_ci95": [
+     0.8978005572399201,
+     0.9076758375721232
+    ],
+    "bits_per_symbol": 1.0234249528224293,
+    "density_bits_um2": 17.04997838937825
+   },
+   "defocus_dof": 0.5,
+   "defocus_um": 0.25,
+   "response": "fixed"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.9519675925925926,
+    "ser_ci95": [
+     0.9482756580089098,
+     0.955408399233979
+    ],
+    "bits_per_symbol": 0.2184100305070384,
+    "density_bits_um2": 3.6386510705045967
+   },
+   "iterative": {
+    "ser": 0.9487123842592593,
+    "ser_ci95": [
+     0.9449089608540043,
+     0.9522664884221864
+    ],
+    "bits_per_symbol": 0.20646796432270076,
+    "density_bits_um2": 3.4396995305739404
+   },
+   "defocus_dof": 1.0,
+   "defocus_um": 0.5,
+   "response": "fixed"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.9368489583333334,
+    "ser_ci95": [
+     0.9326715900814478,
+     0.940783599049443
+    ],
+    "bits_per_symbol": 0.025583548819806567,
+    "density_bits_um2": 0.42621489079227937
+   },
+   "iterative": {
+    "ser": 0.9354021990740741,
+    "ser_ci95": [
+     0.9311822542211807,
+     0.9393802202578443
+    ],
+    "bits_per_symbol": 0.02666338660975117,
+    "density_bits_um2": 0.4442046915410441
+   },
+   "defocus_dof": 1.5,
+   "defocus_um": 0.75,
+   "response": "fixed"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.9315682870370371,
+    "ser_ci95": [
+     0.927238302949201,
+     0.9356584777023796
+    ],
+    "bits_per_symbol": 0.06640882999792039,
+    "density_bits_um2": 1.1063528529432802
+   },
+   "iterative": {
+    "ser": 0.9297598379629629,
+    "ser_ci95": [
+     0.9253792864203172,
+     0.9339016009164309
+    ],
+    "bits_per_symbol": 0.0644950270369462,
+    "density_bits_um2": 1.074469421690066
+   },
+   "defocus_dof": 2.0,
+   "defocus_um": 1.0,
+   "response": "fixed"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3464988425925926,
+    "ser_ci95": [
+     0.33860991654939393,
+     0.3544730588876403
+    ],
+    "bits_per_symbol": 2.415408890809246,
+    "density_bits_um2": 37.145849916328274
+   },
+   "iterative": {
+    "ser": 0.18619791666666666,
+    "ser_ci95": [
+     0.1797962886425578,
+     0.19277390336774114
+    ],
+    "bits_per_symbol": 3.043041457991319,
+    "density_bits_um2": 46.79802319094686
+   },
+   "defocus_dof": 0.0,
+   "defocus_um": 0.0,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3543836805555556,
+    "ser_ci95": [
+     0.34645137734298787,
+     0.3623968929467151
+    ],
+    "bits_per_symbol": 2.389729939758438,
+    "density_bits_um2": 36.750941018968675
+   },
+   "iterative": {
+    "ser": 0.1879340277777778,
+    "ser_ci95": [
+     0.1815087046949423,
+     0.1945327448975957
+    ],
+    "bits_per_symbol": 3.003875460219506,
+    "density_bits_um2": 46.195701041438
+   },
+   "defocus_dof": 0.25,
+   "defocus_um": 0.125,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.35279224537037035,
+    "ser_ci95": [
+     0.3448685053962294,
+     0.36079777877642116
+    ],
+    "bits_per_symbol": 2.389299040967619,
+    "density_bits_um2": 36.74431435551894
+   },
+   "iterative": {
+    "ser": 0.19603587962962962,
+    "ser_ci95": [
+     0.18950272825726097,
+     0.2027379233857257
+    ],
+    "bits_per_symbol": 2.978743921999993,
+    "density_bits_um2": 45.809210642060634
+   },
+   "defocus_dof": 0.5,
+   "defocus_um": 0.25,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.353515625,
+    "ser_ci95": [
+     0.34558798067527713,
+     0.3615246608233063
+    ],
+    "bits_per_symbol": 2.3770939238470077,
+    "density_bits_um2": 36.55661551475598
+   },
+   "iterative": {
+    "ser": 0.20319733796296297,
+    "ser_ci95": [
+     0.19657251995176467,
+     0.20998706921795796
+    ],
+    "bits_per_symbol": 2.9516836085453226,
+    "density_bits_um2": 45.39305818601034
+   },
+   "defocus_dof": 1.0,
+   "defocus_um": 0.5,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.38208912037037035,
+    "ser_ci95": [
+     0.37402294724059965,
+     0.39022080863233416
+    ],
+    "bits_per_symbol": 2.3001142491924726,
+    "density_bits_um2": 35.372768153671245
+   },
+   "iterative": {
+    "ser": 0.251953125,
+    "ser_ci95": [
+     0.2447856317610645,
+     0.25925844117653696
+    ],
+    "bits_per_symbol": 2.803802931634255,
+    "density_bits_um2": 43.1188455460862
+   },
+   "defocus_dof": 1.5,
+   "defocus_um": 0.75,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "cell_area_um2": 0.065025,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3761574074074074,
+    "ser_ci95": [
+     0.3681175081554872,
+     0.3842661176447966
+    ],
+    "bits_per_symbol": 2.2979565707290233,
+    "density_bits_um2": 35.33958586280697
+   },
+   "iterative": {
+    "ser": 0.26048900462962965,
+    "ser_ci95": [
+     0.2532397105050871,
+     0.26787137887852286
+    ],
+    "bits_per_symbol": 2.7421160650143066,
+    "density_bits_um2": 42.17018169956642
+   },
+   "defocus_dof": 2.0,
+   "defocus_um": 1.0,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3308738425925926,
+    "ser_ci95": [
+     0.3230780150819231,
+     0.3387636421149601
+    ],
+    "bits_per_symbol": 2.482065640648993,
+    "density_bits_um2": 41.35053128944595
+   },
+   "iterative": {
+    "ser": 0.1618923611111111,
+    "ser_ci95": [
+     0.1558459479347906,
+     0.16812663792416224
+    ],
+    "bits_per_symbol": 3.159708572290702,
+    "density_bits_um2": 52.63987625640487
+   },
+   "defocus_dof": 0.0,
+   "defocus_um": 0.0,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3279079861111111,
+    "ser_ci95": [
+     0.3201309222342436,
+     0.33578066992631445
+    ],
+    "bits_per_symbol": 2.4872710548069503,
+    "density_bits_um2": 41.43725205842483
+   },
+   "iterative": {
+    "ser": 0.1759982638888889,
+    "ser_ci95": [
+     0.16974022021919985,
+     0.18243633349544494
+    ],
+    "bits_per_symbol": 3.106093361747051,
+    "density_bits_um2": 51.74666158678969
+   },
+   "defocus_dof": 0.25,
+   "defocus_um": 0.125,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.3485243055555556,
+    "ser_ci95": [
+     0.34062400885778016,
+     0.35650876709186624
+    ],
+    "bits_per_symbol": 2.409016365528927,
+    "density_bits_um2": 40.13355044612957
+   },
+   "iterative": {
+    "ser": 0.18258101851851852,
+    "ser_ci95": [
+     0.17622944141800814,
+     0.18910896396262625
+    ],
+    "bits_per_symbol": 3.061581057719539,
+    "density_bits_um2": 51.0050988374767
+   },
+   "defocus_dof": 0.5,
+   "defocus_um": 0.25,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.33644386574074076,
+    "ser_ci95": [
+     0.32861374795350684,
+     0.3443648606530597
+    ],
+    "bits_per_symbol": 2.4667785503588986,
+    "density_bits_um2": 41.09585256741189
+   },
+   "iterative": {
+    "ser": 0.20891203703703703,
+    "ser_ci95": [
+     0.20221642976999085,
+     0.21576938227460182
+    ],
+    "bits_per_symbol": 2.982965784790917,
+    "density_bits_um2": 49.69539000068167
+   },
+   "defocus_dof": 1.0,
+   "defocus_um": 0.5,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.384765625,
+    "ser_ci95": [
+     0.3766880155936177,
+     0.3929072623852679
+    ],
+    "bits_per_symbol": 2.3431287319344274,
+    "density_bits_um2": 39.03588058199796
+   },
+   "iterative": {
+    "ser": 0.3168402777777778,
+    "ser_ci95": [
+     0.30913638145002326,
+     0.32464594362376115
+    ],
+    "bits_per_symbol": 2.628517460460964,
+    "density_bits_um2": 43.79037835003689
+   },
+   "defocus_dof": 1.5,
+   "defocus_um": 0.75,
+   "response": "re-estimated"
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "cell_area_um2": 0.060024999999999995,
+   "symbols": 13824,
+   "linear": {
+    "ser": 0.42180266203703703,
+    "ser_ci95": [
+     0.4135929982563286,
+     0.4300557748103226
+    ],
+    "bits_per_symbol": 2.2786489720057554,
+    "density_bits_um2": 37.961665506135034
+   },
+   "iterative": {
+    "ser": 0.4029947916666667,
+    "ser_ci95": [
+     0.39484613424554565,
+     0.41119734834684957
+    ],
+    "bits_per_symbol": 2.4029461697993524,
+    "density_bits_um2": 40.03242265388342
+   },
+   "defocus_dof": 2.0,
+   "defocus_um": 1.0,
+   "response": "re-estimated"
+  }
+ ],
+ "quick": false
+}

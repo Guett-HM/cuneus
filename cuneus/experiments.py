@@ -8,6 +8,8 @@ lattice    square vs hexagonal lattice at equal density, for three conditions:
 placement  best density vs dot placement error (what the writer must achieve).
 focus      density vs defocus, with a response fixed at best focus or re-estimated
            from training symbols read at the same focus.
+seeds      the realistic lattice comparison repeated with independent random streams, to
+           measure how much the hexagonal gain moves from one sample to the next.
 
 Every configuration uses its own deterministic random stream, so results do not depend
 on the order or the number of worker processes.
@@ -177,6 +179,37 @@ def run_focus(params, pitch_by_kind, defocus_units, workers=2):
             "pitch_nm": {k: round(v * 1000, 1) for k, v in pitch_by_kind.items()}, "rows": rows}
 
 
+# ---- seeds ---------------------------------------------------------------------------
+def _seeds_job(job):
+    kind, pitch, seed, params = job
+    p = dict(params, seed=seed)
+    r = simulate(kind, pitch, p, placement=params["placement_error"] * pitch, estimate=True, key=(13,))
+    r["seed"] = seed
+    return r
+
+
+def run_seeds(params, pitches, seeds, workers=2):
+    jobs = [(k, p, s, params) for s in seeds for k in KINDS for p in pitches]
+    rows = _pool_map(_seeds_job, jobs, workers)
+    per_seed = []
+    for s in seeds:
+        entry = {"seed": s}
+        for dec in ("linear", "iterative"):
+            best = {k: _best([r for r in rows if r["seed"] == s and r["lattice"] == k], dec) for k in KINDS}
+            entry[dec] = {**best, "hex_gain": best["hex"]["density_bits_um2"] / best["square"]["density_bits_um2"] - 1}
+        per_seed.append(entry)
+    summary = {}
+    for dec in ("linear", "iterative"):
+        g = np.array([e[dec]["hex_gain"] for e in per_seed])
+        dens = {k: np.array([e[dec][k]["density_bits_um2"] for e in per_seed]) for k in KINDS}
+        summary[dec] = {"hex_gain_mean": float(g.mean()), "hex_gain_min": float(g.min()),
+                        "hex_gain_max": float(g.max()), "hex_gain_std": float(g.std(ddof=1)),
+                        **{f"{k}_density_mean": float(v.mean()) for k, v in dens.items()}}
+    return {"experiment": "seeds", "parameters": params, "seeds": list(seeds),
+            "pitches_nm": [round(p * 1000, 1) for p in pitches], "rows": rows,
+            "per_seed": per_seed, "summary": summary}
+
+
 def grid(start, stop, step):
     k = int(round((stop - start) / step))
     return [round(start + i * step, 4) for i in range(k + 1)]
@@ -198,6 +231,10 @@ def run(name, quick=False, workers=None, out=None, **overrides):
         pitch = {"square": 0.255, "hex": 0.245}     # best realistic pitches of the lattice run
         units = (0.0, 0.5) if quick else (0.0, 0.25, 0.5, 1.0, 1.5, 2.0)
         res = run_focus(params, pitch, units, workers)
+    elif name == "seeds":
+        pitches = grid(0.24, 0.26, 0.02) if quick else grid(0.235, 0.275, 0.005)
+        seeds = [params["seed"] + k for k in ((1, 2) if quick else (1, 2, 3, 4))]
+        res = run_seeds(params, pitches, seeds, workers)
     else:
         raise ValueError(f"unknown experiment {name!r}")
     res["quick"] = quick
