@@ -34,6 +34,11 @@ pitches from 225 to 300 nm (`results/lattice.json`, 13,824 symbols per point):
 interference cancellation (16 passes). Common setting: periodic lattice of 48 × 48 symbols
 with no edges, 10% writing variability, 64,000 photons per symbol.
 
+Independent random draws of the same setting differ by up to about 1 bit/µm²: the realistic
+hexagonal case repeated with four further seeds gives 51.9 to 52.7 bits/µm². Differences of
+this size, such as 66.1 against 65.8 in the table, are sampling noise: a decoder that learns
+the response cannot do better on average than one that knows it exactly.
+
 What Phase 1 found:
 
 1. **The decoder matters more than the lattice.** Interference cancellation raises the best
@@ -49,13 +54,16 @@ What Phase 1 found:
    frames of known symbols (4,608 symbols) does as well as one that knows it exactly, because
    the model uses the known pupil edge and a compact kernel (about 50 effective unknowns).
 4. **Dot placement is the main real-world limit.** With placement errors of 5% of the pitch
-   (about 12 nm per axis) the best hexagonal density falls from 65.8 to 52.5 bits/µm²; to
+   (about 12 nm per axis) the best hexagonal density falls from 65.8 to 52.5 bits/µm² in the
+   placement run (51.9 in the table above: same setting, other random draws); to
    keep more than 90% of the ideal value the writer must place dots to about 2.5% of the
    pitch, about 6 nm (61.5 bits/µm²).
 5. **Re-learning the response turns defocus from a cliff into a slope.** Coherent defocus is
    a pure phase in the pupil, so a decoder that learns the response at the actual focus keeps
    49.7 bits/µm² at one depth of focus (0.5 µm) on the hexagonal lattice, against
-   18.3 bits/µm² for a response fixed at best focus at only half a depth of focus.
+   18.3 bits/µm² for a response fixed at best focus at only half a depth of focus. At two
+   depths of focus the square lattice overtakes the hexagonal one only because each is
+   tested at its own optimum pitch (255 nm against the denser 245 nm).
 
 ![Best density against dot placement error](figures/placement.png)
 ![Density against defocus](figures/focus.png)

@@ -1331,6 +1331,101 @@
    "cited_in": [
     "docs/PHASE1.md"
    ]
+  },
+  {
+   "id": "seeds_hex_it_2027",
+   "description": "Realistic hexagonal density, iterative, seed 2027",
+   "file": "seeds.json",
+   "path": [
+    "per_seed",
+    {
+     "seed": 2027
+    },
+    "iterative",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_hex_it_2028",
+   "description": "Realistic hexagonal density, iterative, seed 2028",
+   "file": "seeds.json",
+   "path": [
+    "per_seed",
+    {
+     "seed": 2028
+    },
+    "iterative",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_hex_it_2029",
+   "description": "Realistic hexagonal density, iterative, seed 2029",
+   "file": "seeds.json",
+   "path": [
+    "per_seed",
+    {
+     "seed": 2029
+    },
+    "iterative",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_hex_it_2030",
+   "description": "Realistic hexagonal density, iterative, seed 2030",
+   "file": "seeds.json",
+   "path": [
+    "per_seed",
+    {
+     "seed": 2030
+    },
+    "iterative",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_hex_it_min",
+   "description": "Smallest realistic hexagonal density over the four seeds",
+   "expr": "min(seeds_hex_it_2027, seeds_hex_it_2028, seeds_hex_it_2029, seeds_hex_it_2030)",
+   "format": "{:.1f}",
+   "snippets": [
+    "gives {v} to",
+    "{v} to"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "seeds_hex_it_max",
+   "description": "Largest realistic hexagonal density over the four seeds",
+   "expr": "max(seeds_hex_it_2027, seeds_hex_it_2028, seeds_hex_it_2029, seeds_hex_it_2030)",
+   "format": "{:.1f}",
+   "snippets": [
+    "to {v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
   }
  ]
 }

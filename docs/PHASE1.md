@@ -63,7 +63,11 @@ Best density over square-equivalent pitches from 225 to 300 nm, bits per µm²
 
 Repeating the realistic case with four further random seeds (`results/seeds.json`) gives a
 hexagonal gain of +10% on average (range 9 to 12%) with interference cancellation and
-+19% (range 18 to 20%) with the linear equaliser. The ranking never changes.
++19% (range 18 to 20%) with the linear equaliser. The ranking never changes. The densities
+themselves move by up to about 1 bit/µm² between draws
+(hexagonal, iterative: 51.9 to 52.7 bits/µm²), so smaller differences between rows, such as
+66.1 against 65.8, are sampling noise: a decoder that learns the response cannot do better on
+average than one that knows it.
 
 Why the hexagonal lattice wins: the frequency cell of a lattice (its Brillouin zone) holds
 exactly one value per symbol, and the reader only sees the part of it inside the pupil disc
@@ -99,7 +103,9 @@ Best density with a learnt response against rms placement error per axis
 | 7.5 | 39.4 | 42.6 |
 | 10 | 32.6 | 35.0 |
 
-At the best hexagonal pitch (245 nm) 5% is about 12 nm per axis. Placement is the largest
+The 5% row (52.5) and the realistic row of section 2.1 (51.9) are the same setting with
+different random draws. At the best hexagonal pitch (245 nm) 5% is about 12 nm per axis.
+Placement is the largest
 loss in the realistic case and therefore the first specification of a writer: about 6 nm
 (2.5%) keeps more than 90% of the ideal density.
 
@@ -118,8 +124,9 @@ depth of focus λ/NA² is 0.5 µm.
 Coherent defocus is a pure phase in the pupil, which a learnt response absorbs. A decoder with
 a fixed response loses two thirds of the density at half a depth of focus; one that learns the
 response from known symbols at the same focus keeps 49.7 bits/µm² at one depth of focus. At
-two depths of focus the square lattice (42.2) overtakes the hexagonal one: the learnt kernel
-then has to cover a wide blur and the denser hexagonal pitch suffers first. In practice the
+two depths of focus the square lattice (42.2) overtakes the hexagonal one, only because each
+is tested at its own optimum pitch: the learnt kernel then has to cover a wide blur and the
+denser hexagonal pitch (245 against 255 nm) suffers first. In practice the
 known symbols must be spread over the plate as pilots, close enough that focus does not change
 between them; Phase 3 will size that overhead.
 
