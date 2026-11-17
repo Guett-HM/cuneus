@@ -2,8 +2,10 @@
 
 Hakim Guettal, 17 November 2026. Version 0.1.0 of the repository.
 
-*I am not a professional physicist; I developed this study with the help of AI tools on
-standard diffraction optics. Corrections from specialists are very welcome.*
+*I am not a professional physicist. CUNEUS grew out of my earlier study 4D-VODS, which started
+as a geometric intuition (storing data in the shape of engraved symbols); like it, this
+simulator and its documents were built with the help of AI tools on standard diffraction
+optics. Corrections from specialists are very welcome.*
 
 Phase 1 of the concept note had one job: build a simulator of the dense tier that has none of
 the weaknesses found in 4D-VODS v1.1 (finite patches, decoders that know the optics exactly,
@@ -162,3 +164,6 @@ implements its model, not that the model matches glass.
    code, a writer model with correlated placement errors; prediction of the best lattice, pitch
    and decoder for any reader and writer.
 3. Phase 4: the low-cost tier (SAMM-2) with a focus sweep, against a binary code.
+
+**Use of AI tools.** AI assistants helped write the simulator and this report. All results come from the code in
+the repository and can be checked by re-running it.

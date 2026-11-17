@@ -1,0 +1,33 @@
+name: Physics or modelling correction
+description: Something in the model, a formula, an assumption or a conclusion is wrong or too optimistic.
+labels: ["physics"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. Corrections from specialists are the most useful contribution to this project.
+        A short note is fine; references are welcome but not required.
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: File and line, figure, or document section (e.g. "cuneus/channel.py, PeriodicChannel" or "docs/PHASE1.md section 2.3").
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong
+      description: What the project assumes or claims, and what is physically correct instead.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Expected effect on the results
+      description: Which numbers would change, in which direction, and roughly by how much, if you can tell.
+  - type: textarea
+    id: refs
+    attributes:
+      label: References
+      description: Papers, textbooks or measurements that support the correction.

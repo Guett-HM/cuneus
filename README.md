@@ -9,17 +9,18 @@ that the format of an optical storage medium (the lattice of written dots, the a
 each dot and the decoder) should be *computed from the optics of the reader*, the way a
 compiler turns a hardware description into machine code, instead of being drawn by hand.
 
+*I am not a professional physicist. CUNEUS grew out of my earlier study 4D-VODS, which started as a geometric intuition (storing data in the shape of engraved symbols); like it, this simulator and its documents were built with the help of AI tools on standard diffraction optics. Corrections from specialists are very welcome.*
+
 > **Status: Phase 1 of 6, simulation only.** Nothing has been written in glass. Every number
 > below comes from the simulator in this repository and is checked against `results/` on
-> every push. I am not a professional physicist; I developed this concept with the help of AI
-> tools on standard diffraction optics. Corrections from specialists are very welcome.
+> every push.
 
 Project page with a live simulation of the reader and interactive results:
 <https://guetthm.github.io/cuneus/> (`index.html`, rebuilt from `results/` by
 `python -m cuneus site`).
 
 The concept note (three tiers on one plate, from naked eye to laboratory reader) is
-[CUNEUS – Concept Note v0.2](https://claude.ai/artifact/Y9NEWMc7YT3YA7Rg1tzkJP). Phase 1
+[CUNEUS – Concept Note v0.2](https://claude.ai/artifact/Y9NEWMc7YT3YA7Rg1tzkJP) (working draft). Phase 1
 tests its dense tier: amplitude/phase dots (APSK-16) read by a coherent 405 nm, NA 0.90
 microscope.
 
@@ -125,13 +126,26 @@ written glass can show that the model matches reality.
 | --- | --- |
 | `cuneus/optics.py`, `lattice.py`, `alphabet.py`, `channel.py` | physical model |
 | `cuneus/equalizer.py` | response estimation, linear MMSE, interference cancellation |
-| `cuneus/experiments.py` | the four Phase 1 experiments |
+| `cuneus/experiments.py` | the five Phase 1 experiments: `lattice`, `placement`, `focus`, `seeds`, `pupil` |
 | `cuneus/validation.py` | checks against closed-form optics and exact identities |
 | `cuneus/provenance.py`, `claims.py` | hashes of results, published numbers vs results |
 | `results/` | result files, `MANIFEST.json` (provenance), `claims.json` (published numbers) |
 | `figures/` | PNG, PDF and the plotted values as CSV |
 | `docs/PHASE1.md` | Phase 1 report: method, results, limits |
 | `index.html`, `cuneus/site.py` | project page; its numbers and chart data come from `results/` |
+
+## Use of AI tools
+
+AI assistants helped write the simulator, the documents and the project page (see the note at
+the top). Every result comes from the code in this repository and can be checked by re-running
+it: the validation checks compare the code with closed-form optics, and every published number
+is checked against the results on every push.
+
+## Contributing
+
+Corrections are the most useful contribution: see [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[physics correction](https://github.com/GuettHM/cuneus/issues/new?template=physics_correction.yml)
+issue form. Please follow the [code of conduct](CODE_OF_CONDUCT.md).
 
 ## Licence and citation
 

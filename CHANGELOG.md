@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Zenodo DOI of version 0.1.0 in the README, CITATION.cff, pyproject.toml and the project page.
+- The note on the use of AI tools, worded as in 4D-VODS, in the README, the Phase 1 report,
+  the project page, CITATION.cff and the new `.zenodo.json`; a "Use of AI tools" section in the
+  README.
+- CONTRIBUTING.md, CODE_OF_CONDUCT.md, issue forms (physics correction, bug) and a pull
+  request template.
+
 ## 0.1.0 (2026-11-17): Phase 1, simulator core
 
 First version of CUNEUS, the successor of 4D-VODS v1.1.

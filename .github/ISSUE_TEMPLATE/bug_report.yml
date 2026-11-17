@@ -1,0 +1,23 @@
+name: Bug in the code
+description: A script crashes, a test fails, or a result cannot be reproduced.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The command you ran and the output or error you got.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: Operating system, Python version, and `pip list | grep -Ei "numpy|scipy|matplotlib"`.
+    validations:
+      required: true

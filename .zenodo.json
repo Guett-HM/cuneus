@@ -1,0 +1,30 @@
+{
+  "title": "CUNEUS: optics-aware data formats for archival storage in glass",
+  "upload_type": "software",
+  "version": "0.1.0",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Guettal, Hakim"
+    }
+  ],
+  "license": "MIT",
+  "description": "<p><em>I am not a professional physicist. CUNEUS grew out of my earlier study 4D-VODS, which started as a geometric intuition (storing data in the shape of engraved symbols); like it, this simulator and its documents were built with the help of AI tools on standard diffraction optics. Corrections from specialists are very welcome.</em></p><p>Open simulator, results and Phase 1 report for a concept of archival optical data storage in glass, in which the storage format (lattice of written dots, symbol alphabet and decoder) is computed from the optics of the reader. Successor of 4D-VODS (doi:10.5281/zenodo.24268721).</p><p>Phase 1 compares square and hexagonal lattices of amplitude/phase (APSK-16) dots read by coherent imaging at 405 nm and NA 0.90, with a linear equaliser and with interference cancellation, a response learnt from known symbols, dot placement errors and defocus.</p><p>All results are simulated; no physical sample has been written or read. Every result file carries its provenance, the model is checked against closed-form optics, and every published number is checked against the results automatically. AI assistants helped write the simulator and the documents.</p>",
+  "keywords": [
+    "optical data storage",
+    "archival storage",
+    "glass",
+    "hexagonal lattice",
+    "equalisation",
+    "interference cancellation",
+    "simulation"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.24268721",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Concept stage, simulation only. Every number in the documents can be regenerated with python -m cuneus."
+}

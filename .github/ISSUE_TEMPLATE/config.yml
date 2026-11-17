@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the Phase 1 report first
+    url: https://github.com/GuettHM/cuneus/blob/main/docs/PHASE1.md
+    about: The model, its results and its known limits (section 4) are explained there.

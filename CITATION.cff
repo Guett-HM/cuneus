@@ -18,8 +18,9 @@ abstract: >-
   amplitude/phase dots read by coherent imaging, with a linear equaliser and with
   interference cancellation, a response learnt from known symbols, dot placement
   errors and defocus. Successor of 4D-VODS (doi:10.5281/zenodo.24268721).
-  The author is not a professional physicist; the study was built with the help
-  of AI tools on standard diffraction optics.
+  The author is not a professional physicist; like 4D-VODS, the simulator and
+  documents were built with the help of AI tools on standard diffraction optics,
+  and every result can be checked by re-running the code.
 keywords:
   - optical data storage
   - archival storage
