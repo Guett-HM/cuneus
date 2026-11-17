@@ -49,7 +49,8 @@ def estimate_response(channel, training, radius=1.0, iterations=80, tol=1e-4):
     p = r.copy()
     rs = np.vdot(r, r).real
     rs0 = rs
-    for it in range(iterations):
+    it = 0
+    for it in range(iterations):  # noqa: B007 (it is reported after the loop)
         Ap = normal(p)
         alpha = rs / np.vdot(p, Ap).real
         h += alpha * p

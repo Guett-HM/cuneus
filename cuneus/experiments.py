@@ -195,7 +195,7 @@ def run(name, quick=False, workers=None, out=None, **overrides):
         fractions = (0.0, 0.05) if quick else (0.0, 0.025, 0.05, 0.075, 0.10)
         res = run_placement(params, pitches, fractions, workers)
     elif name == "focus":
-        pitch = {"square": 0.26, "hex": 0.245}
+        pitch = {"square": 0.255, "hex": 0.245}     # best realistic pitches of the lattice run
         units = (0.0, 0.5) if quick else (0.0, 0.25, 0.5, 1.0, 1.5, 2.0)
         res = run_focus(params, pitch, units, workers)
     else:

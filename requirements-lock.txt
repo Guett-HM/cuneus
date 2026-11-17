@@ -1,0 +1,6 @@
+# Exact versions of the reference environment that produced the published results
+# (Python 3.13). Install with: pip install -r requirements-lock.txt
+numpy==2.5.3
+scipy==1.18.1
+matplotlib==3.11.2
+pytest==9.1.1

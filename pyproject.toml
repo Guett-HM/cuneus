@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cuneus"
+version = "0.1.0"
+description = "Optics-aware data formats for archival storage in glass: open simulation study"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Hakim Guettal" }]
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0", "pytest-cov>=4.0"]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "ruff>=0.5"]
+
+[project.urls]
+Repository = "https://github.com/GuettHM/cuneus"
+"Predecessor (4D-VODS)" = "https://doi.org/10.5281/zenodo.24268721"
+
+[project.scripts]
+cuneus = "cuneus.cli:main"
+
+# The CLI finds results/ and figures/ next to the package: install in editable mode
+# (pip install -e .) or run "python -m cuneus" from the repository root.
+[tool.setuptools]
+packages = ["cuneus"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["cuneus"]
+omit = ["cuneus/figures.py"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "I"]
+ignore = ["E701", "E702", "E731", "E741", "B905"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["cuneus"]

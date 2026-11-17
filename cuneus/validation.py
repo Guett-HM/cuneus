@@ -76,7 +76,8 @@ def dot_image_matches_direct_integral():
         x = k * lat.spacing / 2
         X, Y = np.meshgrid(x - g, -g)
         rr = np.hypot(X, Y)
-        h = np.where(rr > 1e-12, fc * j1(2 * np.pi * fc * np.maximum(rr, 1e-12)) / np.maximum(rr, 1e-12), np.pi * fc * fc)
+        rs = np.maximum(rr, 1e-12)
+        h = np.where(rr > 1e-12, fc * j1(2 * np.pi * fc * rs) / rs, np.pi * fc * fc)
         direct = float(w @ h @ w)
         code = u[iy0, (ix0 + int(round(x / ch.dx))) % ch.Mx].real
         worst = max(worst, abs(code - direct))
