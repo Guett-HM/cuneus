@@ -8,14 +8,14 @@ from cuneus.cli import main
 
 
 def test_simulate_is_deterministic():
-    p = dict(E.DEFAULTS, **E.QUICK, frames=1)
+    p = {**E.DEFAULTS, **E.QUICK, "frames": 1}
     a = E.simulate("hex", 0.26, p, placement=0.013, estimate=True)
     b = E.simulate("hex", 0.26, p, placement=0.013, estimate=True)
     assert a == b
 
 
 def test_worker_count_does_not_change_results():
-    p = dict(E.DEFAULTS, **E.QUICK, frames=1)
+    p = {**E.DEFAULTS, **E.QUICK, "frames": 1}
     one = E.run_lattice(p, [0.26], workers=1)
     two = E.run_lattice(p, [0.26], workers=2)
     assert one == two

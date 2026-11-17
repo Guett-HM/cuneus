@@ -19,8 +19,8 @@
     "seed": 2026,
     "quick": false
    },
-   "commit": "67e7713",
-   "code_modified": true,
+   "commit": "09487f9",
+   "code_modified": false,
    "environment": {
     "python": "3.13.18",
     "numpy": "2.5.3",
@@ -28,7 +28,7 @@
     "matplotlib": "3.11.2",
     "platform": "Linux-6.18.44-fc-v553-x86_64-with-glibc2.39"
    },
-   "created_utc": "2026-11-17T20:34:57Z"
+   "created_utc": "2026-11-17T20:42:42Z"
   },
   "lattice.json": {
    "sha256": "79d8332065bad8fa84b6c1d6c618a60b9c0646aa2651e2281339216d870d6158",
@@ -77,8 +77,8 @@
     "seed": 2026,
     "quick": false
    },
-   "commit": "67e7713",
-   "code_modified": true,
+   "commit": "09487f9",
+   "code_modified": false,
    "environment": {
     "python": "3.13.18",
     "numpy": "2.5.3",
@@ -86,7 +86,65 @@
     "matplotlib": "3.11.2",
     "platform": "Linux-6.18.44-fc-v553-x86_64-with-glibc2.39"
    },
-   "created_utc": "2026-11-17T20:34:00Z"
+   "created_utc": "2026-11-17T20:41:43Z"
+  },
+  "pupil.json": {
+   "sha256": "bdf8409cd20089a44f758ff67e16aa2a0df6142dde6832cb0fd336f9f8364aa0",
+   "command": "python -m cuneus run pupil",
+   "parameters": {
+    "wavelength": 0.405,
+    "na": 0.9,
+    "n": 48,
+    "q": 12,
+    "photons": 64000.0,
+    "writing_variability": 0.1,
+    "placement_error": 0.05,
+    "training_frames": 2,
+    "frames": 6,
+    "pic_iterations": 16,
+    "estimate_radius": 1.0,
+    "seed": 2026,
+    "quick": false
+   },
+   "commit": "6ebf602",
+   "code_modified": false,
+   "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "platform": "Linux-6.18.44-fc-v553-x86_64-with-glibc2.39"
+   },
+   "created_utc": "2026-11-17T20:50:14Z"
+  },
+  "seeds.json": {
+   "sha256": "5377797e98c8f7967540d31ac8cb6654c0d3259d45dee8f29a2bb0e00200cdde",
+   "command": "python -m cuneus run seeds --config configs/phase1.toml",
+   "parameters": {
+    "wavelength": 0.405,
+    "na": 0.9,
+    "n": 48,
+    "q": 12,
+    "photons": 64000.0,
+    "writing_variability": 0.1,
+    "placement_error": 0.05,
+    "training_frames": 2,
+    "frames": 6,
+    "pic_iterations": 16,
+    "estimate_radius": 1.0,
+    "seed": 2026,
+    "quick": false
+   },
+   "commit": "09487f9",
+   "code_modified": false,
+   "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "platform": "Linux-6.18.44-fc-v553-x86_64-with-glibc2.39"
+   },
+   "created_utc": "2026-11-17T20:45:35Z"
   }
  }
 }

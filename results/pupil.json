@@ -1,0 +1,212 @@
+{
+ "experiment": "pupil",
+ "parameters": {
+  "wavelength": 0.405,
+  "na": 0.9,
+  "n": 48,
+  "q": 12,
+  "photons": 64000.0,
+  "writing_variability": 0.1,
+  "placement_error": 0.05,
+  "training_frames": 2,
+  "frames": 6,
+  "pic_iterations": 16,
+  "estimate_radius": 1.0,
+  "seed": 2026
+ },
+ "rows": [
+  {
+   "lattice": "square",
+   "pitch_nm": 225.0,
+   "spacing_nm": 225.0,
+   "zone_fraction_outside_pupil": 0.2154713991795239
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 230.0,
+   "spacing_nm": 230.0,
+   "zone_fraction_outside_pupil": 0.1862483542614397
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 235.0,
+   "spacing_nm": 235.0,
+   "zone_fraction_outside_pupil": 0.1617811296044262
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 240.0,
+   "spacing_nm": 240.0,
+   "zone_fraction_outside_pupil": 0.14021068228262723
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 245.0,
+   "spacing_nm": 245.0,
+   "zone_fraction_outside_pupil": 0.12078784574383221
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 250.0,
+   "spacing_nm": 250.0,
+   "zone_fraction_outside_pupil": 0.10331284224078491
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 255.0,
+   "spacing_nm": 255.0,
+   "zone_fraction_outside_pupil": 0.08763861315397731
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 260.0,
+   "spacing_nm": 260.0,
+   "zone_fraction_outside_pupil": 0.0734294208803817
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 265.0,
+   "spacing_nm": 265.0,
+   "zone_fraction_outside_pupil": 0.06073798454774619
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 270.0,
+   "spacing_nm": 270.0,
+   "zone_fraction_outside_pupil": 0.04945609120964039
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 275.0,
+   "spacing_nm": 275.0,
+   "zone_fraction_outside_pupil": 0.039345117445730514
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 280.0,
+   "spacing_nm": 280.0,
+   "zone_fraction_outside_pupil": 0.03056044594832693
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 285.0,
+   "spacing_nm": 285.0,
+   "zone_fraction_outside_pupil": 0.022963342170723957
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 290.0,
+   "spacing_nm": 290.0,
+   "zone_fraction_outside_pupil": 0.01643726909368883
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 295.0,
+   "spacing_nm": 295.0,
+   "zone_fraction_outside_pupil": 0.011071016827113169
+  },
+  {
+   "lattice": "square",
+   "pitch_nm": 300.0,
+   "spacing_nm": 300.0,
+   "zone_fraction_outside_pupil": 0.0068479372253923065
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 225.0,
+   "spacing_nm": 241.8,
+   "zone_fraction_outside_pupil": 0.21446138974256976
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 230.0,
+   "spacing_nm": 247.2,
+   "zone_fraction_outside_pupil": 0.1791008227416309
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 235.0,
+   "spacing_nm": 252.5,
+   "zone_fraction_outside_pupil": 0.14309865842000244
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 240.0,
+   "spacing_nm": 257.9,
+   "zone_fraction_outside_pupil": 0.10628380415883383
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 245.0,
+   "spacing_nm": 263.3,
+   "zone_fraction_outside_pupil": 0.0737227401338372
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 250.0,
+   "spacing_nm": 268.6,
+   "zone_fraction_outside_pupil": 0.051008056323690126
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 255.0,
+   "spacing_nm": 274.0,
+   "zone_fraction_outside_pupil": 0.03368706732280686
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 260.0,
+   "spacing_nm": 279.4,
+   "zone_fraction_outside_pupil": 0.020546106836761426
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 265.0,
+   "spacing_nm": 284.8,
+   "zone_fraction_outside_pupil": 0.01091250109606209
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 270.0,
+   "spacing_nm": 290.1,
+   "zone_fraction_outside_pupil": 0.004439848711513559
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 275.0,
+   "spacing_nm": 295.5,
+   "zone_fraction_outside_pupil": 0.000916414839718296
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 280.0,
+   "spacing_nm": 300.9,
+   "zone_fraction_outside_pupil": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 285.0,
+   "spacing_nm": 306.3,
+   "zone_fraction_outside_pupil": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 290.0,
+   "spacing_nm": 311.6,
+   "zone_fraction_outside_pupil": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 295.0,
+   "spacing_nm": 317.0,
+   "zone_fraction_outside_pupil": 0.0
+  },
+  {
+   "lattice": "hex",
+   "pitch_nm": 300.0,
+   "spacing_nm": 322.4,
+   "zone_fraction_outside_pupil": 0.0
+  }
+ ],
+ "quick": false
+}

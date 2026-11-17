@@ -151,11 +151,10 @@ def frequency_picture(pitch=0.265):
         ax.set_aspect("equal")
         ax.set_xlabel("fx (cycles per µm)")
         _title(ax, f"{NAME[kind].capitalize()}: {100 * frac:.1f}% of the zone\noutside the pupil (never seen)")
-        ax.text(0, -lim + 0.15, "dashed: pupil NA/λ; shaded: frequency cell of the lattice",
-                ha="center", fontsize=8, color=INK2)
     axes[0].set_ylabel("fy (cycles per µm)")
-    fig.suptitle(f"Same density ({pitch * 1000:.0f} nm square-equivalent pitch), 405 nm, NA 0.90",
-                 x=0.06, ha="left", fontsize=9, color=INK2, y=0.02)
+    fig.suptitle(f"Dashed circle: pupil NA/λ. Shaded: frequency cell of the lattice (one value per symbol).\n"
+                 f"Same density ({pitch * 1000:.0f} nm square-equivalent pitch), 405 nm, NA 0.90.",
+                 x=0.06, ha="left", fontsize=8.5, color=INK2, y=0.0)
     return _save(fig, "frequency_picture", ["lattice", "pitch_nm", "spacing_nm", "zone_fraction_outside_pupil"], rows)
 
 

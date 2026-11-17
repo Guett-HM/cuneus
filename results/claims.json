@@ -1,0 +1,1336 @@
+{
+ "description": "Every number quoted in README.md and docs/PHASE1.md, with how to compute it from results/. Checked by `python -m cuneus check` and tests/test_results.py.",
+ "constants": {
+  "vods_v11_density": 42.6,
+  "ecc_rate": 0.8810196078431373,
+  "bdxl_net": 30.4608
+ },
+ "constants_sources": {
+  "vods_v11_density": "4D-VODS v1.1, APSK-16 at 300 nm (doi:10.5281/zenodo.24275029)",
+  "ecc_rate": "4D-VODS v1.1 planned LDPC 0.94 x RS(255,239)",
+  "bdxl_net": "4D-VODS v1.1: Blu-ray 22.8 bits/um^2 x 33.4/25"
+ },
+ "claims": [
+  {
+   "id": "ideal_sq_lin",
+   "description": "Best density, ideal condition, square lattice, linear decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "ideal",
+    "linear",
+    "square",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "ideal_sq_it",
+   "description": "Best density, ideal condition, square lattice, iterative decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "ideal",
+    "iterative",
+    "square",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "ideal_hex_lin",
+   "description": "Best density, ideal condition, hex lattice, linear decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "ideal",
+    "linear",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "ideal_hex_it",
+   "description": "Best density, ideal condition, hex lattice, iterative decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "ideal",
+    "iterative",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "est_sq_lin",
+   "description": "Best density, estimated condition, square lattice, linear decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "estimated",
+    "linear",
+    "square",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "est_sq_it",
+   "description": "Best density, estimated condition, square lattice, iterative decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "estimated",
+    "iterative",
+    "square",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "est_hex_lin",
+   "description": "Best density, estimated condition, hex lattice, linear decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "estimated",
+    "linear",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "est_hex_it",
+   "description": "Best density, estimated condition, hex lattice, iterative decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "estimated",
+    "iterative",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "real_sq_lin",
+   "description": "Best density, realistic condition, square lattice, linear decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "realistic",
+    "linear",
+    "square",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "real_sq_it",
+   "description": "Best density, realistic condition, square lattice, iterative decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "realistic",
+    "iterative",
+    "square",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "real_hex_lin",
+   "description": "Best density, realistic condition, hex lattice, linear decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "realistic",
+    "linear",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "real_hex_it",
+   "description": "Best density, realistic condition, hex lattice, iterative decoder (bits/um^2)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "realistic",
+    "iterative",
+    "hex",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "**{v}**",
+    "{v} bits/µm²"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "ideal_gain_lin",
+   "description": "Hexagonal gain over square, ideal, linear decoder (%)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "ideal",
+    "linear",
+    "hex_gain"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "ideal_gain_it",
+   "description": "Hexagonal gain over square, ideal, iterative decoder (%)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "ideal",
+    "iterative",
+    "hex_gain"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "est_gain_lin",
+   "description": "Hexagonal gain over square, estimated, linear decoder (%)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "estimated",
+    "linear",
+    "hex_gain"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "est_gain_it",
+   "description": "Hexagonal gain over square, estimated, iterative decoder (%)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "estimated",
+    "iterative",
+    "hex_gain"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "real_gain_lin",
+   "description": "Hexagonal gain over square, realistic, linear decoder (%)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "realistic",
+    "linear",
+    "hex_gain"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "real_gain_it",
+   "description": "Hexagonal gain over square, realistic, iterative decoder (%)",
+   "file": "lattice.json",
+   "path": [
+    "summary",
+    "realistic",
+    "iterative",
+    "hex_gain"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "ideal_gain_lin_pct",
+   "description": "Hexagonal gain, ideal, lin, in percent",
+   "expr": "100 * ideal_gain_lin",
+   "format": "{:.0f}",
+   "snippets": [
+    "+{v}%"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "ideal_gain_it_pct",
+   "description": "Hexagonal gain, ideal, it, in percent",
+   "expr": "100 * ideal_gain_it",
+   "format": "{:.0f}",
+   "snippets": [
+    "+{v}%"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "est_gain_lin_pct",
+   "description": "Hexagonal gain, estimated, lin, in percent",
+   "expr": "100 * est_gain_lin",
+   "format": "{:.0f}",
+   "snippets": [
+    "+{v}%"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "est_gain_it_pct",
+   "description": "Hexagonal gain, estimated, it, in percent",
+   "expr": "100 * est_gain_it",
+   "format": "{:.0f}",
+   "snippets": [
+    "+{v}%"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "real_gain_lin_pct",
+   "description": "Hexagonal gain, realistic, lin, in percent",
+   "expr": "100 * real_gain_lin",
+   "format": "{:.0f}",
+   "snippets": [
+    "+{v}%"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "real_gain_it_pct",
+   "description": "Hexagonal gain, realistic, it, in percent",
+   "expr": "100 * real_gain_it",
+   "format": "{:.0f}",
+   "snippets": [
+    "+{v}%"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "symbols_per_point",
+   "description": "Symbols scored per configuration",
+   "file": "lattice.json",
+   "path": [
+    "rows",
+    0,
+    "symbols"
+   ],
+   "format": "{:,.0f}",
+   "snippets": [
+    "{v} symbols per point",
+    "{v} symbols"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "decoder_gain_ideal_hex_pct",
+   "description": "Interference cancellation vs linear, hexagonal, ideal (%)",
+   "expr": "100 * (ideal_hex_it / ideal_hex_lin - 1)",
+   "format": "{:.0f}",
+   "snippets": [
+    "(+{v}%)",
+    "+{v}%"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "seeds_gain_it_mean",
+   "description": "Hexagonal gain over 4 further seeds, realistic, iterative: mean",
+   "file": "seeds.json",
+   "path": [
+    "summary",
+    "iterative",
+    "hex_gain_mean"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_gain_lin_mean",
+   "description": "Hexagonal gain over 4 further seeds, realistic, linear: mean",
+   "file": "seeds.json",
+   "path": [
+    "summary",
+    "linear",
+    "hex_gain_mean"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_gain_it_min",
+   "description": "Hexagonal gain over 4 further seeds, realistic, iterative: min",
+   "file": "seeds.json",
+   "path": [
+    "summary",
+    "iterative",
+    "hex_gain_min"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_gain_lin_min",
+   "description": "Hexagonal gain over 4 further seeds, realistic, linear: min",
+   "file": "seeds.json",
+   "path": [
+    "summary",
+    "linear",
+    "hex_gain_min"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_gain_it_max",
+   "description": "Hexagonal gain over 4 further seeds, realistic, iterative: max",
+   "file": "seeds.json",
+   "path": [
+    "summary",
+    "iterative",
+    "hex_gain_max"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_gain_lin_max",
+   "description": "Hexagonal gain over 4 further seeds, realistic, linear: max",
+   "file": "seeds.json",
+   "path": [
+    "summary",
+    "linear",
+    "hex_gain_max"
+   ],
+   "format": "{:.3f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "seeds_gain_it_mean_pct",
+   "description": "Seed-averaged hexagonal gain, iterative (%)",
+   "expr": "100 * seeds_gain_it_mean",
+   "format": "{:.0f}",
+   "snippets": [
+    "+{v}% on average",
+    "+{v}% (range"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "seeds_gain_it_min_pct",
+   "description": "Smallest hexagonal gain over seeds, iterative (%)",
+   "expr": "100 * seeds_gain_it_min",
+   "format": "{:.0f}",
+   "snippets": [
+    "range {v} to"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "seeds_gain_it_max_pct",
+   "description": "Largest hexagonal gain over seeds, iterative (%)",
+   "expr": "100 * seeds_gain_it_max",
+   "format": "{:.0f}",
+   "snippets": [
+    "to {v}%)"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "seeds_gain_lin_mean_pct",
+   "description": "Seed-averaged hexagonal gain, linear (%)",
+   "expr": "100 * seeds_gain_lin_mean",
+   "format": "{:.0f}",
+   "snippets": [
+    "+{v}% on average",
+    "+{v}% (range"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "seeds_gain_lin_min_pct",
+   "description": "Smallest hexagonal gain over seeds, linear (%)",
+   "expr": "100 * seeds_gain_lin_min",
+   "format": "{:.0f}",
+   "snippets": [
+    "range {v} to"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "seeds_gain_lin_max_pct",
+   "description": "Largest hexagonal gain over seeds, linear (%)",
+   "expr": "100 * seeds_gain_lin_max",
+   "format": "{:.0f}",
+   "snippets": [
+    "to {v}%)"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_hex_it_0",
+   "description": "Best hexagonal density, iterative, placement error 0.0 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.0
+    },
+    "hex",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "{v} bits/µm²",
+    "({v} bits/µm²)",
+    "| {v} |"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_hex_it_2p5",
+   "description": "Best hexagonal density, iterative, placement error 0.025 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.025
+    },
+    "hex",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "{v} bits/µm²",
+    "({v} bits/µm²)",
+    "| {v} |"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_hex_it_5",
+   "description": "Best hexagonal density, iterative, placement error 0.05 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.05
+    },
+    "hex",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "{v} bits/µm²",
+    "({v} bits/µm²)",
+    "| {v} |"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_hex_it_5_pitch",
+   "description": "Best hexagonal pitch at 5% placement error (nm)",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.05
+    },
+    "hex",
+    "iterative",
+    "pitch_nm"
+   ],
+   "format": "{:.0f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "placement_5_nm",
+   "description": "5% placement error in nm at the best hexagonal pitch",
+   "expr": "0.05 * placement_hex_it_5_pitch",
+   "format": "{:.0f}",
+   "snippets": [
+    "about {v} nm per axis",
+    "{v} nm"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_2p5_nm",
+   "description": "2.5% placement error in nm at the best hexagonal pitch",
+   "expr": "0.025 * placement_hex_it_5_pitch",
+   "format": "{:.0f}",
+   "snippets": [
+    "about {v} nm"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "focus_hex_re_1dof_it",
+   "description": "Hexagonal, response re-learnt, 1 depth of focus, iterative",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "re-estimated",
+     "defocus_dof": 1.0
+    },
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_re_1dof_lin",
+   "description": "Hexagonal, response re-learnt, 1 depth of focus, linear",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "re-estimated",
+     "defocus_dof": 1.0
+    },
+    "linear",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_fixed_half_it",
+   "description": "Hexagonal, response fixed at best focus, 0.5 depth of focus, iterative",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "fixed",
+     "defocus_dof": 0.5
+    },
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_fixed_half_lin",
+   "description": "Hexagonal, response fixed at best focus, 0.5 depth of focus, linear",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "fixed",
+     "defocus_dof": 0.5
+    },
+    "linear",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_re_1dof",
+   "description": "Hexagonal, response re-learnt at the actual focus, 1 depth of focus, best decoder",
+   "expr": "max(focus_hex_re_1dof_it, focus_hex_re_1dof_lin)",
+   "format": "{:.1f}",
+   "snippets": [
+    "{v} bits/µm²",
+    "| {v} |"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "focus_hex_fixed_half",
+   "description": "Hexagonal, response fixed at best focus, 0.5 depth of focus, best decoder",
+   "expr": "max(focus_hex_fixed_half_it, focus_hex_fixed_half_lin)",
+   "format": "{:.1f}",
+   "snippets": [
+    "{v} bits/µm²",
+    "| {v} |"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "vods_uplift_ideal_pct",
+   "description": "Ideal hexagonal + iterative vs the 4D-VODS v1.1 headline (%)",
+   "expr": "100 * (ideal_hex_it / vods_v11_density - 1)",
+   "format": "{:.0f}",
+   "snippets": [
+    "(+{v}%)"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "net_real_hex",
+   "description": "Realistic hexagonal + iterative after pilots 1/16 and error correction 0.88 (bits/um^2)",
+   "expr": "real_hex_it * 15 / 16 * ecc_rate",
+   "format": "{:.0f}",
+   "snippets": [
+    "about {v} bits/µm² of user data"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "net_real_vs_bdxl",
+   "description": "Same, relative to a BDXL layer",
+   "expr": "net_real_hex / bdxl_net",
+   "format": "{:.2f}",
+   "snippets": [
+    "about {v}× a BDXL layer",
+    "{v}×"
+   ],
+   "cited_in": [
+    "README.md",
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_sq_it_0",
+   "description": "Best square density, iterative, placement error 0.0 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.0
+    },
+    "square",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_sq_it_2p5",
+   "description": "Best square density, iterative, placement error 0.025 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.025
+    },
+    "square",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_sq_it_5",
+   "description": "Best square density, iterative, placement error 0.05 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.05
+    },
+    "square",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_sq_it_7p5",
+   "description": "Best square density, iterative, placement error 0.075 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.075
+    },
+    "square",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_hex_it_7p5",
+   "description": "Best hexagonal density, iterative, placement error 0.075 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.075
+    },
+    "hex",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_sq_it_10",
+   "description": "Best square density, iterative, placement error 0.1 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.1
+    },
+    "square",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "placement_hex_it_10",
+   "description": "Best hexagonal density, iterative, placement error 0.1 x pitch",
+   "file": "placement.json",
+   "path": [
+    "summary",
+    {
+     "placement_fraction": 0.1
+    },
+    "hex",
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "focus_hex_fixed_1p0_lin",
+   "description": "hex, response fixed, 1.0 DOF, linear",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "fixed",
+     "defocus_dof": 1.0
+    },
+    "linear",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_fixed_1p0_ite",
+   "description": "hex, response fixed, 1.0 DOF, iterative",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "fixed",
+     "defocus_dof": 1.0
+    },
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_fixed_1p0",
+   "description": "hex, response fixed, 1.0 depths of focus, best decoder",
+   "expr": "max(focus_hex_fixed_1p0_lin, focus_hex_fixed_1p0_ite)",
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "({v})"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "focus_hex_fixed_2p0_lin",
+   "description": "hex, response fixed, 2.0 DOF, linear",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "fixed",
+     "defocus_dof": 2.0
+    },
+    "linear",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_fixed_2p0_ite",
+   "description": "hex, response fixed, 2.0 DOF, iterative",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "fixed",
+     "defocus_dof": 2.0
+    },
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_fixed_2p0",
+   "description": "hex, response fixed, 2.0 depths of focus, best decoder",
+   "expr": "max(focus_hex_fixed_2p0_lin, focus_hex_fixed_2p0_ite)",
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "({v})"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "focus_hex_re_0p5_lin",
+   "description": "hex, response re-estimated, 0.5 DOF, linear",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "re-estimated",
+     "defocus_dof": 0.5
+    },
+    "linear",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_re_0p5_ite",
+   "description": "hex, response re-estimated, 0.5 DOF, iterative",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "re-estimated",
+     "defocus_dof": 0.5
+    },
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_re_0p5",
+   "description": "hex, response re-estimated, 0.5 depths of focus, best decoder",
+   "expr": "max(focus_hex_re_0p5_lin, focus_hex_re_0p5_ite)",
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "({v})"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "focus_hex_re_2p0_lin",
+   "description": "hex, response re-estimated, 2.0 DOF, linear",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "re-estimated",
+     "defocus_dof": 2.0
+    },
+    "linear",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_re_2p0_ite",
+   "description": "hex, response re-estimated, 2.0 DOF, iterative",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "response": "re-estimated",
+     "defocus_dof": 2.0
+    },
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_hex_re_2p0",
+   "description": "hex, response re-estimated, 2.0 depths of focus, best decoder",
+   "expr": "max(focus_hex_re_2p0_lin, focus_hex_re_2p0_ite)",
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "({v})"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "focus_sq_re_2p0_lin",
+   "description": "square, response re-estimated, 2.0 DOF, linear",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "square",
+     "response": "re-estimated",
+     "defocus_dof": 2.0
+    },
+    "linear",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_sq_re_2p0_ite",
+   "description": "square, response re-estimated, 2.0 DOF, iterative",
+   "file": "focus.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "square",
+     "response": "re-estimated",
+     "defocus_dof": 2.0
+    },
+    "iterative",
+    "density_bits_um2"
+   ],
+   "format": "{:.1f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "focus_sq_re_2p0",
+   "description": "square, response re-estimated, 2.0 depths of focus, best decoder",
+   "expr": "max(focus_sq_re_2p0_lin, focus_sq_re_2p0_ite)",
+   "format": "{:.1f}",
+   "snippets": [
+    "| {v} |",
+    "({v})"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "pupil_lost_square_265_frac",
+   "description": "Fraction of the square lattice's frequency cell outside the pupil at 265 nm (%)",
+   "file": "pupil.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "square",
+     "pitch_nm": 265.0
+    },
+    "zone_fraction_outside_pupil"
+   ],
+   "format": "{:.4f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "pupil_lost_square_265",
+   "description": "Same, in percent",
+   "expr": "100 * pupil_lost_square_265_frac",
+   "format": "{:.1f}",
+   "snippets": [
+    "{v}% of the",
+    "against {v}%"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  },
+  {
+   "id": "pupil_lost_hex_265_frac",
+   "description": "Fraction of the hex lattice's frequency cell outside the pupil at 265 nm (%)",
+   "file": "pupil.json",
+   "path": [
+    "rows",
+    {
+     "lattice": "hex",
+     "pitch_nm": 265.0
+    },
+    "zone_fraction_outside_pupil"
+   ],
+   "format": "{:.4f}",
+   "snippets": [],
+   "cited_in": []
+  },
+  {
+   "id": "pupil_lost_hex_265",
+   "description": "Same, in percent",
+   "expr": "100 * pupil_lost_hex_265_frac",
+   "format": "{:.1f}",
+   "snippets": [
+    "{v}% of the",
+    "against {v}%"
+   ],
+   "cited_in": [
+    "docs/PHASE1.md"
+   ]
+  }
+ ]
+}
