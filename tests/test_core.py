@@ -115,3 +115,22 @@ def test_mutual_info_and_wilson():
     assert lo < 0.05 < hi
     assert wilson(0, 0) == (0.0, 1.0)
     assert math.isclose(sum(wilson(50, 100)), 1.0, rel_tol=1e-9)
+
+
+@pytest.mark.parametrize("kind", ["square", "hex"])
+def test_brillouin_zone_area_is_inverse_cell_area(kind):
+    lat = Lattice.from_square_pitch(kind, 0.25)
+    x, y = lat.brillouin_zone().T
+    area = 0.5 * abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
+    assert area == pytest.approx(1 / lat.cell_area)
+
+
+def test_hexagonal_zone_fits_the_pupil_better():
+    fc = Reader().cutoff
+    sq = Lattice.from_square_pitch("square", 0.275).zone_fraction_outside_pupil(fc)
+    hx = Lattice.from_square_pitch("hex", 0.275).zone_fraction_outside_pupil(fc)
+    assert hx < sq
+    assert Lattice.from_square_pitch("hex", 0.40).zone_fraction_outside_pupil(fc) == 0.0
+    # a zone larger than the pupil disc loses at least the area difference
+    lat = Lattice.from_square_pitch("hex", 0.24)
+    assert lat.zone_fraction_outside_pupil(fc) >= 1 - Reader().dof_density * lat.cell_area - 1e-3

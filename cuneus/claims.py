@@ -51,7 +51,7 @@ def values(registry=None):
                     cache[c["file"]] = json.load(f)
             v = _resolve(cache[c["file"]], c.get("path", []))
         else:
-            v = eval(c["expr"], {"__builtins__": {}, "sum": sum, "round": round, "math": math},
+            v = eval(c["expr"], {"__builtins__": {}, "sum": sum, "round": round, "max": max, "min": min, "math": math},
                      dict(out, **registry.get("constants", {})))
         out[c["id"]] = float(v)
     return out

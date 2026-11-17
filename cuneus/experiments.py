@@ -8,6 +8,8 @@ lattice    square vs hexagonal lattice at equal density, for three conditions:
 placement  best density vs dot placement error (what the writer must achieve).
 focus      density vs defocus, with a response fixed at best focus or re-estimated
            from training symbols read at the same focus.
+pupil      fraction of each lattice's frequency cell (Brillouin zone) outside the pupil:
+           the geometric reason for the hexagonal advantage (no simulation).
 seeds      the realistic lattice comparison repeated with independent random streams, to
            measure how much the hexagonal gain moves from one sample to the next.
 
@@ -231,6 +233,16 @@ def run(name, quick=False, workers=None, out=None, **overrides):
         pitch = {"square": 0.255, "hex": 0.245}     # best realistic pitches of the lattice run
         units = (0.0, 0.5) if quick else (0.0, 0.25, 0.5, 1.0, 1.5, 2.0)
         res = run_focus(params, pitch, units, workers)
+    elif name == "pupil":
+        reader = Reader(params["wavelength"], params["na"])
+        pitches = grid(0.225, 0.30, 0.005)
+        rows = []
+        for k in KINDS:
+            for p in pitches:
+                lat = Lattice.from_square_pitch(k, p)
+                rows.append({"lattice": k, "pitch_nm": round(p * 1000, 1), "spacing_nm": round(lat.spacing * 1000, 1),
+                             "zone_fraction_outside_pupil": lat.zone_fraction_outside_pupil(reader.cutoff)})
+        res = {"experiment": "pupil", "parameters": params, "rows": rows}
     elif name == "seeds":
         pitches = grid(0.24, 0.26, 0.02) if quick else grid(0.235, 0.275, 0.005)
         seeds = [params["seed"] + k for k in ((1, 2) if quick else (1, 2, 3, 4))]

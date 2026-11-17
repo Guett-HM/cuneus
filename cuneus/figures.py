@@ -7,14 +7,12 @@ as PNG (web), PDF (print) and a CSV of the plotted values in figures/data/.
 """
 import csv
 import json
-import math
 import os
 
 import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
-import numpy as np  # noqa: E402
 from matplotlib.patches import Circle, Polygon  # noqa: E402
 
 from . import RESULTS, ROOT  # noqa: E402
@@ -133,39 +131,17 @@ def focus():
     return _save(fig, "focus", ["lattice", "response", "defocus_dof", "defocus_um", "bits_per_um2"], rows)
 
 
-def _bz_square(a):
-    h = 1 / (2 * a)
-    return np.array([[-h, -h], [h, -h], [h, h], [-h, h]])
-
-
-def _bz_hex(lat):
-    """Brillouin zone (Wigner-Seitz cell of the reciprocal lattice) of the hexagonal lattice."""
-    a = lat.spacing
-    g = 2 / (a * math.sqrt(3))                       # length of the reciprocal basis vectors
-    r = g / math.sqrt(3)                             # circumradius of the hexagonal zone
-    ang = np.deg2rad(np.arange(0, 360, 60))          # real-space rows along x -> corners on x
-    return np.stack([r * np.cos(ang), r * np.sin(ang)], 1)
-
-
-def _inside(poly, X, Y):
-    from matplotlib.path import Path
-    return Path(poly).contains_points(np.c_[X.ravel(), Y.ravel()]).reshape(X.shape)
-
-
-def frequency_picture(pitch=0.25):
-    """Pupil disc vs the Brillouin zone of each lattice at the same density: the part of the
-    pupil outside the zone is where neighbouring symbols alias onto each other."""
+def frequency_picture(pitch=0.265):
+    """Pupil disc vs the Brillouin zone of each lattice at the same density. The zone holds one
+    frequency per symbol; the part of it outside the pupil is information the reader never sees."""
     reader = Reader()
     fc = reader.cutoff
     fig, axes = plt.subplots(1, 2, figsize=(8.6, 4.2))
-    g = np.linspace(-fc, fc, 1201)
-    X, Y = np.meshgrid(g, g)
-    disc = X ** 2 + Y ** 2 <= fc ** 2
     rows = []
     for ax, kind in zip(axes, ("square", "hex")):
         lat = Lattice.from_square_pitch(kind, pitch)
-        poly = _bz_square(lat.spacing) if kind == "square" else _bz_hex(lat)
-        frac = float(np.sum(disc & _inside(poly, X, Y)) / np.sum(disc))
+        poly = lat.brillouin_zone()
+        frac = lat.zone_fraction_outside_pupil(fc)
         rows.append((kind, pitch * 1000, lat.spacing * 1000, frac))
         ax.add_patch(Polygon(poly, closed=True, fc=matplotlib.colors.to_rgba(COL[kind], 0.18), ec=COL[kind], lw=2))
         ax.add_patch(Circle((0, 0), fc, fill=False, ec=INK, lw=1.6, ls="--"))
@@ -174,12 +150,13 @@ def frequency_picture(pitch=0.25):
         ax.set_ylim(-lim, lim)
         ax.set_aspect("equal")
         ax.set_xlabel("fx (cycles per µm)")
-        _title(ax, f"{NAME[kind].capitalize()}: {100 * frac:.0f}% of the pupil\ninside the zone")
-        ax.text(0, -lim + 0.15, "dashed: pupil NA/λ; shaded: Brillouin zone", ha="center", fontsize=8, color=INK2)
+        _title(ax, f"{NAME[kind].capitalize()}: {100 * frac:.1f}% of the zone\noutside the pupil (never seen)")
+        ax.text(0, -lim + 0.15, "dashed: pupil NA/λ; shaded: frequency cell of the lattice",
+                ha="center", fontsize=8, color=INK2)
     axes[0].set_ylabel("fy (cycles per µm)")
     fig.suptitle(f"Same density ({pitch * 1000:.0f} nm square-equivalent pitch), 405 nm, NA 0.90",
                  x=0.06, ha="left", fontsize=9, color=INK2, y=0.02)
-    return _save(fig, "frequency_picture", ["lattice", "pitch_nm", "spacing_nm", "pupil_fraction_inside_zone"], rows)
+    return _save(fig, "frequency_picture", ["lattice", "pitch_nm", "spacing_nm", "zone_fraction_outside_pupil"], rows)
 
 
 def make_all():

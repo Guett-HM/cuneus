@@ -54,5 +54,33 @@ class Lattice:
         y = j * self.row_height
         return np.stack([x, y], -1)
 
+    def brillouin_zone(self):
+        """Corners (cycles/um) of the first Brillouin zone: the frequency cell of the lattice.
+        Square: a square of side 1/a. Hexagonal (rows along x): a hexagon with corners on the
+        fx axis at 2/(3a). Its area is 1 / cell_area."""
+        a = self.spacing
+        if self.kind == "square":
+            h = 1 / (2 * a)
+            return np.array([[-h, -h], [h, -h], [h, h], [-h, h]])
+        r = 2 / (3 * a)
+        ang = np.deg2rad(np.arange(0, 360, 60))
+        return np.stack([r * np.cos(ang), r * np.sin(ang)], 1)
+
+    def zone_fraction_outside_pupil(self, cutoff, samples=1201):
+        """Fraction of the Brillouin zone farther than `cutoff` from the origin.
+
+        The zone holds exactly one frequency per symbol degree of freedom, and every point of
+        it is closer to the origin than any of its aliases, so a zone frequency outside the
+        pupil disc is never seen by the reader: that fraction of the written information
+        cannot be recovered by a linear decoder."""
+        from matplotlib.path import Path
+        zone = self.brillouin_zone()
+        r = float(np.max(np.hypot(*zone.T)))
+        g = np.linspace(-r, r, samples)
+        X, Y = np.meshgrid(g, g)
+        inside = Path(zone).contains_points(np.c_[X.ravel(), Y.ravel()]).reshape(X.shape)
+        outside = inside & (X ** 2 + Y ** 2 > cutoff ** 2)
+        return float(np.sum(outside) / np.sum(inside))
+
     def label(self):
         return f"{self.kind} lattice, {self.cell_area:.4f} um^2 per symbol, spacing {self.spacing * 1000:.0f} nm"

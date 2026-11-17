@@ -1,6 +1,6 @@
 """Single entry point:  python -m cuneus <command> [options]
 
-  run <experiment>  lattice | placement | focus | seeds | all   (writes results/<name>.json)
+  run <experiment>  lattice | placement | focus | seeds | pupil | all  (results/<name>.json)
   figures           rebuild figures/ from results/
   validate          physics and numerics checks -> docs/VALIDATION.md
   check             every published number vs results/ and the documents
@@ -17,7 +17,7 @@ import tomllib
 
 from . import RESULTS, RESULTS_QUICK, ROOT, __version__, provenance
 
-EXPERIMENTS = ("lattice", "placement", "focus", "seeds")
+EXPERIMENTS = ("lattice", "placement", "focus", "seeds", "pupil")
 OVERRIDES = ("frames", "seed", "photons", "writing_variability", "placement_error", "pic_iterations")
 
 
