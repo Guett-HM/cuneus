@@ -4,7 +4,14 @@ type: software
 title: "CUNEUS: optics-aware data formats for archival storage in glass"
 version: 0.1.0
 date-released: "2026-11-17"
-doi: 10.5281/zenodo.24325754
+doi: 10.5281/zenodo.24325753
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24325753
+    description: "Concept DOI: all versions, resolves to the latest"
+  - type: doi
+    value: 10.5281/zenodo.24325754
+    description: "Version 0.1.0"
 authors:
   - family-names: Guettal
     given-names: Hakim

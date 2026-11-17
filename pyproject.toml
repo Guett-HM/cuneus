@@ -19,7 +19,7 @@ dev = ["pytest>=7.0", "pytest-cov>=4.0", "ruff>=0.5"]
 [project.urls]
 Homepage = "https://guetthm.github.io/cuneus/"
 Repository = "https://github.com/GuettHM/cuneus"
-DOI = "https://doi.org/10.5281/zenodo.24325754"
+DOI = "https://doi.org/10.5281/zenodo.24325753"
 "Predecessor (4D-VODS)" = "https://doi.org/10.5281/zenodo.24268721"
 
 [project.scripts]

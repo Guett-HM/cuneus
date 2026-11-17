@@ -1,6 +1,6 @@
 # CUNEUS
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24325754.svg)](https://doi.org/10.5281/zenodo.24325754)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24325753.svg)](https://doi.org/10.5281/zenodo.24325753)
 
 **Optics-aware data formats for archival storage in glass: an open simulation study.**
 
@@ -149,6 +149,12 @@ issue form. Please follow the [code of conduct](CODE_OF_CONDUCT.md).
 
 ## Licence and citation
 
-MIT licence. Please cite with the metadata in [CITATION.cff](CITATION.cff); version 0.1.0 is archived on
-Zenodo as [doi:10.5281/zenodo.24325754](https://doi.org/10.5281/zenodo.24325754). CUNEUS reuses the
+MIT licence. Please cite with the metadata in [CITATION.cff](CITATION.cff). CUNEUS is archived on
+Zenodo:
+
+| Version | DOI |
+| --- | --- |
+| All versions (always resolves to the latest) | https://doi.org/10.5281/zenodo.24325753 |
+| 0.1.0 | https://doi.org/10.5281/zenodo.24325754 |
+ CUNEUS reuses the
 reproducibility infrastructure of 4D-VODS (doi:10.5281/zenodo.24268721).

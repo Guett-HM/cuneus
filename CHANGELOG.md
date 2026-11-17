@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-- Zenodo DOI of version 0.1.0 in the README, CITATION.cff, pyproject.toml and the project page.
+- Zenodo DOIs in the README, CITATION.cff, pyproject.toml and the project page: concept DOI
+  10.5281/zenodo.24325753 (all versions) and 10.5281/zenodo.24325754 (version 0.1.0).
 - The note on the use of AI tools, worded as in 4D-VODS, in the README, the Phase 1 report,
   the project page, CITATION.cff and the new `.zenodo.json`; a "Use of AI tools" section in the
   README.
