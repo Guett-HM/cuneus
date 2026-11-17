@@ -13,7 +13,7 @@ compiler turns a hardware description into machine code, instead of being drawn 
 > tools on standard diffraction optics. Corrections from specialists are very welcome.
 
 The concept note (three tiers on one plate, from naked eye to laboratory reader) is
-[CUNEUS – Concept Note v0.1](https://claude.ai/artifact/Y9NEWMc7YT3YA7Rg1tzkJP). Phase 1
+[CUNEUS – Concept Note v0.2](https://claude.ai/artifact/Y9NEWMc7YT3YA7Rg1tzkJP). Phase 1
 tests its dense tier: amplitude/phase dots (APSK-16) read by a coherent 405 nm, NA 0.90
 microscope.
 
