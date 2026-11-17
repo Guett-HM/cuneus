@@ -1,0 +1,14 @@
+# Parameters of the published Phase 1 runs (python -m cuneus run all --config configs/phase1.toml).
+# These are the defaults of cuneus/experiments.py, written out so that a run is self-describing.
+wavelength = 0.405            # um
+na = 0.90
+n = 48                        # symbols per side of the periodic patch (2304 per frame)
+q = 12                        # simulation pixels per lattice spacing
+photons = 64000.0             # detected photons per symbol
+writing_variability = 0.10    # rms complex error of each written dot (relative)
+placement_error = 0.05        # rms dot placement error per axis, x square-equivalent pitch
+training_frames = 2           # frames of known symbols used to estimate the response
+frames = 6                    # data frames per configuration (13 824 symbols)
+pic_iterations = 16
+estimate_radius = 1.0         # um, extent of the estimated response kernel at best focus
+seed = 2026
