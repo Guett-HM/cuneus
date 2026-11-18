@@ -16,8 +16,8 @@ authors:
   - family-names: Guettal
     given-names: Hakim
 license: MIT
-repository-code: "https://github.com/GuettHM/cuneus"
-url: "https://guetthm.github.io/cuneus/"
+repository-code: "https://github.com/Guett-HM/cuneus"
+url: "https://guett-hm.github.io/cuneus/"
 abstract: >-
   Open simulator for a concept of archival optical data storage in glass in which
   the storage format (lattice, symbol alphabet, decoder) is computed from the

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Repository moved to https://github.com/Guett-HM/cuneus after the former account (GuettHM) was
+  closed; project page now at https://guett-hm.github.io/cuneus/. Links updated in the README,
+  CITATION.cff, pyproject.toml, the contribution guide, the issue forms, the project page and the
+  concept note (PDF and Markdown). The Zenodo DOIs are unchanged. Release tags were not carried
+  over; version 0.1.0 (commit aa27247) is archived on Zenodo (doi:10.5281/zenodo.24325754).
 - Phase 2, literature and patent search (`docs/PHASE2.md`): the three remaining candidate
   contributions (three-tier plate, format compiler, code scaled to λ/NA) were all found in
   earlier work, products or patents. Criterion "at least one contribution not anticipated" not

@@ -18,7 +18,7 @@ compiler turns a hardware description into machine code, instead of being drawn 
 > checked against `results/` on every push.
 
 Project page with a live simulation of the reader and interactive results:
-<https://guetthm.github.io/cuneus/> (`index.html`, rebuilt from `results/` by
+<https://guett-hm.github.io/cuneus/> (`index.html`, rebuilt from `results/` by
 `python -m cuneus site`).
 
 The concept note (three tiers on one plate, from naked eye to laboratory reader) is
@@ -171,7 +171,7 @@ is checked against the results on every push.
 ## Contributing
 
 Corrections are the most useful contribution: see [CONTRIBUTING.md](CONTRIBUTING.md) and the
-[physics correction](https://github.com/GuettHM/cuneus/issues/new?template=physics_correction.yml)
+[physics correction](https://github.com/Guett-HM/cuneus/issues/new?template=physics_correction.yml)
 issue form. Please follow the [code of conduct](CODE_OF_CONDUCT.md).
 
 ## Licence and citation

@@ -235,7 +235,7 @@
       <a href="#prior">Prior art</a>
       <a href="#plan">Plan</a>
       <a href="#reproduce">Reproduce</a>
-      <a href="https://github.com/GuettHM/cuneus">GitHub</a>
+      <a href="https://github.com/Guett-HM/cuneus">GitHub</a>
     </nav>
   </div>
 </header>
@@ -250,7 +250,7 @@
       <p class="status"><b>Stopped after phase 2.</b> <span>Simulation only: nothing has been written in glass. The literature search found every candidate contribution already published, so CUNEUS stays an open study. Every number on this page is checked against the published results.</span></p>
       <div class="actions">
         <a class="btn primary" href="#results">See the Phase 1 results</a>
-        <a class="btn" href="https://github.com/GuettHM/cuneus/blob/main/docs/PHASE1.md">Read the report</a>
+        <a class="btn" href="https://github.com/Guett-HM/cuneus/blob/main/docs/PHASE1.md">Read the report</a>
         <a class="btn" href="docs/CUNEUS_Concept_Note_v0.2.pdf">Concept note (PDF)</a>
       </div>
     </div>
@@ -431,7 +431,7 @@
           <li><strong>Three-tier plate:</strong> the Rosetta Disk, the Arch Mission Lunar Library, Piql film, and patents on archival media that carry their own reading instructions.</li>
           <li><strong>Format compiler:</strong> Microsoft's Project Silica selects levels, mapping and code rate for its glass by maximising mutual information (<a href="https://doi.org/10.1038/s41586-025-10042-w">Nature, 2026</a>).</li>
           <li><strong>Code scaled to the reader:</strong> multi-level and hexagonal 2D codes, and codes that adapt to the camera's resolution (FOCUS, MobiSys 2016).</li>
-          <li><a href="https://github.com/GuettHM/cuneus/blob/main/docs/PHASE2.md">Read the Phase 2 report</a></li>
+          <li><a href="https://github.com/Guett-HM/cuneus/blob/main/docs/PHASE2.md">Read the Phase 2 report</a></li>
         </ul>
       </div>
     </div>
@@ -444,7 +444,7 @@
     <ul class="plan">
       <li class="done"><span class="n">0</span><span><a href="docs/CUNEUS_Concept_Note_v0.2.pdf">Concept note</a></span><span class="crit">Scope fixed by the author</span><span class="st">Done</span></li>
       <li class="done"><span class="n">1</span><span>Simulator core: periodic lattices, learnt response, interference cancellation, placement errors, defocus</span><span class="crit">Hexagonal gain ≥ 15%: met with the linear decoder, not with the iterative one</span><span class="st">Conditional go</span></li>
-      <li class="stop"><span class="n">2</span><span><a href="https://github.com/GuettHM/cuneus/blob/main/docs/PHASE2.md">Literature and patent search</a> on the three remaining candidates</span><span class="crit">At least one contribution not anticipated: not met, all three were already published</span><span class="st">No-go</span></li>
+      <li class="stop"><span class="n">2</span><span><a href="https://github.com/Guett-HM/cuneus/blob/main/docs/PHASE2.md">Literature and patent search</a> on the three remaining candidates</span><span class="crit">At least one contribution not anticipated: not met, all three were already published</span><span class="st">No-go</span></li>
       <li><span class="n">3</span><span>Format compiler: reader and writer in, lattice, alphabet, code and net density out; a decoder that tracks slow placement errors</span><span class="crit">Predictions within 5% of full simulation</span><span class="st">Not started</span></li>
       <li><span class="n">4</span><span>Low-cost code (SAMM-2) with a focus sweep, against a binary Data-Matrix-like code</span><span class="crit">≥ 20% more net density at equal reliability</span><span class="st">Not started</span></li>
       <li><span class="n">5</span><span>Paper experiment: layers printed large and photographed through a pinhole</span><span class="crit">≥ 95% of real frames decoded</span><span class="st">Not started</span></li>
@@ -461,7 +461,7 @@
     <div class="code">
       <button type="button" class="copy" data-copy="repro">Copy</button>
 <pre id="repro"><span class="c"># exact reference environment (Python 3.13)</span>
-git clone https://github.com/GuettHM/cuneus && cd cuneus
+git clone https://github.com/Guett-HM/cuneus && cd cuneus
 pip install -r requirements-lock.txt
 python -m cuneus validate        <span class="c"># physics checks -> docs/VALIDATION.md</span>
 python -m cuneus run all --quick <span class="c"># a small version of every experiment, about a minute</span>
@@ -496,12 +496,12 @@ pytest -q</pre>
 <footer>
   <div class="wrap">
     <div>
-      <p><strong>CUNEUS</strong> by Hakim Guettal, 2026. I am not a professional physicist. CUNEUS grew out of my earlier study 4D-VODS, which started as a geometric intuition (storing data in the shape of engraved symbols); like it, this simulator and its documents were built with the help of AI tools on standard diffraction optics. Corrections from specialists are very welcome: please open an <a href="https://github.com/GuettHM/cuneus/issues/new?template=physics_correction.yml">issue on GitHub</a>.</p>
+      <p><strong>CUNEUS</strong> by Hakim Guettal, 2026. I am not a professional physicist. CUNEUS grew out of my earlier study 4D-VODS, which started as a geometric intuition (storing data in the shape of engraved symbols); like it, this simulator and its documents were built with the help of AI tools on standard diffraction optics. Corrections from specialists are very welcome: please open an <a href="https://github.com/Guett-HM/cuneus/issues/new?template=physics_correction.yml">issue on GitHub</a>.</p>
       <p>AI assistants helped write the simulator, the documents and this page. Every result comes from the code in the repository and can be checked by re-running it.</p>
       <p>The name is Latin for wedge: the shape that started 4D-VODS, and the tool of the first writing system.</p>
     </div>
     <div>
-      <p><a href="https://github.com/GuettHM/cuneus">Code, results and report on GitHub</a></p>
+      <p><a href="https://github.com/Guett-HM/cuneus">Code, results and report on GitHub</a></p>
       <p><a href="docs/CUNEUS_Concept_Note_v0.2.pdf">Concept note v0.2 (PDF)</a></p>
       <p><a href="https://doi.org/10.5281/zenodo.24268721">Predecessor: 4D-VODS (Zenodo)</a></p>
       <p><a href="https://doi.org/10.5281/zenodo.24325753">Archived on Zenodo, doi:10.5281/zenodo.24325753</a> (all versions; version 0.1.0: <a href="https://doi.org/10.5281/zenodo.24325754">10.5281/zenodo.24325754</a>)</p>
