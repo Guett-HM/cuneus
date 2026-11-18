@@ -9,6 +9,15 @@
   README.
 - CONTRIBUTING.md, CODE_OF_CONDUCT.md, issue forms (physics correction, bug) and a pull
   request template.
+- The concept note is now public in the repository: `docs/CUNEUS_Concept_Note_v0.2.pdf` and its
+  Markdown source `docs/src/concept-note.md` (its main Phase 1 numbers are checked against
+  `results/` like the README). The private working-draft link is gone. Sections are numbered so
+  that the cross-references ("section 9") resolve.
+- Prior art stated in the README, the Phase 1 report, the project page and the concept note: the
+  hexagonal lattice and two-dimensional equaliser (Philips TwoDOS: Immink et al. 2003; Conway
+  2004; Huang, Mathew and Chong 2005), interference cancellation and pilot-based channel
+  estimation (digital communications) and numerical refocusing (digital holographic microscopy,
+  Colomb et al. 2010) are known; Phase 1 measures them, it does not invent them.
 
 ## 0.1.0 (2026-11-17): Phase 1, simulator core
 

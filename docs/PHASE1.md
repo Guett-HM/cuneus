@@ -7,7 +7,7 @@ as a geometric intuition (storing data in the shape of engraved symbols); like i
 simulator and its documents were built with the help of AI tools on standard diffraction
 optics. Corrections from specialists are very welcome.*
 
-Phase 1 of the concept note had one job: build a simulator of the dense tier that has none of
+Phase 1 of the [concept note](CUNEUS_Concept_Note_v0.2.pdf) had one job: build a simulator of the dense tier that has none of
 the weaknesses found in 4D-VODS v1.1 (finite patches, decoders that know the optics exactly,
 no placement errors, no defocus) and use it to test the claim that a hexagonal lattice stores
 more than a square one. This report gives the method, the results and the go/no-go decision.
@@ -148,7 +148,33 @@ interference cancellation (+10%). Decision: **conditional go.**
   placement errors, which v1.1 did not model, it gives 51.9 bits/µm²:
   about 43 bits/µm² of user data with the v1.1 overhead, about 1.41× a BDXL layer.
 
-## 4. Limits
+## 4. Prior art
+
+The three ideas behind these results are known; Phase 1 measures them for this reader, it does
+not invent them.
+
+* **Hexagonal lattice and two-dimensional equalisation.** Philips' two-dimensional optical
+  storage (TwoDOS) wrote bits on a hexagonal lattice and read them with two-dimensional
+  equalisation and detection: A. H. J. Immink et al., "Signal processing and coding for
+  two-dimensional optical storage", *IEEE GLOBECOM* 2003; T. Conway, "A partial response read
+  channel for two dimensional optical data storage", *IEEE Trans. Consumer Electronics* 50(4),
+  1107–1112 (2004); L. Huang, G. Mathew, T. C. Chong, "Channel modeling and target design for
+  two-dimensional optical storage systems", *IEEE Trans. Magnetics* 41(8), 2414–2424 (2005),
+  doi:10.1109/TMAG.2005.852212.
+* **Interference cancellation and a response learnt from known symbols** (sections 2.1 and
+  2.2) are standard in digital communications: parallel interference cancellation in
+  multi-user detection, channel estimation from pilot symbols.
+* **Numerical refocusing of a measured complex field** (section 2.4) is how digital holographic
+  microscopy extends the depth of focus: T. Colomb, N. Pavillon, J. Kühn, E. Cuche,
+  C. Depeursinge, Y. Emery, "Extended depth-of-focus by digital holographic microscopy",
+  *Optics Letters* 35(11), 1840–1842 (2010), doi:10.1364/OL.35.001840.
+
+What is new in this report is the size of each effect for a coherent 405 nm, NA 0.90 reader of
+APSK-16 dots with placement errors and defocus, in open code. The candidates for a new
+contribution (the format compiler, a code aligned to the reader's λ/NA, the three-tier plate)
+are not tested here; Phase 2 searches the literature and patents for them.
+
+## 5. Limits
 
 Scalar optics and thin two-dimensional dots at NA 0.90 (vectorial effects are not small there);
 a Gaussian, independent model of writing and placement errors; no camera pixels, aberrations
@@ -156,7 +182,7 @@ other than defocus, or non-linear writing; densities are mutual information of h
 not the output of a real error-correction code. The validation checks prove that the code
 implements its model, not that the model matches glass.
 
-## 5. Next steps
+## 6. Next steps
 
 1. Phase 2: literature and patent search on the six ingredients of the concept note, now with
    interference cancellation and response learning added to the list.

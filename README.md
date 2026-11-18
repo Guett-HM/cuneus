@@ -20,8 +20,8 @@ Project page with a live simulation of the reader and interactive results:
 `python -m cuneus site`).
 
 The concept note (three tiers on one plate, from naked eye to laboratory reader) is
-[CUNEUS – Concept Note v0.2](https://claude.ai/artifact/Y9NEWMc7YT3YA7Rg1tzkJP) (working draft). Phase 1
-tests its dense tier: amplitude/phase dots (APSK-16) read by a coherent 405 nm, NA 0.90
+[CUNEUS Concept Note v0.2](docs/CUNEUS_Concept_Note_v0.2.pdf) (PDF; Markdown source in
+[docs/src/concept-note.md](docs/src/concept-note.md)). Phase 1 tests its dense tier: amplitude/phase dots (APSK-16) read by a coherent 405 nm, NA 0.90
 microscope.
 
 ## Phase 1 results
@@ -46,7 +46,8 @@ hexagonal case repeated with four further seeds gives 51.9 to 52.7 bits/µm². D
 this size, such as 66.1 against 65.8 in the table, are sampling noise: a decoder that learns
 the response cannot do better on average than one that knows it exactly.
 
-What Phase 1 found:
+What Phase 1 found (the techniques behind these results are already known; what Phase 1 adds
+is their measurement for this reader, see [Prior art](#prior-art)):
 
 1. **The decoder matters more than the lattice.** Interference cancellation raises the best
    hexagonal density from 52.9 to 65.8 bits/µm² (+24%) under ideal conditions.
@@ -92,6 +93,24 @@ no placement errors. Under the same idealised assumptions CUNEUS reaches 65.8 bi
 reaches 51.9 bits/µm², about 43 bits/µm² of user data with the v1.1 overhead (pilots 1 in 16,
 error-correction rate 0.88), about 1.41× a BDXL layer.
 
+## Prior art
+
+None of the three ideas behind the Phase 1 results is new. They were published before CUNEUS:
+
+| Phase 1 result | Already known from |
+| --- | --- |
+| A hexagonal lattice packs more data than a square one; neighbouring dots are separated by a two-dimensional equaliser | Two-dimensional optical storage (TwoDOS, Philips Research) and the read channels designed for it: A. H. J. Immink et al., "Signal processing and coding for two-dimensional optical storage", *IEEE GLOBECOM* 2003; T. Conway, "A partial response read channel for two dimensional optical data storage", *IEEE Trans. Consumer Electronics* 50(4), 1107–1112 (2004); L. Huang, G. Mathew, T. C. Chong, "Channel modeling and target design for two-dimensional optical storage systems", *IEEE Trans. Magnetics* 41(8), 2414–2424 (2005), [doi:10.1109/TMAG.2005.852212](https://doi.org/10.1109/TMAG.2005.852212) |
+| Interference cancellation, and a response learnt from known symbols | Standard in digital communications: parallel interference cancellation in multi-user detection, and channel estimation from pilot symbols |
+| Defocus corrected in software from the measured complex field | Digital holographic microscopy: T. Colomb, N. Pavillon, J. Kühn, E. Cuche, C. Depeursinge, Y. Emery, "Extended depth-of-focus by digital holographic microscopy", *Optics Letters* 35(11), 1840–1842 (2010), [doi:10.1364/OL.35.001840](https://doi.org/10.1364/OL.35.001840) |
+
+What Phase 1 adds is a measurement, not an invention: the size of each effect for a coherent
+405 nm, NA 0.90 reader of APSK-16 dots, with placement errors and defocus, in open code that
+anyone can rerun. The candidates for a new contribution are elsewhere and still untested: the
+format compiler that computes lattice, alphabet and decoder from the reader and the writer, a
+code that aligns itself to the reader's λ/NA, and the three-tier plate readable from the naked
+eye to a laboratory reader. Phase 2 is the literature and patent search that will check them
+(section 6 of the [concept note](docs/CUNEUS_Concept_Note_v0.2.pdf)).
+
 ## Reproduce
 
 ```bash
@@ -131,6 +150,7 @@ written glass can show that the model matches reality.
 | `cuneus/provenance.py`, `claims.py` | hashes of results, published numbers vs results |
 | `results/` | result files, `MANIFEST.json` (provenance), `claims.json` (published numbers) |
 | `figures/` | PNG, PDF and the plotted values as CSV |
+| `docs/CUNEUS_Concept_Note_v0.2.pdf`, `docs/src/` | concept note (PDF and Markdown source) |
 | `docs/PHASE1.md` | Phase 1 report: method, results, limits |
 | `index.html`, `cuneus/site.py` | project page; its numbers and chart data come from `results/` |
 

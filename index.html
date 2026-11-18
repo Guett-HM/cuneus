@@ -231,6 +231,7 @@
       <a href="#geometry">Why hexagonal</a>
       <a href="#results">Results</a>
       <a href="#limits">Limits</a>
+      <a href="#prior">Prior art</a>
       <a href="#plan">Plan</a>
       <a href="#reproduce">Reproduce</a>
       <a href="https://github.com/GuettHM/cuneus">GitHub</a>
@@ -249,6 +250,7 @@
       <div class="actions">
         <a class="btn primary" href="#results">See the Phase 1 results</a>
         <a class="btn" href="https://github.com/GuettHM/cuneus/blob/main/docs/PHASE1.md">Read the report</a>
+        <a class="btn" href="docs/CUNEUS_Concept_Note_v0.2.pdf">Concept note (PDF)</a>
       </div>
     </div>
 
@@ -409,11 +411,37 @@
   </div>
 </section>
 
+<section class="block" id="prior" aria-labelledby="prior-title">
+  <div class="wrap">
+    <h2 id="prior-title">What was already known, and what is left to test</h2>
+    <p class="intro">The three ideas behind the Phase 1 results were published before CUNEUS. Phase 1 measures them for one reader, in code anyone can rerun. Whether CUNEUS adds something new depends on the ideas that have not been tested yet.</p>
+    <div class="notes">
+      <div>
+        <h3>Already known</h3>
+        <ul>
+          <li><strong>Hexagonal lattice and two-dimensional equaliser:</strong> Philips' two-dimensional optical storage (TwoDOS). Immink et al., IEEE GLOBECOM 2003; Conway, IEEE Trans. Consumer Electronics 50, 1107 (2004); Huang, Mathew and Chong, IEEE Trans. Magnetics 41, 2414 (2005), <a href="https://doi.org/10.1109/TMAG.2005.852212">doi:10.1109/TMAG.2005.852212</a>.</li>
+          <li><strong>Interference cancellation and a response learnt from known symbols:</strong> standard in digital communications (multi-user detection, channel estimation from pilot symbols).</li>
+          <li><strong>Defocus corrected in software:</strong> digital holographic microscopy. Colomb et al., Optics Letters 35, 1840 (2010), <a href="https://doi.org/10.1364/OL.35.001840">doi:10.1364/OL.35.001840</a>.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Left to test</h3>
+        <ul>
+          <li>The format compiler: lattice, alphabet, decoder and code computed from the reader and the writer</li>
+          <li>A low-cost code aligned to the reader's λ/NA, against a binary code</li>
+          <li>The three-tier plate, from the naked eye to a laboratory reader</li>
+          <li>First, Phase 2: a literature and patent search on all three</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="plan" aria-labelledby="plan-title">
   <div class="wrap">
     <h2 id="plan-title">Six phases, each with a measurable go/no-go</h2>
     <ul class="plan">
-      <li class="done"><span class="n">0</span><span>Concept note</span><span class="crit">Scope fixed by the author</span><span class="st">Done</span></li>
+      <li class="done"><span class="n">0</span><span><a href="docs/CUNEUS_Concept_Note_v0.2.pdf">Concept note</a></span><span class="crit">Scope fixed by the author</span><span class="st">Done</span></li>
       <li class="done"><span class="n">1</span><span>Simulator core: periodic lattices, learnt response, interference cancellation, placement errors, defocus</span><span class="crit">Hexagonal gain ≥ 15%: met with the linear decoder, not with the iterative one</span><span class="st">Conditional go</span></li>
       <li class="next"><span class="n">2</span><span>Literature and patent search on every ingredient, including interference cancellation and response learning</span><span class="crit">At least one contribution not anticipated</span><span class="st">Next</span></li>
       <li><span class="n">3</span><span>Format compiler: reader and writer in, lattice, alphabet, code and net density out; a decoder that tracks slow placement errors</span><span class="crit">Predictions within 5% of full simulation</span><span class="st">Planned</span></li>
@@ -473,6 +501,7 @@ pytest -q</pre>
     </div>
     <div>
       <p><a href="https://github.com/GuettHM/cuneus">Code, results and report on GitHub</a></p>
+      <p><a href="docs/CUNEUS_Concept_Note_v0.2.pdf">Concept note v0.2 (PDF)</a></p>
       <p><a href="https://doi.org/10.5281/zenodo.24268721">Predecessor: 4D-VODS (Zenodo)</a></p>
       <p><a href="https://doi.org/10.5281/zenodo.24325753">Archived on Zenodo, doi:10.5281/zenodo.24325753</a> (all versions; version 0.1.0: <a href="https://doi.org/10.5281/zenodo.24325754">10.5281/zenodo.24325754</a>)</p>
       <p>MIT licence. Cite with CITATION.cff in the repository.</p>

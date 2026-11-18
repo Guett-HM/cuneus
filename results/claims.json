@@ -1,5 +1,5 @@
 {
- "description": "Every number quoted in README.md and docs/PHASE1.md, with how to compute it from results/. Checked by `python -m cuneus check` and tests/test_results.py.",
+ "description": "Every number quoted in README.md and docs/PHASE1.md, and the main Phase 1 numbers of the concept note (docs/src/concept-note.md), with how to compute it from results/. Checked by `python -m cuneus check` and tests/test_results.py.",
  "constants": {
   "vods_v11_density": 42.6,
   "ecc_rate": 0.8810196078431373,
@@ -96,7 +96,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -272,7 +273,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -419,7 +421,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -432,7 +435,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -451,7 +455,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -465,7 +470,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -726,7 +732,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -739,7 +746,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -825,7 +833,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -852,7 +861,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -865,7 +875,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -879,7 +890,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -1222,7 +1234,8 @@
     "({v})"
    ],
    "cited_in": [
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -1271,7 +1284,8 @@
     "({v})"
    ],
    "cited_in": [
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -1300,7 +1314,8 @@
     "against {v}%"
    ],
    "cited_in": [
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -1329,7 +1344,8 @@
     "against {v}%"
    ],
    "cited_in": [
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
@@ -1411,7 +1427,8 @@
    ],
    "cited_in": [
     "README.md",
-    "docs/PHASE1.md"
+    "docs/PHASE1.md",
+    "docs/src/concept-note.md"
    ]
   },
   {
