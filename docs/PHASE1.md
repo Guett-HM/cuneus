@@ -172,7 +172,8 @@ not invent them.
 What is new in this report is the size of each effect for a coherent 405 nm, NA 0.90 reader of
 APSK-16 dots with placement errors and defocus, in open code. The candidates for a new
 contribution (the format compiler, a code aligned to the reader's λ/NA, the three-tier plate)
-are not tested here; Phase 2 searches the literature and patents for them.
+are not tested here; Phase 2 searched the literature and patents for them and found all three
+already published ([Phase 2 report](PHASE2.md)).
 
 ## 5. Limits
 

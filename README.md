@@ -11,9 +11,11 @@ compiler turns a hardware description into machine code, instead of being drawn 
 
 *I am not a professional physicist. CUNEUS grew out of my earlier study 4D-VODS, which started as a geometric intuition (storing data in the shape of engraved symbols); like it, this simulator and its documents were built with the help of AI tools on standard diffraction optics. Corrections from specialists are very welcome.*
 
-> **Status: Phase 1 of 6, simulation only.** Nothing has been written in glass. Every number
-> below comes from the simulator in this repository and is checked against `results/` on
-> every push.
+> **Status: stopped after Phase 2, simulation only.** Nothing has been written in glass. The
+> literature and patent search of Phase 2 found every candidate contribution already
+> published ([docs/PHASE2.md](docs/PHASE2.md)), so CUNEUS stays an open, reproducible study,
+> not an invention. Every number below comes from the simulator in this repository and is
+> checked against `results/` on every push.
 
 Project page with a live simulation of the reader and interactive results:
 <https://guetthm.github.io/cuneus/> (`index.html`, rebuilt from `results/` by
@@ -108,8 +110,12 @@ What Phase 1 adds is a measurement, not an invention: the size of each effect fo
 anyone can rerun. The candidates for a new contribution are elsewhere and still untested: the
 format compiler that computes lattice, alphabet and decoder from the reader and the writer, a
 code that aligns itself to the reader's λ/NA, and the three-tier plate readable from the naked
-eye to a laboratory reader. Phase 2 is the literature and patent search that will check them
-(section 6 of the [concept note](docs/CUNEUS_Concept_Note_v0.2.pdf)).
+eye to a laboratory reader. Phase 2 searched the literature and patents for them and found all
+three already published: the three-tier plate in the Rosetta Disk, the Arch Lunar Library,
+Piql film and patents on self-describing archival media; the format compiler in Microsoft's
+Project Silica (2026); the code scaled to the reader in multi-level, hexagonal and
+reader-adaptive 2D codes. Decision: **no-go** as an innovation project
+([docs/PHASE2.md](docs/PHASE2.md)).
 
 ## Reproduce
 
@@ -152,6 +158,7 @@ written glass can show that the model matches reality.
 | `figures/` | PNG, PDF and the plotted values as CSV |
 | `docs/CUNEUS_Concept_Note_v0.2.pdf`, `docs/src/` | concept note (PDF and Markdown source) |
 | `docs/PHASE1.md` | Phase 1 report: method, results, limits |
+| `docs/PHASE2.md` | Phase 2 report: literature and patent search, go/no-go |
 | `index.html`, `cuneus/site.py` | project page; its numbers and chart data come from `results/` |
 
 ## Use of AI tools

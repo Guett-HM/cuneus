@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Phase 2, literature and patent search (`docs/PHASE2.md`): the three remaining candidate
+  contributions (three-tier plate, format compiler, code scaled to λ/NA) were all found in
+  earlier work, products or patents. Criterion "at least one contribution not anticipated" not
+  met: **no-go**. CUNEUS stops as an innovation project and stays an open, reproducible study;
+  README, project page and Phase 1 report updated.
 - Zenodo DOIs in the README, CITATION.cff, pyproject.toml and the project page: concept DOI
   10.5281/zenodo.24325753 (all versions) and 10.5281/zenodo.24325754 (version 0.1.0).
 - The note on the use of AI tools, worded as in 4D-VODS, in the README, the Phase 1 report,

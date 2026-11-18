@@ -188,6 +188,7 @@
   .plan .done .st { color: var(--good); }
   .plan .next .st { color: var(--accent); }
   .plan .done .n { color: var(--good); }
+  .plan .stop .st, .plan .stop .n { color: var(--ink); }
 
   /* reproduce */
   pre { background: var(--ink); color: var(--bg); border-radius: 14px; padding: 20px 22px; overflow-x: auto; font-family: var(--mono); font-size: 0.88rem; line-height: 1.7; margin: 0; }
@@ -246,7 +247,7 @@
       <h1 id="title">CUNEUS</h1>
       <p class="tagline">Data formats for glass, computed from the optics of the reader.</p>
       <p class="lead">The lattice of dots written in the glass, the alphabet of each dot and the decoder are not drawn by hand: they are calculated from the microscope that will read them. In simulation, the dense layer reaches <strong><span data-claim="real_hex_it">51.9</span> bits/µm²</strong> before error correction with realistic writing errors, against <span data-claim="vods_v11">42.6</span> for its predecessor <a href="https://doi.org/10.5281/zenodo.24268721">4D-VODS</a> under ideal assumptions.</p>
-      <p class="status"><b>Phase 1 of 6 done.</b> <span>Simulation only: nothing has been written in glass yet, and every number on this page is checked against the published results.</span></p>
+      <p class="status"><b>Stopped after phase 2.</b> <span>Simulation only: nothing has been written in glass. The literature search found every candidate contribution already published, so CUNEUS stays an open study. Every number on this page is checked against the published results.</span></p>
       <div class="actions">
         <a class="btn primary" href="#results">See the Phase 1 results</a>
         <a class="btn" href="https://github.com/GuettHM/cuneus/blob/main/docs/PHASE1.md">Read the report</a>
@@ -413,8 +414,8 @@
 
 <section class="block" id="prior" aria-labelledby="prior-title">
   <div class="wrap">
-    <h2 id="prior-title">What was already known, and what is left to test</h2>
-    <p class="intro">The three ideas behind the Phase 1 results were published before CUNEUS. Phase 1 measures them for one reader, in code anyone can rerun. Whether CUNEUS adds something new depends on the ideas that have not been tested yet.</p>
+    <h2 id="prior-title">What was already known</h2>
+    <p class="intro">The three ideas behind the Phase 1 results were published before CUNEUS, and the Phase 2 search found the three remaining candidates published too. What CUNEUS adds is an open simulator and measurements anyone can rerun, not an invention.</p>
     <div class="notes">
       <div>
         <h3>Already known</h3>
@@ -425,12 +426,12 @@
         </ul>
       </div>
       <div>
-        <h3>Left to test</h3>
+        <h3>Phase 2: the candidates, also known</h3>
         <ul>
-          <li>The format compiler: lattice, alphabet, decoder and code computed from the reader and the writer</li>
-          <li>A low-cost code aligned to the reader's λ/NA, against a binary code</li>
-          <li>The three-tier plate, from the naked eye to a laboratory reader</li>
-          <li>First, Phase 2: a literature and patent search on all three</li>
+          <li><strong>Three-tier plate:</strong> the Rosetta Disk, the Arch Mission Lunar Library, Piql film, and patents on archival media that carry their own reading instructions.</li>
+          <li><strong>Format compiler:</strong> Microsoft's Project Silica selects levels, mapping and code rate for its glass by maximising mutual information (<a href="https://doi.org/10.1038/s41586-025-10042-w">Nature, 2026</a>).</li>
+          <li><strong>Code scaled to the reader:</strong> multi-level and hexagonal 2D codes, and codes that adapt to the camera's resolution (FOCUS, MobiSys 2016).</li>
+          <li><a href="https://github.com/GuettHM/cuneus/blob/main/docs/PHASE2.md">Read the Phase 2 report</a></li>
         </ul>
       </div>
     </div>
@@ -439,16 +440,16 @@
 
 <section class="block" id="plan" aria-labelledby="plan-title">
   <div class="wrap">
-    <h2 id="plan-title">Six phases, each with a measurable go/no-go</h2>
+    <h2 id="plan-title">Six phases, each with a measurable go/no-go: stopped at the second</h2>
     <ul class="plan">
       <li class="done"><span class="n">0</span><span><a href="docs/CUNEUS_Concept_Note_v0.2.pdf">Concept note</a></span><span class="crit">Scope fixed by the author</span><span class="st">Done</span></li>
       <li class="done"><span class="n">1</span><span>Simulator core: periodic lattices, learnt response, interference cancellation, placement errors, defocus</span><span class="crit">Hexagonal gain ≥ 15%: met with the linear decoder, not with the iterative one</span><span class="st">Conditional go</span></li>
-      <li class="next"><span class="n">2</span><span>Literature and patent search on every ingredient, including interference cancellation and response learning</span><span class="crit">At least one contribution not anticipated</span><span class="st">Next</span></li>
-      <li><span class="n">3</span><span>Format compiler: reader and writer in, lattice, alphabet, code and net density out; a decoder that tracks slow placement errors</span><span class="crit">Predictions within 5% of full simulation</span><span class="st">Planned</span></li>
-      <li><span class="n">4</span><span>Low-cost code (SAMM-2) with a focus sweep, against a binary Data-Matrix-like code</span><span class="crit">≥ 20% more net density at equal reliability</span><span class="st">Planned</span></li>
-      <li><span class="n">5</span><span>Paper experiment: layers printed large and photographed through a pinhole</span><span class="crit">≥ 95% of real frames decoded</span><span class="st">Planned</span></li>
-      <li><span class="n">5b</span><span>First real plate without a laboratory: a commercial chrome-on-quartz photomask carrying the human and low-cost layers</span><span class="crit">≥ 95% of frames decoded; measured variability fed to the compiler</span><span class="st">Planned</span></li>
-      <li><span class="n">6</span><span>Glass with a partner laboratory: test grids that measure placement error and writing variability, then data</span><span class="crit">Measured errors within twice the simulated values</span><span class="st">Planned</span></li>
+      <li class="stop"><span class="n">2</span><span><a href="https://github.com/GuettHM/cuneus/blob/main/docs/PHASE2.md">Literature and patent search</a> on the three remaining candidates</span><span class="crit">At least one contribution not anticipated: not met, all three were already published</span><span class="st">No-go</span></li>
+      <li><span class="n">3</span><span>Format compiler: reader and writer in, lattice, alphabet, code and net density out; a decoder that tracks slow placement errors</span><span class="crit">Predictions within 5% of full simulation</span><span class="st">Not started</span></li>
+      <li><span class="n">4</span><span>Low-cost code (SAMM-2) with a focus sweep, against a binary Data-Matrix-like code</span><span class="crit">≥ 20% more net density at equal reliability</span><span class="st">Not started</span></li>
+      <li><span class="n">5</span><span>Paper experiment: layers printed large and photographed through a pinhole</span><span class="crit">≥ 95% of real frames decoded</span><span class="st">Not started</span></li>
+      <li><span class="n">5b</span><span>First real plate without a laboratory: a commercial chrome-on-quartz photomask carrying the human and low-cost layers</span><span class="crit">≥ 95% of frames decoded; measured variability fed to the compiler</span><span class="st">Not started</span></li>
+      <li><span class="n">6</span><span>Glass with a partner laboratory: test grids that measure placement error and writing variability, then data</span><span class="crit">Measured errors within twice the simulated values</span><span class="st">Not started</span></li>
     </ul>
   </div>
 </section>
