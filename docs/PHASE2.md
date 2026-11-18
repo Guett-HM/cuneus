@@ -1,6 +1,6 @@
 # CUNEUS Phase 2 report: literature and patent search
 
-Hakim Guettal, 18 November 2026.
+H. Guettal, 18 November 2026.
 
 *I am not a professional physicist. CUNEUS grew out of my earlier study 4D-VODS, which started
 as a geometric intuition (storing data in the shape of engraved symbols); like it, this

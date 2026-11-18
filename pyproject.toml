@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Optics-aware data formats for archival storage in glass: open simulation study"
 readme = "README.md"
 license = "MIT"
-authors = [{ name = "Hakim Guettal" }]
+authors = [{ name = "H. Guettal" }]
 requires-python = ">=3.11"
 dependencies = ["numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7"]
 

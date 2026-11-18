@@ -4,7 +4,7 @@
 
 Optics-aware alphabets for archival data storage in glass, from a phone microscope to a laboratory reader (working title)
 
-Hakim Guettal, 17 November 2026
+H. Guettal, 17 November 2026
 
 ## 1. At a glance
 

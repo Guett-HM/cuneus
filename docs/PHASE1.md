@@ -1,6 +1,6 @@
 # CUNEUS Phase 1 report: simulator core and lattice test
 
-Hakim Guettal, 17 November 2026. Version 0.1.0 of the repository.
+H. Guettal, 17 November 2026. Version 0.1.0 of the repository.
 
 *I am not a professional physicist. CUNEUS grew out of my earlier study 4D-VODS, which started
 as a geometric intuition (storing data in the shape of engraved symbols); like it, this

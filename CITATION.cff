@@ -14,7 +14,7 @@ identifiers:
     description: "Version 0.1.0"
 authors:
   - family-names: Guettal
-    given-names: Hakim
+    given-names: H.
 license: MIT
 repository-code: "https://github.com/Guett-HM/cuneus"
 url: "https://guett-hm.github.io/cuneus/"
@@ -41,5 +41,5 @@ references:
     title: "4D-VODS: optical data storage in glass with a self-aligning code for low-cost readers"
     authors:
       - family-names: Guettal
-        given-names: Hakim
+        given-names: H.
     doi: 10.5281/zenodo.24268721

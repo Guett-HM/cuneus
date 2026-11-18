@@ -10,7 +10,7 @@ assume good faith; say what you know and how sure you are; credit other people's
 **Not accepted:** harassment, insults, personal or political attacks, discriminatory
 language, publishing someone's private information, or sustained disruption of discussions.
 
-**Reporting:** contact the maintainer, Hakim Guettal, through a GitHub issue marked
+**Reporting:** contact the maintainer, H. Guettal, through a GitHub issue marked
 "conduct" or privately through the contact on his GitHub profile. Reports are handled
 confidentially. The maintainer may edit or remove comments, and block contributors who do
 not follow this code.

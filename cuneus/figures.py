@@ -32,7 +32,7 @@ plt.rcParams.update({
     "axes.facecolor": SURF, "savefig.facecolor": SURF, "legend.frameon": False,
     "text.color": INK, "pdf.fonttype": 42, "lines.linewidth": 2, "lines.markersize": 5,
 })
-PDF_META = {"Creator": "CUNEUS cuneus/figures.py", "Author": "Hakim Guettal", "CreationDate": None}
+PDF_META = {"Creator": "CUNEUS cuneus/figures.py", "Author": "H. Guettal", "CreationDate": None}
 STYLE = {"linear": dict(ls="--", mfc=SURF), "iterative": dict(ls="-")}
 DEC = {"linear": "linear MMSE", "iterative": "MMSE + interference cancellation"}
 LEARNT = {"re-estimated": "response learnt at the same focus", "fixed": "response fixed at best focus"}
